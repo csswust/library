@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zjl.library.dao.BookInfoDao">
+    <select id="selectByCondition" resultMap="ResultMapWithBLOBs" parameterType="java.util.Map">
+        SELECT
+        <include refid="Base_Column_List"/>
+        ,
+        <include refid="Blob_Column_List"/>
+        FROM book_info
+        WHERE 1 = 1
+        <if test="record.id != null">
+            AND
+            id = #{record.id}
+        </if>
+        <if test="record.tile != null">
+            AND
+            tile = #{record.tile}
+        </if>
+        <if test="record.image != null">
+            AND
+            image = #{record.image}
+        </if>
+        <if test="record.author != null">
+            AND
+            author = #{record.author}
+        </if>
+        <if test="record.pressTime != null">
+            AND
+            press_time = #{record.pressTime}
+        </if>
+        <if test="record.press != null">
+            AND
+            press = #{record.press}
+        </if>
+        <if test="record.secondId != null">
+            AND
+            second_id = #{record.secondId}
+        </if>
+        <if test="record.money != null">
+            AND
+            money = #{record.money}
+        </if>
+        <if test="record.price != null">
+            AND
+            price = #{record.price}
+        </if>
+        <if test="record.isbn != null">
+            AND
+            ISBN = #{record.isbn}
+        </if>
+        <if test="record.bookSize != null">
+            AND
+            book_size = #{record.bookSize}
+        </if>
+        <if test="record.bookPage != null">
+            AND
+            book_page = #{record.bookPage}
+        </if>
+        <if test="record.createTime != null">
+            AND
+            create_time = #{record.createTime}
+        </if>
+        <if test="record.modifyTime != null">
+            AND
+            modify_time = #{record.modifyTime}
+        </if>
+        <if test="record.bookSpcial != null">
+            AND
+            book_spcial = #{record.bookSpcial}
+        </if>
+        <include refid="custom_condition"/>
+        <if test="start != null and rows != null">
+            LIMIT #{start}, #{rows}
+        </if>
+    </select>
+    <select id="selectByConditionGetCount" resultType="java.lang.Integer" parameterType="java.util.Map">
+        SELECT
+        count(*)
+        FROM book_info
+        WHERE 1 = 1
+        <if test="record.id != null">
+            AND
+            id = #{record.id}
+        </if>
+        <if test="record.tile != null">
+            AND
+            tile = #{record.tile}
+        </if>
+        <if test="record.image != null">
+            AND
+            image = #{record.image}
+        </if>
+        <if test="record.author != null">
+            AND
+            author = #{record.author}
+        </if>
+        <if test="record.pressTime != null">
+            AND
+            press_time = #{record.pressTime}
+        </if>
+        <if test="record.press != null">
+            AND
+            press = #{record.press}
+        </if>
+        <if test="record.secondId != null">
+            AND
+            second_id = #{record.secondId}
+        </if>
+        <if test="record.money != null">
+            AND
+            money = #{record.money}
+        </if>
+        <if test="record.price != null">
+            AND
+            price = #{record.price}
+        </if>
+        <if test="record.isbn != null">
+            AND
+            ISBN = #{record.isbn}
+        </if>
+        <if test="record.bookSize != null">
+            AND
+            book_size = #{record.bookSize}
+        </if>
+        <if test="record.bookPage != null">
+            AND
+            book_page = #{record.bookPage}
+        </if>
+        <if test="record.createTime != null">
+            AND
+            create_time = #{record.createTime}
+        </if>
+        <if test="record.modifyTime != null">
+            AND
+            modify_time = #{record.modifyTime}
+        </if>
+        <if test="record.bookSpcial != null">
+            AND
+            book_spcial = #{record.bookSpcial}
+        </if>
+        <include refid="custom_condition"/>
+        <if test="start != null and rows != null">
+            LIMIT #{start}, #{rows}
+        </if>
+    </select>
+    <delete id="deleteByIdsList" parameterType="java.util.Map">
+        delete from book_info
+        where id in
+        <foreach collection="list" item="item" index="index" open="(" close=")" separator=",">
+            #{item}
+        </foreach>
+    </delete>
+    <select id="selectByIdsList" resultMap="ResultMapWithBLOBs" parameterType="java.util.Map">
+        select
+        <include refid="Base_Column_List" />
+        ,
+        <include refid="Blob_Column_List"/>
+        from book_info
+        where id in
+        <foreach collection="list" item="item" index="index" open="(" close=")" separator=",">
+            #{item}
+        </foreach>
+    </select>
+    <select id="insertBatch" parameterType="java.util.Map">
+        insert into book_info
+        (tile, image, author, press_time, press, second_id, money, price, ISBN, book_size, book_page, create_time, modify_time) values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.tile}, #{item.image}, #{item.author}, #{item.pressTime}, #{item.press}, #{item.secondId}, #{item.money}, #{item.price}, #{item.isbn}, #{item.bookSize}, #{item.bookPage}, #{item.createTime}, #{item.modifyTime})
+        </foreach>
+    </select>
+</mapper>
