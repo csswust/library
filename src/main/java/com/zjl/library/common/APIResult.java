@@ -1,11 +1,15 @@
 package com.zjl.library.common;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Created by 972536780 on 2018/3/12.
  */
 public class APIResult {
     private Integer status = 0;
     private String desc = "";
+    private Map<String, Object> data = new HashMap<>();
 
     public APIResult() {
         status = 0;
@@ -40,5 +44,9 @@ public class APIResult {
     public void setStatusAndDesc(Integer status, String desc) {
         this.status = status;
         this.desc = desc;
+    }
+
+    public void setData(String key, Object vlaue) {
+        data.put(key, vlaue);
     }
 }
