@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>用户登录</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/register.css"/>
+		<link rel="stylesheet" type="text/css" href="css/login.css"/>
+		<link rel="stylesheet" type="text/css" href="css/publicPart.css"/>
+		
+	</head>
+	<body>
+		<div id="loginTop">
+			<div class="registerTopContent">
+				<div class="registerTopContent_left">
+					<a href="index.html">
+						<img src="img/首页/logo.png"/>
+					</a>
+				</div>
+				<div class="registerTopContent_right">
+					<div class="right1"><span>正版好图书</span></div>
+					<div class="right2"><span>全场满69包邮</span></div>
+					<div class="right3"><span>特价书一折起</span></div>
+				</div>
+			</div>
+		</div>
+		
+		<div id="loginMid">
+			<div class="registerMid_top">
+				<span>用户登录</span>
+			</div>
+			
+			<div class="userInfo">
+				<form action="" method="post">
+					<div class="infoList">
+						<label for="userName">用户名：</label>
+						<input type="text" id="userName" class="required" value="请输入你的用户名/邮箱" onfocus="javascript:if(this.value=='请输入你的用户名/邮箱')this.value='';" onBlur="if(value==''){value='请输入你的用户名/邮箱'}" />
+					</div>
+					<div class="infoList">
+						<label for="confirmPassword">确认密码：</label>
+						<input type="password" id="confirmPassword" class="required" />
+					</div>
+					<div class="infoList" id="verificationCode">
+						<label>验证码：</label>
+						<input type="text" name="code" id="code" value="请输入验证码" onfocus="javascript:if(this.value=='请输入验证码')this.value='';" onBlur="if(value==''){value='请输入验证码'}" />
+						<div class="codeContent"></div><span class="change">换一换</span>
+						<label id="verification" class="verificationStyle"></label>
+					</div>
+					<div class="sub">
+						<input type="submit" name="send" id="send" value="登录" />
+					</div>
+				</form>
+			</div>
+			<div class="forgetPassword">
+				<a href="#">忘记密码？</a>
+				<a href="#">新用户注册>></a>
+			</div>
+			<div class="otherLogin">
+				<a href="#"><span></span>新浪微博账号登录</a>
+				<a href="#"><span></span>QQ账号登录</a>
+			</div>
+		</div>
+		
+		<div class="modal" id="myModal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">
+							<span aria-hidden="true">×</span>
+							<span class="sr-only">Close</span>
+						</button>
+						<h4 class="model_title">登录失败</h4>
+					</div>
+					<div class="modal-body" id="dialogs">  
+            			<p></p>  
+        			</div>  
+			        <div class="modal-footer">  
+			            <button type="button" data-dismiss="modal" style="color: #FFFFFF;background-color:#FB8F02; text-align:center;  
+			              padding:10px;border: 1px solid #dedede;-moz-border-radius: 15px;-webkit-border-radius: 15px;  border-radius:15px;vertical-align:middle;">我知道了  
+			            </button>  
+			        </div>  
+				</div>
+			</div>
+		</div>
+		
+		
+		<div class="register_login_Bottom">
+			<div class="bottomTop">
+				<ul>
+					<li><a href="#">本站简介</a></li>
+					<li>|</li>
+					<li><a href="#">帮助中心</a></li>
+					<li>|</li>
+					<li><a href="#">联系我们</a></li>
+					<li>|</li>
+					<li><a href="#">招聘英才</a></li>
+				</ul>
+			</div>
+			<div class="bottomFooter">
+				<div class="bottomFooter_left">
+					<a href="#"><img src="img/首页/chengxin.jpg"/></a>
+					<a href="#"><img src="img/首页/ectrust.gif"/></a>
+				</div>
+				<div class="bottomFooter_right">
+					<ul>
+						<li><a href="#">川ICP备********号-*</a></li>
+						<li><a href="#">川信市监发[2018]***号</a></li>
+						<li>火星公安分局备案编号：**********</li>
+						<li><a href="#">营业执照</a></li>
+						<li><a href="#">出版物经营许可证 川出发川批字第直******</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<script type="text/javascript" src="js/jquery-1.12.1.min.js" ></script>
+		<script type="text/javascript" src="js/VerificationCode.js" ></script>
+		<script type="text/javascript" src="js/login.js" ></script>
+		<script type="text/javascript" src="js/bootstrap.min.js" ></script>
+		<script type="text/javascript" src="js/dataInteraction/loginData.js" ></script>
+	</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>新用户注册</title>
+		<link rel="stylesheet" type="text/css" href="css/register.css"/>
+		<link rel="stylesheet" type="text/css" href="css/login.css"/>
+		<link rel="stylesheet" type="text/css" href="css/publicPart.css"/>
+	</head>
+	<body>
+		<div id="registerTop">
+			<div class="registerTopContent">
+				<div class="registerTopContent_left">
+					<a href="index.html">
+						<img src="img/首页/logo.png"/>
+					</a>
+				</div>
+				<div class="registerTopContent_right">
+					<div class="right1"><span>正版好图书</span></div>
+					<div class="right2"><span>全场满69包邮</span></div>
+					<div class="right3"><span>特价书一折起</span></div>
+				</div>
+			</div>
+		</div>
+		
+		<div id="registerMid">
+			<div class="registerMid_top">
+				<span>新用户注册</span>
+				<div>
+					<span>已有账号？</span>
+					<a href="#">请登录</a>
+				</div>
+			</div>
+			
+			<div class="userInfo">
+				<form action="" method="post">
+					<div class="infoList">
+						<label for="userName">用户名：</label>
+						<input type="text" id="userName" class="required" value="" />
+					</div>
+					<div class="infoList">
+						<label for="userEmail">用户邮箱：</label>
+						<input type="text" id="userEmail" class="required" value="请输入你的常用邮箱" onfocus="javascript:if(this.value=='请输入你的常用邮箱')this.value='';" onBlur="if(value==''){value='请输入你的常用邮箱'}" />
+					</div>
+					<div class="infoList">
+						<label for="setPassword">设置密码：</label>
+						<input type="password" id="setPassword" class="required" />
+					</div>
+					<div class="infoList">
+						<label for="confirmPassword">确认密码：</label>
+						<input type="password" id="confirmPassword" class="required" />
+					</div>
+					<div class="infoList" id="verificationCode">
+						<label>验证码：</label>
+						<input type="text" name="code" id="code" value="请输入验证码" onfocus="javascript:if(this.value=='请输入验证码')this.value='';" onBlur="if(value==''){value='请输入验证码'}" />
+						<div class="codeContent"></div><span class="change">换一换</span>
+						<label id="verification" class="verificationStyle"></label>
+					</div>
+					<div class="sub">
+						<input type="" name="send" id="send" value="立即注册" />
+					</div>
+				</form>
+			</div>
+		</div>
+		
+		<div class="register_login_Bottom">
+			<div class="bottomTop">
+				<ul>
+					<li><a href="#">本站简介</a></li>
+					<li>|</li>
+					<li><a href="#">帮助中心</a></li>
+					<li>|</li>
+					<li><a href="#">联系我们</a></li>
+					<li>|</li>
+					<li><a href="#">招聘英才</a></li>
+				</ul>
+			</div>
+			<div class="bottomFooter">
+				<div class="bottomFooter_left">
+					<a href="#"><img src="img/首页/chengxin.jpg"/></a>
+					<a href="#"><img src="img/首页/ectrust.gif"/></a>
+				</div>
+				<div class="bottomFooter_right">
+					<ul>
+						<li><a href="#">川ICP备********号-*</a></li>
+						<li><a href="#">川信市监发[2018]***号</a></li>
+						<li>海淀公安分局备案编号：**********</li>
+						<li><a href="#">营业执照</a></li>
+						<li><a href="#">出版物经营许可证 川出发川批字第直******</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<script type="text/javascript" src="js/jquery-1.12.1.min.js" ></script>
+		<script type="text/javascript" src="js/register.js" ></script>
+		<script type="text/javascript" src="js/VerificationCode.js" ></script>
+	</body>
+</html>

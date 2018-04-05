@@ -1,0 +1,297 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	font-family: "微软雅黑";
+}
+#nav .navContent ul li:nth-child(2)>a{
+	color: #333333;
+	font-weight: normal;
+}
+#goodList{
+	width: 1204px;
+	height: auto;
+	margin: 20px auto;
+}
+#goodList .goodList_left{
+	width: 958px;
+	height: auto;
+	float: left;
+}
+#goodList .goodList_left .goodList_leftContent{
+	width: 958px;
+	height: 246px;
+}
+#goodList .goodList_left .goodList_leftContent
+.goodList_bookInfo{
+	width: 954px;
+	height: 224px;
+	padding-top: 21.3px;
+	border-left: 2px solid white;
+	border-right: 2px solid white;
+	border-bottom: 2px solid #E9E9E9;
+}
+#goodList .goodList_left .goodList_leftContent
+.goodList_bookInfo:nth-child(1){
+	border-top: 2px solid white;
+}
+#goodList .goodList_left .goodList_leftContent
+.goodList_bookInfo:hover{
+	border-left: 2px solid #E9E9E9;
+	border-right: 2px solid #E9E9E9;
+}
+#goodList .goodList_left .goodList_leftContent
+.goodList_bookInfo:nth-child(1):hover{
+	border-top: 2px solid #E9E9E9;
+}
+#goodList .goodList_left .goodList_leftContent
+.goodList_bookInfo .goodList_bookInfoContent{
+	width: 868px;
+	height: 204px;
+	margin: 0px auto;
+}
+#goodList .goodList_left .goodList_leftContent
+.goodList_bookInfo .goodList_bookInfoContent>a>img{
+	width: 149px;
+	height: 200px;
+	float: left;
+}
+#goodList .goodList_left .goodList_leftContent
+.goodList_bookInfo .goodList_bookInfoContent
+.goodList_bookDetail{
+	width: 675px;
+	height: 174px;
+	float: right;
+}
+#goodList .goodList_left .goodList_leftContent
+.goodList_bookInfo .goodList_bookInfoContent
+.goodList_bookDetail>a:nth-child(1){
+	width: 100%;
+	height: 24px;
+	display: block;
+	line-height: 24px;
+	color: #0080cc;
+}
+#goodList .goodList_left .goodList_leftContent
+.goodList_bookInfo .goodList_bookInfoContent
+.goodList_bookDetail>a:nth-child(1):hover{
+	color: #E60000;
+}
+#goodList .goodList_left .goodList_leftContent
+.goodList_bookInfo .goodList_bookInfoContent
+.goodList_bookDetail .bookInfo{
+	width: 100%;
+	height: 24px;
+	display: block;
+	font-size: 12px;
+	line-height: 24px;
+}
+#goodList .goodList_left .goodList_leftContent
+.goodList_bookInfo .goodList_bookInfoContent
+.goodList_bookDetail .bookInfo>a{
+	color: #999999;
+}
+#goodList .goodList_left .goodList_leftContent
+.goodList_bookInfo .goodList_bookInfoContent
+.goodList_bookDetail .bookInfo>a:hover{
+	color: #E60000;
+	text-decoration: underline;
+}
+#goodList .goodList_left .goodList_leftContent
+.goodList_bookInfo .goodList_bookInfoContent
+.goodList_bookDetail .bookInfo>span{
+	margin: 0px 10px;
+	color: #666666;
+}
+#goodList .goodList_left .goodList_leftContent
+.goodList_bookInfo .goodList_bookInfoContent
+.goodList_bookDetail .bookPrice{
+	width: 100%;
+	height: 30px;
+	display: block;
+	line-height: 30px;
+}
+#goodList .goodList_left .goodList_leftContent
+.goodList_bookInfo .goodList_bookInfoContent
+.goodList_bookDetail .bookPrice>span{
+	color: #999999;
+	font-size: 12px;
+}
+#goodList .goodList_left .goodList_leftContent
+.goodList_bookInfo .goodList_bookInfoContent
+.goodList_bookDetail .bookPrice>span:nth-child(1){
+	font-size: 18px;
+	color: #E60000;
+}
+#goodList .goodList_left .goodList_leftContent
+.goodList_bookInfo .goodList_bookInfoContent
+.goodList_bookDetail .bookPrice>span:nth-child(2){
+	color: #666666;
+	margin-left: 6px;
+	margin-right: 10px;
+}
+#goodList .goodList_left .goodList_leftContent
+.goodList_bookInfo .goodList_bookInfoContent
+.goodList_bookDetail .bookPrice>span:nth-child(4){
+	text-decoration: line-through;
+}
+#goodList .goodList_left .goodList_leftContent
+.goodList_bookInfo .goodList_bookInfoContent
+.goodList_bookDetail>p{
+	width: 100%;
+	height: 40px;
+	line-height: 20px;
+	font-size: 12px;
+	margin-top: 10px;
+}
+#goodList .goodList_left .goodList_leftContent
+.goodList_bookInfo .goodList_bookInfoContent
+.goodList_bookDetail .addShoppingCart{
+	width: 101px;
+	height: 30px;
+	display: block;
+	line-height: 30px;
+	color: white;
+	text-align: center;
+	font-size: 13px;
+	text-indent: 24px;
+	background: url("../../img/childredSprit.png") no-repeat;
+	background-position: -164px -452px;
+	margin-top: 12px;
+}
+#goodList .goodList_left .goodList_page{
+	width: 100%;
+	height: 112px;
+	clear: both;
+	margin-top: 30px;
+	float: left;
+}
+#goodList .goodList_left .goodList_page>ul{
+	width: 392px;
+	height: 30px;
+	margin: 0px auto;
+	margin-top: 40px;
+}
+#goodList .goodList_left .goodList_page>ul>li{
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	border: 1px solid #DADADA;
+	float: left;
+	border-left: none;
+}
+#goodList .goodList_left .goodList_page>ul>li>a{
+	font-size: 14px;
+	color: #666666;
+}
+#goodList .goodList_left .goodList_page>ul>li:nth-child(2){
+	border-left: 1px solid #DADADA;
+}
+#goodList .goodList_left .goodList_page>ul>li:nth-child(5){
+	border-top: none;
+	border-bottom: none;
+}
+#goodList .goodList_left .goodList_page>ul>li.prevPage,
+#goodList .goodList_left .goodList_page>ul>li.nextPage{
+	width: 72px;
+	height: 30px;
+	border-left: 1px solid #DADADA;
+}
+#goodList .goodList_left .goodList_page>ul>li.prevPage{
+	margin-right: 12px;
+	
+}
+#goodList .goodList_left .goodList_page>ul>li.nextPage{
+	margin-left: 12px;
+}
+#goodList .goodList_left .goodList_page>ul>li:hover{
+	border-color: #E60000;
+	background: #E60000;
+}
+#goodList .goodList_left .goodList_page>ul>li:nth-child(5):hover{
+	background: white;
+	border-color: #DADADA;
+}
+#goodList .goodList_left .goodList_page>ul>li:hover>a{
+	color: white;
+}
+
+#goodList .goodList_right{
+	width: 230px;
+	float: right;
+}
+#goodList .goodList_right .goodList_rightTop,
+#goodList .goodList_right .goodList_rightBottom{
+	width: 100%;
+	height: 1598px;
+	border: 1px solid #E6E6E6;
+}
+#goodList .goodList_right .goodList_rightBottom{
+	margin-top: 18px;
+}
+.goodList_rightTop_title{
+	width: 100%;
+	height: 54px;
+	line-height: 54px;
+	border-bottom: 1px solid #E6E6E6;
+	background: #F1F1F1;
+}
+.goodList_rightTop_title>h2{
+	font-size: 17px;
+	text-indent: 20px;
+	font-weight: normal;
+}
+.goodList_rightTop_content{
+	width: 100%;
+	height: 1544px;
+}
+.goodList_rightTop_content>ul>li{
+	width: 200px;
+	height: 240px;
+	padding-top: 16px;
+	border-bottom: 1px solid #E3E3E3;
+	margin: 0px auto;
+}
+.goodList_rightTop_content>ul>li:last-child{
+	border: none;
+}
+.goodList_rightTop_content>ul>li>a:nth-child(1){
+	width: 158px;
+	height: 158px;
+	display: block;
+	margin: 0px auto;
+}
+.goodList_rightTop_content>ul>li>a:nth-child(1)>img{
+	width: 158px;
+	height: 158px;
+}
+.goodList_rightTop_content>ul>li>a:nth-child(2){
+	width: 100%;
+	height: 22px;
+	display: block;
+	line-height: 22px;
+	font-size: 14px;
+	color: #333333;
+	margin-top: 10px;
+} 
+.goodList_rightTop_content>ul>li>a:nth-child(2):hover{
+	color: #E60000;
+}
+.goodList_rightTop_content>ul>li>span:nth-child(3){
+	width: 100%;
+	height: 22px;
+	display: block;
+	line-height: 22px;
+	font-size: 12px;
+}
+.goodList_rightTop_content>ul>li>span:nth-child(4){
+	font-size: 14px;
+	color: #E60000;
+}
+.goodList_rightTop_content>ul>li>span:nth-child(5){
+	font-size: 13px;
+	color: #999999;
+	text-decoration: line-through;
+}
+
+

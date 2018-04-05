@@ -1,0 +1,79 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	font-family: "微软雅黑";
+}
+a{
+	text-decoration: none;
+}
+li{
+	list-style-type: none;
+}
+#submitOrder{
+	width: 1000px;
+	height: auto;
+	margin: 0px auto;
+	padding-top: 30px;
+}
+#submitOrder .submitOrder_nav{
+	width: 1000px;
+	height: 38px;
+	background: url("../../img/ShoppingCart/payp.png") no-repeat;
+}
+#submitOrder .submitOrder_nav>span{
+	width: 192px;
+	height: 38px;
+	display: block;
+	line-height: 38px;
+	font-size: 14px;
+	text-indent: 70px;
+	float: left;
+	color: #666666;
+}
+#submitOrder .submitOrder_nav>span:nth-child(3){
+	color: white;
+	text-indent: 60px;
+	text-indent: 90px;
+}
+#submitOrder .submitOrder_content{
+	width: 1000px;
+	height: 180px;
+	border: 1px solid #E9E9E9;
+	margin-top: 30px;
+}
+#submitOrder .submitOrder_content .submitOrder_contentLeft{
+	width: 180px;
+	height: 120px;
+	background: #FAFAFA;
+	padding-top: 60px;
+	float: left;
+}
+#submitOrder .submitOrder_content .submitOrder_contentLeft>img{
+	margin: 0px auto;
+	display: block;
+}
+#submitOrder .submitOrder_content .submitOrder_contentRight{
+	width: 800px;
+	height: 120px;
+	float: left;
+	margin-left: 20px;
+	margin-top: 30px;
+}
+#submitOrder .submitOrder_content .submitOrder_contentRight>h2{
+	font-size: 26px;
+	font-weight: normal;
+}
+#submitOrder .submitOrder_content .submitOrder_contentRight>h3{
+	font-weight: normal;
+	font-size: 18px;
+	color: #E60000;
+	margin-top: 4px;
+	margin-bottom: 20px;
+}
+#submitOrder .submitOrder_content .submitOrder_contentRight>a{
+	color: #184ca0;
+	font-size: 15px;
+}
+#submitOrder .submitOrder_content .submitOrder_contentRight>a:hover{
+	text-decoration: underline;
+}
