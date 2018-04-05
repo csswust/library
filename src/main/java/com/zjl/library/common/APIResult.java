@@ -46,8 +46,8 @@ public class APIResult {
         this.desc = desc;
     }
 
-    public void setData(String key, Object vlaue) {
-        data.put(key, vlaue);
+    public void setData(String key, Object value) {
+        data.put(key, value);
     }
 
     public Map<String, Object> getData() {
