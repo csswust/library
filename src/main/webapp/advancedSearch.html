@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>高级搜索</title>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<link rel="stylesheet" type="text/css" href="css/advancedSearch.css"/>
+		<link rel="stylesheet" type="text/css" href="css/publicPart.css"/>
+	</head>
+	<body>
+		<!--顶部导航开始-->
+		<div id="topNav">
+			<div class="topNav_main">
+				<div class="topNav_mainLeft">
+					<span>欢迎登录Sunny图书网</span>
+					<span>请</span>
+					<span><a href="#">登录</a></span>
+					<span>|</span>
+					<span><a href="#">注册</a></span>
+				</div>
+				<div class="topNav_mainRight">
+					<ul>
+						<li><a href="#">购物车</a></li>
+						<li><a href="#">我的订单</a></li>
+						<li>
+							<a href="#">我的账户<b class="icon"></b></a>
+							<div class="topNav_mainRightMenu">
+								<ul>
+									<li><a href="#">我的收藏夹</a></li>
+									<li><a href="#">账户余额</a></li>
+									<li><a href="#">我的优惠券</a></li>
+									<li><a href="#">我的积分</a></li>
+									<li><a href="#">收货地址</a></li>
+									<li><a href="#">我的书评</a></li>
+									<li><a href="#">我的消息</a></li>
+									<li><a href="#">积分换券</a></li>
+								</ul>
+							</div>
+						</li>
+						<li><a href="#">帮助中心</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--顶部导航结束-->
+		
+		<!--搜索部分开始-->
+		<div id="search">
+			<div class="searchLeft">
+				<a href="#"><img src="img/首页/logo.png"/></a>
+			</div>
+			<div class="searchRight">
+				<div class="searchBox">
+					<input type="text" name="keyword" id="keyword" value="小王子" onfocus="javascript:if(this.value=='小王子')this.value='';" onBlur="if(value==''){value='小王子'}" />
+					<a href="#">搜 索</a>
+				</div>
+				<div class="searchBook">
+					<ul>
+						<li><a href="#">装在套子里的人</a></li>
+						<li><a href="#">阿加莎·克里斯蒂</a></li>
+						<li><a href="#">蒙台梭利育儿全书</a></li>
+						<li><a href="#">红楼梦图谱</a></li>
+					</ul>
+				</div>
+				<div class="moreSearch">
+					<a href="#">高级搜索</a>
+				</div>
+			</div>
+		</div>
+		<!--搜索部分结束-->
+		
+		<!--一级导航开始-->
+		<div id="nav">
+			<div class="navContent">
+				<ul>
+					<li>
+						<b class="icon"></b>
+						<span>图书分类</span>
+						<b class="icon"></b>
+					</li>
+					<li><a href="#">首页</a></li>
+					<li><a href="#">淘书团</a></li>
+					<li><a href="#">畅销榜</a></li>
+					<li><a href="#">新上架</a></li>
+					<li><a href="#">满价包邮</a></li>
+					<li><a href="#">出版社浏览</a></li>
+					<li><a href="#">闲情雅致</a></li>
+					<li><a href="#">书籍批发</a></li>
+				</ul>
+			</div>
+		</div>
+		<!--一级导航结束-->
+		
+		<!--高级搜索开始-->
+		<div id="advancedSearch">
+			<div class="advancedSearchContent">
+				<form action="" method="post">
+					<div class="searchList">
+						<label for="bookName">书名：</label>
+						<input type="text" name="bookName" id="bookName" value="" />
+					</div>
+					<div class="searchList">
+						<label for="bookAuthor">作者：</label>
+						<input type="text" name="bookAuthor" id="bookAuthor" value="" />
+					</div>
+					<div class="searchList">
+						<label for="bookPress">出版社：</label>
+						<input type="text" name="bookPress" id="bookPress" value="" />
+					</div>
+					<div class="searchList">
+						<label for="bookISBN">ISBN：</label>
+						<input type="text" name="bookISBN" id="bookISBN" value="" />
+					</div>
+					<div class="sub_searchBook">
+						<input type="" name="searchBook" id="searchBook" value="立即搜索" />
+					</div>
+					<div class="resetSearch">
+						<input type="" name="resetSearchBook" id="resetSearchBook" value="重置搜索" />
+					</div>
+				</form>
+			</div>
+		</div>
+		<!--高级搜索结束-->
+		
+		<!--高级搜索底部开始-->
+		<div class="advancedSearch_homePage_footer">
+			<div class="advancedSearch_homePage_footerTop">
+				<div class="advancedSearch_homePage_footerTop_content">
+					<div class="advancedSearch_homePage_footerTop_contentLeft">
+						<ul>
+							<li>新手上路</li>
+							<li><a href="#">购物流程演示</a></li>
+							<li><a href="#">注册用户 更改注册信息</a></li>
+							<li><a href="#">购物常见问题</a></li>
+							<li><a href="#">关于特价书的常见问题</a></li>
+						</ul>
+						<ul>
+							<li>购买问题</li>
+							<li><a href="#">订单跟踪</a></li>
+							<li><a href="#">付款方式</a></li>
+							<li><a href="#">账户余额    申请提现</a></li>
+							<li><a href="#">配送方式及费用、范围</a></li>
+							<li><a href="#">集团购买</a></li>
+						</ul>
+						<ul>
+							<li>售后服务</li>
+							<li><a href="#">退换货流程</a></li>
+							<li><a href="#">投诉与建议</a></li>
+						</ul>
+						<ul>
+							<li>特色服务</li>
+							<li><a href="#">会员等级与积分</a></li>
+							<li><a href="#">图书馨卡</a></li>
+							<li><a href="#">邮件订阅</a></li>
+							<li><a href="#">邀请好友购买返5元</a></li>
+						</ul>
+						<ul>
+							<li>其他信息</li>
+							<li><a href="#">本站简介</a></li>
+							<li><a href="#">联系我们</a></li>
+							<li><a href="#">招聘英才</a></li>
+							<li><a href="#">网站联盟</a></li>
+							<li><a href="#">友情链接</a></li>
+						</ul>
+					</div>
+					<div class="advancedSearch_homePage_footerTop_contentRight">
+						<div class="weibo">
+							<span>我们的微博</span>
+							<img src="img/weibo.png"/>
+						</div>
+						<div class="weixin">
+							<span>我们的公众号</span>
+							<img src="img/focuUs.jpg"/>
+						</div>
+						<div class="QQ">
+							<span>我的联系方式</span>
+							<img src="img/QQ.jpg"/>
+						</div>
+					</div>
+					<div class="advancedSearch_homePage_footerTop_bottom">
+						<img src="img/footbannr.jpg"/>
+					</div>
+				</div>
+			</div>
+			<div class="advancedSearch_homePage_footerBottom">
+				<div class="advancedSearch_homePage_footerBottom_content">
+					<div class="footerBottom_left">
+						<a href="#"><img src="img/首页/chengxin.jpg"/></a>
+						<a href="#"><img src="img/首页/ectrust.gif"/></a>
+					</div>
+					<div class="footerBottom_right">
+						<ul>
+							<li><a href="#">川ICP备********号-*</a></li>
+							<li><a href="#">川信市监发[2018]***号</a></li>
+							<li>火星公安分局备案编号：**********</li>
+							<li><a href="#">营业执照</a></li>
+							<li><a href="#">出版物经营许可证 川出发川批字第直******</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--高级搜索底部结束-->
+	</body>
+</html>

@@ -1,0 +1,461 @@
+*{
+	padding: 0px;
+	margin: 0px;
+	font-family: "微软雅黑";
+}
+a{
+	text-decoration: none;
+}
+li{
+	list-style-type: none;
+}
+/*顶部导航公共样式开始*/
+#topNav,
+#myShoppingCart_topNav,
+#writeAddress_topNav{
+	width: 100%;
+	height: 30px;
+	background-color: #F2F2F2;
+}
+.topNav_main{
+	width: 1190px;
+	height: 28px;
+	margin: 0px auto;
+}
+#myShoppingCart_topNav .topNav_main,
+#writeAddress_topNav .topNav_main{
+	width: 1000px;
+	height: 28px;
+}
+.topNav_main .topNav_mainLeft{
+	width: 220px;
+	height: 28px;
+	float: left;
+}
+.topNav_main .topNav_mainLeft>span{
+	font-size: 13px;
+	line-height: 28px;
+	color: #666666;
+}
+.topNav_main .topNav_mainLeft>span:hover>a{
+	text-decoration: underline;
+}
+.topNav_main .topNav_mainLeft>span>a{
+	color: #E60000;
+}
+.topNav_main .topNav_mainLeft>span:nth-child(4){
+	color: #D1D1D1;
+}
+.topNav_main .topNav_mainRight{
+	width: 395px;
+	height: 28px;
+	float: right;
+}
+.topNav_main .topNav_mainRight>ul>li{
+	float: left;
+	font-size: 13px;
+	line-height: 28px;
+	width: 90px;
+	height: 28px;
+	text-align: center;
+}
+.topNav_main .topNav_mainRight>ul>li>a{
+	color: #333333;
+}
+.topNav_main .topNav_mainRight>ul>li>a:hover{
+	color: #E60000;
+	text-decoration: underline;
+}
+.topNav_main .topNav_mainRight>ul>li:nth-child(3){
+	position: relative;
+}
+.topNav_main .topNav_mainRight>ul>li:nth-child(3)>a:hover{
+	width: 90px;
+	height: 28px;
+	background-color: white;
+	border: 1px solid #DADADA;
+	border-bottom: none;
+	display: block;
+}
+.topNav_main .topNav_mainRight>ul>li .icon{
+	width: 8px;
+	height: 4px;
+	background: url("../img/homeindex.png") no-repeat 0px 0px;
+	position: absolute;
+	top: 13px;
+	left: 74px;
+}
+.topNav_main .topNav_mainRight>ul>li:nth-child(3)>a:hover .icon{
+	width: 8px;
+	height: 4px;
+	background: url("../img/homeindex.png") no-repeat 0px -4px;
+	position: absolute;
+	top: 13px;
+	left: 74px;
+}
+.topNav_main .topNav_mainRight>ul>li:nth-child(3)>div{
+	width: 175px;
+	height: 120px;
+	background-color: white;
+	position: absolute;
+	top: 29px;
+	z-index: 999999;
+	border: 1px solid #DADADA;
+}
+.topNav_main .topNav_mainRight>ul>li:nth-child(3)>div>ul>li{
+	width: 70px;
+	float: left;
+	margin-left: 10px;
+}
+.topNav_main .topNav_mainRight>ul>li:nth-child(3)>div>ul>li>a{
+	color: #666666;
+}
+.topNav_main .topNav_mainRight>ul>li:nth-child(3)>div>ul>li>a:hover{
+	text-decoration: underline;
+}
+.topNav_mainRightMenu{
+	display: none;
+}
+
+
+#registerTop,
+#loginTop,
+#addShoppingCart_success,
+#myShoppingCart_mid{
+	width: 100%;
+	height: 92px;
+	background-color: white;
+	border-bottom: 2px solid #E60000;
+}
+.registerTopContent{
+	width: 1000px;
+	height: 92px;
+	margin: 0px auto;
+}
+.registerTopContent 
+.registerTopContent_left{
+	width: 200px;
+	height: 92px;
+	float: left;
+}
+.registerTopContent 
+.registerTopContent_left>a{
+	width: 200px;
+	height: 34px;
+	display: block;
+	padding-top: 20px;
+}
+.registerTopContent 
+.registerTopContent_left>a>img{
+	width: 200px;
+	height: 54px;
+}
+.registerTopContent 
+.registerTopContent_right{
+	width: 426px;
+	height: 40px;
+	margin-top: 24px;
+	float: right;
+}
+.registerTopContent 
+.registerTopContent_right>div{
+	width: 140px;
+	height: 40px;
+	line-height: 40px;
+	float: left;
+	background: url("../img/首页/register.png") no-repeat;
+}
+.registerTopContent 
+.registerTopContent_right .right1{
+	background-position: 0px center;
+}
+.registerTopContent 
+.registerTopContent_right .right2{
+	background-position: -140px center;
+}
+.registerTopContent 
+.registerTopContent_right .right3{
+	background-position: -280px center;
+}
+.registerTopContent 
+.registerTopContent_right>div>span{
+	font-size: 12px;
+	margin-left: 50px;
+}
+.registerTopContent 
+.registerTopContent_right .right3>span{
+	margin-left: 60px;
+}
+
+/*注册登录页面的底部*/
+.register_login_Bottom{
+	width: 1000px;
+	height: 134px;
+	margin: 0px auto;
+	padding-top: 30px;
+}
+.register_login_Bottom .bottomTop{
+	width: 500px;
+	height: 30px;
+	margin: 0px auto;
+}
+.register_login_Bottom .bottomTop>ul>li{
+	color: #C6C6C6;
+	float: left;
+	margin-right: 42px;
+}
+.register_login_Bottom .bottomTop>ul>li>a{
+	font-size: 12px;
+	color: #333333;
+}
+.register_login_Bottom .bottomTop>ul>li>a:hover{
+	text-decoration: underline;
+	color: #E60000;
+}
+.register_login_Bottom .bottomFooter{
+	width: 750px;
+	height: 44px;
+	margin: 20px auto;
+}
+.register_login_Bottom .bottomFooter .bottomFooter_left{
+	width: 290px;
+	height: 44px;
+	float: left;
+}
+.register_login_Bottom .bottomFooter .bottomFooter_left>a{
+	float: left;
+}
+.register_login_Bottom .bottomFooter .bottomFooter_left>a:nth-child(1){
+	margin-right: 4px;
+}
+.register_login_Bottom .bottomFooter .bottomFooter_right{
+	width: 460px;
+	height: 44px;
+	float: left;
+}
+.register_login_Bottom .bottomFooter .bottomFooter_right>ul>li{
+	float: left;
+	font-size: 12px;
+	color: #333333;
+}
+.register_login_Bottom .bottomFooter .bottomFooter_right>ul>li>a{
+	font-size: 12px;
+	color: #333333;
+}
+.register_login_Bottom .bottomFooter .bottomFooter_right>ul>li>a:hover{
+	color: #E60000;
+	text-decoration: underline;
+}
+
+
+/*加入购物车和商品详情列表的底部*/
+.shoppingCart_goodList_footer{
+	width: 1000px;
+	height: 216px;
+	border-top: 2px solid #EEEEEE;
+	margin: 12px auto;
+}
+.shoppingCart_goodList_footer .shoppingCart_goodList_footerTop{
+	width: 100%;
+	height: 156px;
+	background-color: #F8F8F8;
+}
+.shoppingCart_goodList_footer .shoppingCart_goodList_footerTop>ul{
+	width: 160px;
+	height: 156px;
+	float: left;
+	margin-left: 15px;
+}
+.shoppingCart_goodList_footer .shoppingCart_goodList_footerTop>ul>li{
+	font-weight: bold;
+	font-size: 14px;
+	line-height: 26px;
+}
+.shoppingCart_goodList_footer .shoppingCart_goodList_footerTop>ul>li>a{
+	font-size: 12px;
+	color: #333333;
+	font-weight: normal;
+}
+.shoppingCart_goodList_footer .shoppingCart_goodList_footerTop>ul>li>a:hover{
+	color: #ff6405;
+	text-decoration: underline;
+}
+.shoppingCart_goodList_footer .shoppingCart_goodList_footerTop .focusUs{
+	width: 125px;
+	height: 140px;
+	float: right;
+}
+.shoppingCart_goodList_footer .shoppingCart_goodList_footerTop .focusUs>span{
+	width: 125px;
+	height: 30px;
+	display: block;
+	line-height: 30px;
+	font-size: 14px;
+	text-align: center;
+}
+.shoppingCart_goodList_footer .shoppingCart_goodList_footerTop .focusUs>img{
+	width: 125px;
+	height: 125px;
+}
+
+.shoppingCart_goodList_footer .shoppingCart_goodList_footerBottom{
+	width: 100%;
+	height: 60px;
+}
+.shoppingCart_goodList_footer .shoppingCart_goodList_footerBottom
+.footerBottom_left{
+	width: 284px;
+	height: 45px;
+	padding-top: 15px;
+	float: left;
+}
+.shoppingCart_goodList_footer .shoppingCart_goodList_footerBottom
+.footerBottom_left>a{
+	display: block;
+	float: left;
+}
+.shoppingCart_goodList_footer .shoppingCart_goodList_footerBottom
+.footerBottom_left>a:nth-child(2){
+	float: right;
+}
+.shoppingCart_goodList_footer .shoppingCart_goodList_footerBottom
+.footerBottom_right{
+	width: 584px;
+	height: 44px;
+	float: right;
+	margin-top: 14px;
+}
+.shoppingCart_goodList_footer .shoppingCart_goodList_footerBottom
+.footerBottom_right>ul>li{
+	float: left;
+	margin-right: 22px;
+	line-height: 24px;
+	font-size: 12px;
+	color: #333333;
+}
+.shoppingCart_goodList_footer .shoppingCart_goodList_footerBottom
+.footerBottom_right>ul>li>a{
+	color: #333333;
+}
+.shoppingCart_goodList_footer .shoppingCart_goodList_footerBottom
+.footerBottom_right>ul>li>a:hover{
+	color: #ff6405;
+	text-decoration: underline;
+}
+
+
+/*首页和高级搜索页面底部样式*/
+.advancedSearch_homePage_footer{
+	width: 100%;
+	height: 404px;
+	margin-top: 20px;
+}
+.advancedSearch_homePage_footer .advancedSearch_homePage_footerTop{
+	width: 100%;
+	height: 305px;
+	background-color: #F4F4F4;
+	border-top: 1px solid #D5D5D5;
+}
+.advancedSearch_homePage_footer .advancedSearch_homePage_footerTop
+.advancedSearch_homePage_footerTop_content{
+	width: 1200px;
+	height: 285px;
+	margin: 0px auto;
+	margin-top: 20px;
+}
+.advancedSearch_homePage_footer .advancedSearch_homePage_footerTop
+.advancedSearch_homePage_footerTop_content
+.advancedSearch_homePage_footerTop_contentLeft{
+	width: 845px;
+	height: 145px;
+	border-right: 1px solid #D5D5D5;
+	float: left;
+}
+.advancedSearch_homePage_footerTop_contentLeft>ul{
+	float: left;
+	margin-left: 40px;
+	margin-right: 40px;
+}
+.advancedSearch_homePage_footerTop_contentLeft>ul:nth-child(1){
+	margin-left: 12px;
+}
+.advancedSearch_homePage_footerTop_contentLeft>ul>li{
+	font-size: 14px;
+	line-height: 23px;
+}
+.advancedSearch_homePage_footerTop_contentLeft>ul>li>a{
+	font-size: 12px;
+	color: #666666;
+}
+.advancedSearch_homePage_footerTop_contentLeft>ul>li>a:hover{
+	color: #E60000;
+	text-decoration: underline;
+}
+
+.advancedSearch_homePage_footerTop_contentRight{
+	width: 340px;
+	height: 134px;
+	float: right;
+}
+.advancedSearch_homePage_footerTop_contentRight>div{
+	width: 112px;
+	height: 120px;
+	float: left;
+	text-align: center;
+}
+.advancedSearch_homePage_footerTop_contentRight>div>span{
+	color: #666666;
+}
+.advancedSearch_homePage_footerTop_contentRight>div>img{
+	width: 77px;
+	height: 77px;
+	margin-top: 10px;
+}
+.advancedSearch_homePage_footerTop_bottom{
+	width: 1200px;
+	height: 110px;
+	margin: 0px auto;
+	float: left;
+	border-top: 1px solid #E1E1E1;
+	margin-top: 30px;
+}
+.advancedSearch_homePage_footerBottom{
+	width: 1200px;
+	height: 74px;
+	margin: 0px auto;
+	padding-top: 24px;
+}
+.advancedSearch_homePage_footerBottom .advancedSearch_homePage_footerBottom_content{
+	width: 760px;
+	height: 50px;
+	margin: 0px auto;
+}
+.advancedSearch_homePage_footerBottom .footerBottom_left{
+	float: left;
+}
+.advancedSearch_homePage_footerBottom .footerBottom_left>a{
+	float: left;
+	margin-right: 4px;
+	display: block;
+}
+.advancedSearch_homePage_footerBottom .footerBottom_right{
+	width: 470px;
+	height: 40px;
+	float: right;
+	margin-top: 2px;
+}
+.advancedSearch_homePage_footerBottom .footerBottom_right>ul>li{
+	font-size: 12px;
+	margin-right: 14px;
+	line-height: 20px;
+	color: #333333;
+	float: left;
+}
+.advancedSearch_homePage_footerBottom .footerBottom_right>ul>li>a{
+	font-size: 12px;
+	color: #333333;
+}
+.advancedSearch_homePage_footerBottom .footerBottom_right>ul>li>a:hover{
+	color: #E60000;
+	text-decoration: underline;
+}

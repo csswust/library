@@ -1,0 +1,119 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	font-family: "微软雅黑";
+}
+/*本站畅销、编辑推荐样式*/
+#bestSell,
+#editorRecommend{
+	width: 1200px;
+	height: 360px;
+	clear: both;
+	margin: 0px auto;
+}
+#bestSell .bestSellTop,
+#editorRecommend .editorRecommendTop{
+	width: 100%;
+	height: 50px;
+	background: #E1F7FF;
+	border-bottom: 4px solid #07BAFD;
+}
+#bestSell .bestSellTop>h2,
+#editorRecommend .editorRecommendTop>h2{
+	line-height: 50px;
+	text-indent: 20px;
+	font-weight: normal;
+	font-size: 20px;
+}
+#bestSell .bestSellBottom,
+#editorRecommend .editorRecommendBottom{
+	width: 100%;
+	height: 296px;
+	margin-top: 10px;
+	background: white;
+}
+#bestSell .bestSellBottom>ul>li,
+#editorRecommend .editorRecommendBottom>ul>li{
+	width: 186px;
+	height: 292px;
+	border: 2px solid white;
+	float: left;
+	margin-right: 12px;
+}
+#bestSell .bestSellBottom>ul>li:hover,
+#editorRecommend .editorRecommendBottom>ul>li:hover{
+	border: 2px solid #f5f5f5;
+}
+#bestSell .bestSellBottom>ul>li:nth-child(6),
+#editorRecommend .editorRecommendBottom>ul>li:nth-child(6){
+	margin-right: 0px;
+}
+#bestSell .bestSellBottom>ul>li>a:nth-child(1)>img,
+#editorRecommend .editorRecommendBottom>ul>li>a:nth-child(1)>img{
+	width: 158px;
+	height: 158px;
+	margin-left: 12px;
+	margin-top: 12px;
+}
+#bestSell .bestSellBottom>ul>li>a:nth-child(2),
+#editorRecommend .editorRecommendBottom>ul>li>a:nth-child(2){
+	width: 158px;
+	height: 28px;
+	display: block;
+	margin: 0px auto;
+	line-height: 28px;
+	font-size: 13px;
+	color: #333333;
+}
+#bestSell .bestSellBottom>ul>li>a:nth-child(2):hover,
+#editorRecommend .editorRecommendBottom>ul>li>a:nth-child(2):hover{
+	color: #E60000;
+}
+#bestSell .bestSellBottom>ul>li>span,
+#editorRecommend .editorRecommendBottom>ul>li>span{
+	display: block;
+	font-size: 13px;
+}
+#bestSell .bestSellBottom>ul>li>span:nth-child(3),
+#editorRecommend .editorRecommendBottom>ul>li>span:nth-child(3){
+	width: 158px;
+	display: block;
+	margin: 0px auto;
+	line-height: 22px;
+}
+#bestSell .bestSellBottom>ul>li>span:nth-child(4),
+#editorRecommend .editorRecommendBottom>ul>li>span:nth-child(4){
+	width: 50px;
+	float: left;
+	margin-left: 12px;
+	font-size: 14px;
+	color: #E60000;
+}
+#bestSell .bestSellBottom>ul>li>span:nth-child(5),
+#editorRecommend .editorRecommendBottom>ul>li>span:nth-child(5){
+	width: 110px;
+	float: left;
+	color: #999999;
+	text-decoration: line-through;
+	margin-bottom: 10px;
+}
+#bestSell .bestSellBottom>ul>li>a:nth-child(6),
+#editorRecommend .editorRecommendBottom>ul>li>a:nth-child(6){
+	width: 158px;
+	height: 26px;
+	display: block;
+	clear: both;
+	background: #DFF6FF;
+	margin: 0px auto;
+	text-align: center;
+	color: #666666;
+	font-size: 14px;
+	line-height: 26px;
+}
+#bestSell .bestSellBottom>ul>li>a:nth-child(6):hover,
+#editorRecommend .editorRecommendBottom>ul>li>a:nth-child(6):hover{
+	width: 120px;
+	background: #E60000;
+	color: white;
+}
+

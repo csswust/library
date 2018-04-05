@@ -1,0 +1,343 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	font-family: "微软雅黑";
+}
+a{
+	text-decoration: none;
+}
+li{
+	list-style-type: none;
+}
+#writeAddress{
+	width: 1000px;
+	height: auto;
+	margin: 0px auto;
+	padding-top: 30px;
+}
+#writeAddress .writeAddress_nav{
+	width: 1000px;
+	height: 38px;
+	background: url("../../img/ShoppingCart/orderInfoProced.png") no-repeat;
+}
+#writeAddress .writeAddress_nav>span{
+	width: 192px;
+	height: 38px;
+	display: block;
+	line-height: 38px;
+	font-size: 14px;
+	text-indent: 70px;
+	float: left;
+	color: #666666;
+}
+#writeAddress .writeAddress_nav>span:nth-child(2){
+	color: white;
+	text-indent: 60px;
+}
+#writeAddress .writeAddress_nav>span:nth-child(3){
+	text-indent: 90px;
+}
+#writeAddress .writeAddress_title{
+	width: 1000px;
+	height: 60px;
+	line-height: 60px;
+}
+#writeAddress .writeAddress_title>h2{
+	font-weight: normal;
+	font-size: 20px;
+	float: left;
+}
+#writeAddress .writeAddress_title>span{
+	width: 200px;
+	height: 30px;
+	color: #666666;
+	font-size: 14px;
+	margin-left: 15px;
+	line-height: 30px;
+	padding-left: 12px;
+	border-left: 1px solid #BDBDBD;
+}
+
+/*填写地址内部样式*/
+#writeAddress .writeAddress_Main{
+	width: 998px;
+	height: auto;
+	background: white;
+	margin: 0px auto;
+	border: 1px solid #D7D7D7;
+	padding-bottom: 24px;
+}
+#writeAddress .writeAddress_Main .writeAddress_MainContent{
+	width: 960px;
+	height: auto;
+	margin: 0px auto;
+	margin-top: 25px;
+}
+
+/*增加收货地址部分样式*/
+.addAddress .border_top_cart .container .checkout-box .box-hd,
+.addressTop{
+	width: 960px;
+	height: 30px;
+	background: #E6E6E6;
+	padding: 0px;
+}
+.addAddress .border_top_cart .container .checkout-box .title,
+.addressTop>h2{
+	height: 30px;
+	font-size: 14px;
+	line-height: 30px;
+	font-weight: bold;
+	text-indent: 20px;
+}
+.xm-edit-addr-box{
+	height: 420px;
+	border-radius: 10px;
+	border: 1px solid #E9E9E9;
+}
+.xm-edit-addr-box .clearfix>button{
+	width: 125px;
+	height: 32px;
+	background: #999999;
+	border: none;
+	border-radius: 15px;
+	color: white;
+	cursor: pointer;
+}
+.xm-edit-addr-box .clearfix>button:nth-child(2){
+	background: #ff2832;
+	color: white;
+}
+
+/*送货方式部分样式*/
+.deliveryMode{
+	width: 960px;
+	height: 136px;
+}
+.addressTop{
+	clear: both;
+	margin-top: 10px;
+}
+.addressBottom{
+	width: 940px;
+	height: 80px;
+	padding-top: 26px;
+	padding-left: 20px;
+}
+.addressBottom>a{
+	width: 186px;
+	height: 54px;
+	display: block;
+	border: 1px solid #E60000;
+	color: #333333;
+	text-align: center;
+	line-height: 54px;
+	font-size: 14px;
+}
+/*支付部分样式*/
+.paymentMethod{
+	height: 360px;
+}
+.paymentMethod .addressTop{
+	margin-top: 200px;
+}
+.paymentMethod .addressBottom>a{
+	float: left;
+	margin-right: 30px;
+}
+.paymentMethod .addressBottom .payList{
+	width: 900px;
+	height: 205px;
+	border: 1px solid #E9E9E9;
+	margin-top: 70px;
+	padding-top: 15px;
+	padding-left: 20px;
+}
+.paymentMethod .addressBottom .payList>ul>li{
+	width: 160px;
+	height: 50px;
+	float: left;
+	margin-right: 15px;
+	margin-bottom: 18px;
+}
+.paymentMethod .addressBottom .payList>ul>li>input{
+	float: left;
+	margin-top: 20px;
+}
+.paymentMethod .addressBottom .payList>ul>li>label{
+	float: right;
+	cursor: pointer;
+}
+.paymentMethod .addressBottom .payList>ul>li>label>img{
+	width: 140px;
+	height: 44px;
+	margin-top: 3px;
+}
+
+/*图书清单部分样式*/
+.address_bookListContent{
+	width: 960px;
+	height: auto;
+	padding: 0px;
+	border-bottom: 1px solid #E9E9E9;
+}
+.address_bookListContent .bookList_title{
+	width: 960px;
+	height: 54px;
+	line-height: 54px;
+}
+.address_bookListContent .bookList_title>div{
+	width: 135px;
+	float: left;
+	text-align: center;
+}
+.address_bookListContent .bookList_title .bookList_title_name{
+	width: 420px;
+	text-align: left;
+	text-indent: 20px;
+}
+.address_bookListContent .bookList_title>div>span{
+	font-size: 14px;
+	color: #333333;
+}
+.address_bookListContent .bookList_Content{
+	width: 960px;
+	height: auto;
+}
+.address_bookListContent .bookList_Content>ul>li{
+	width: 960px;
+	height: 38px;
+	line-height: 38px;
+	border-top: 1px solid #E9E9E9;
+}
+.address_bookListContent .bookList_Content>ul>li>div{
+	width: 135px;
+	float: left;
+	text-align: center;
+}
+.address_bookListContent .bookList_Content>ul>li .bookList_Content_name{
+	width: 420px;
+	text-align: left;
+	text-indent: 20px;
+}
+.address_bookListContent .bookList_Content>ul>li>div>span{
+	font-size: 13px;
+	color: #333333;
+}
+.address_bookListContent .bookList_Content>ul>li>div>a{
+	font-size: 13px;
+	color: #333333;
+}
+.address_bookListContent .bookList_Content>ul>li>div>a:hover{
+	text-decoration: underline;
+}
+
+/*用户留言部分样式*/
+.leaveWord{
+	width: 960px;
+	height: 310px;
+	margin-top: 30px;
+	border-top: 1px solid #E9E9E9;
+}
+.leaveWord .leaveWord_top{
+	width: 960px;
+	height: 228px;
+}
+.leaveWord .leaveWord_top .leaveWord_topLeft{
+	width: 640px;
+	height: 228px;
+	float: left;
+}
+.leaveWord .leaveWord_top .leaveWord_topLeft>h2{
+	width: 100%;
+	height: 50px;
+	text-indent: 20px;
+	line-height: 50px;
+	font-size: 20px;
+	color: #333333;
+	font-weight: normal;
+}
+.leaveWord .leaveWord_top .leaveWord_topLeft>textarea{
+	width: 580px;
+	height: 160px;
+	margin-left: 20px;
+	font-size: 15px;
+	color: #333333;
+}
+.leaveWord .leaveWord_top .leaveWord_topRight{
+	width: 192px;
+	height: 228px;
+	float: right;
+}
+.leaveWord .leaveWord_top .leaveWord_topRight>ul{
+	width: 192px;
+	height: 180px;
+	margin-top: 40px;
+}
+.leaveWord .leaveWord_top .leaveWord_topRight>ul>li{
+	width: 100%;
+	height: 25px;
+}
+.leaveWord .leaveWord_top .leaveWord_topRight>ul>li:last-child{
+	height: 80px;
+}
+.leaveWord .leaveWord_top .leaveWord_topRight>ul>li>div{
+	width: 96px;
+	height: 25px;
+	text-align: right;
+	float: left;
+	line-height: 25px;
+	font-size: 15px;
+	color: #333333;
+}
+.leaveWord .leaveWord_top .leaveWord_topRight>ul>li>div:nth-child(2){
+	color: #E60000;
+}
+.leaveWord .leaveWord_top .leaveWord_topRight>ul>li:last-child>div{
+	height: 80px;
+	line-height: 110px;
+}
+.leaveWord .leaveWord_top .leaveWord_topRight>ul>li:last-child>div:nth-child(2){
+	font-size: 24px;
+}
+.leaveWord .leaveWord_top .leaveWord_topRight>ul>li:last-child>div:nth-child(2)>span{
+	font-size: 14px;
+}
+.leaveWord .leaveWord_bottom{
+	width: 960px;
+	height: 84px;
+	background: #FAFAFA;
+}
+.leaveWord .leaveWord_bottom .leaveWord_bottomContent{
+	width: 310px;
+	height: 40px;
+	margin-top: 22px;
+	float: right;
+}
+.leaveWord .leaveWord_bottom .leaveWord_bottomContent>a{
+	width: 148px;
+	height: 38px;
+	display: block;
+	float: left;
+	text-align: center;
+	line-height: 38px;
+	font-size: 15px;
+}
+.leaveWord .leaveWord_bottom .leaveWord_bottomContent>a:nth-child(1){
+	border: 1px solid #DFDFDF;
+	background: white;
+	color: #333333;
+	margin-right: 10px;
+}
+.leaveWord .leaveWord_bottom .leaveWord_bottomContent>a:nth-child(1):hover{
+	background: #DFDFDF;
+}
+.leaveWord .leaveWord_bottom .leaveWord_bottomContent>a:nth-child(2){
+	border: 1px solid #FF4646;
+	background: #FF4646;
+	color: white;
+}
+.leaveWord .leaveWord_bottom .leaveWord_bottomContent>a:nth-child(2):hover{
+	border-color: #EE330A;
+	background: #EE330A;
+}

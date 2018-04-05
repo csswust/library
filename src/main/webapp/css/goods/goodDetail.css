@@ -1,0 +1,465 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	font-family: "微软雅黑";
+}
+#goodDetail{
+	width: 1200px;
+	height: 2610px;
+	margin: 0px auto;
+	padding-top: 30px;
+}
+#goodDetail .goodDetail_top{
+	width: 1200px;
+	height: 350px;
+}
+#goodDetail .goodDetail_top .goodDetail_topLeft{
+	width: 350px;
+	height: 350px;
+	border: 1px solid #D7D7D7;
+	float: left;
+}
+#goodDetail .goodDetail_top .goodDetail_topLeft>a{
+	width: 350px;
+	height: 350px;
+	display: block;
+}
+#goodDetail .goodDetail_top .goodDetail_topLeft>a>img{
+	margin-top: 26px;
+	margin-left: 24px;
+}
+#goodDetail .goodDetail_top .goodDetail_topMid{
+	width: 572px;
+	height: 315px;
+	float: left;
+	margin-left: 22px;
+	margin-top: 20px;
+}
+.goodDetail_title{
+	font-size: 18px;
+	line-height: 35px;
+}
+#goodDetail .goodDetail_top .goodDetail_topMid>span{
+	font-size: 12px;
+	line-height: 28px;
+	display: block;
+}
+#goodDetail .goodDetail_top .goodDetail_topMid>span>a{
+	color: #024f7d;
+}
+#goodDetail .goodDetail_top .goodDetail_topMid>span>a:hover{
+	text-decoration: underline;
+}
+.goodDetail_press{
+	float: left;
+	margin-right: 30px;
+}
+.goodDetail_size{
+	float: left;
+	margin-right: 34px;
+}
+
+.goodDetail_price{
+	width: 572px;
+	height: 40px;
+	margin-top: 20px;
+	line-height: 40px;
+	background-color: #FFF4F8;
+	color: #666666;
+}
+.goodDetail_price>span{
+	font-size: 13px;
+}
+.goodDetail_price>span:nth-child(1){
+	margin-left: 10px;
+}
+.goodDetail_price>span:nth-child(2){
+	font-size: 18px;
+	color: #E60000;
+}
+.goodDetail_price>span:nth-child(5){
+	text-decoration: line-through;
+}
+.goodDetail_addShoppingCart{
+	width: 162px;
+	height: 38px;
+	display: block;
+	background: url("../../img/childredSprit.png") no-repeat -335px -262px;
+	line-height: 36px;
+	text-indent: 50px;
+	color: white;
+	margin-top: 18px;
+}
+#goodDetail .goodDetail_top .goodDetail_topRight{
+	width: 230px;
+	height: 350px;
+	border: 1px solid #E7E7E7;
+	float: right;
+}
+#goodDetail .goodDetail_top .goodDetail_topRight
+.goodDetail_topRight_title{
+	width: 100%;
+	height: 54px;
+	background: #F3F3F3;
+	
+}
+#goodDetail .goodDetail_top .goodDetail_topRight
+.goodDetail_topRight_title>h2{
+	font-size: 16px;
+	line-height: 54px;
+	text-indent: 20px;
+	font-weight: normal;
+}
+#goodDetail .goodDetail_top .goodDetail_topRight
+.goodDetail_topRight_content>ul>li{
+	width: 220px;
+	height: 32px;
+	line-height: 32px;
+	padding-left: 10px;
+	border-top: 1px solid #E9E9E9;
+}
+#goodDetail .goodDetail_top .goodDetail_topRight
+.goodDetail_topRight_content>ul>li:hover,
+.goodDetail_bottom .goodDetail_bottomLeft .bookerRecommend>ul>li:hover{
+	cursor: pointer;
+}
+#goodDetail .goodDetail_top .goodDetail_topRight
+.goodDetail_topRight_content>ul>li:hover>a,
+.goodDetail_bottom .goodDetail_bottomLeft .bookerRecommend>ul>li:hover>a{
+	color: #E60000;
+}
+#goodDetail .goodDetail_top .goodDetail_topRight
+.goodDetail_topRight_content>ul>li>em,
+.goodDetail_bottom .goodDetail_bottomLeft .bookerRecommend>ul>li>em{
+	width: 4px;
+	height: 8px;
+	float: right;
+	margin-top: 14px;
+	margin-right: 10px;
+	background: url("../../img/childredSprit.png") no-repeat 0px -343px;
+}
+#goodDetail .goodDetail_top .goodDetail_topRight
+.goodDetail_topRight_content>ul>li>a,
+.goodDetail_bottom .goodDetail_bottomLeft .bookerRecommend>ul>li>a{
+	color: #333333;
+	font-size: 12px;
+}
+.goodDetail_bottom{
+	width: 1200px;
+	height: 2164px;
+	margin-top: 70px;
+}
+.goodDetail_bottom .goodDetail_bottomLeft{
+	width: 200px;
+	height: 2164px;
+	background: white;
+	float: left;
+}
+.goodDetail_bottom .goodDetail_bottomLeft .bookerRecommend{
+	width: 200px;
+	height: 544px;
+	border: 1px solid #E9E9E9;
+}
+.goodDetail_bottom .goodDetail_bottomLeft .bookerRecommend .bookerRecommend_top,
+.goodDetail_bottom .goodDetail_bottomLeft .goodDetail_bestSell
+.goodDetail_bestSellTop{
+	width: 200px;
+	height: 55px;
+	background-color: #F1F1F1;
+}
+.goodDetail_bottom .goodDetail_bottomLeft .bookerRecommend 
+.bookerRecommend_top>h2,
+.goodDetail_bottom .goodDetail_bottomLeft .goodDetail_bestSell
+.goodDetail_bestSellTop>h2{
+	line-height: 55px;
+	font-size: 18px;
+	font-weight: normal;
+	text-indent: 10px;
+}
+.goodDetail_bottom .goodDetail_bottomLeft .bookerRecommend>ul>li{
+	width: 200px;
+	height: 34px;
+	line-height: 34px;
+	border-top: 1px solid #E9E9E9;
+	text-indent: 10px;
+}
+.goodDetail_bottom .goodDetail_bottomLeft .bookerRecommend>ul>li>em{
+	margin-top: 16px;
+}
+.goodDetail_bottom .goodDetail_bottomLeft .goodDetail_bestSell{
+	width: 200px;
+	height: 1595px;
+	margin-top: 20px;
+	border: 1px solid #E9E9E9;
+}
+.goodDetail_bottom .goodDetail_bottomLeft .goodDetail_bestSell
+.goodDetail_bestSellTop{
+	border-bottom: 1px solid #E9E9E9;
+}
+.goodDetail_bottom .goodDetail_bottomLeft .goodDetail_bestSell
+.goodDetail_bestSellContent{
+	width: 200px;
+	height: 1540px;
+}
+.goodDetail_bottom .goodDetail_bottomLeft .goodDetail_bestSell
+.goodDetail_bestSellContent>ul>li{
+	width: 180px;
+	height: 240px;
+	border-bottom: 1px solid #E9E9E9;
+	margin: 0px auto;
+	padding-top: 16px;
+}
+.goodDetail_bottom .goodDetail_bottomLeft .goodDetail_bestSell
+.goodDetail_bestSellContent>ul>li:nth-child(6){
+	border: none;
+}
+.goodDetail_bottom .goodDetail_bottomLeft .goodDetail_bestSell
+.goodDetail_bestSellContent>ul>li>a:nth-child(1){
+	width: 158px;
+	height: 158px;
+	display: block;
+	margin-left: 10px;
+}
+.goodDetail_bottom .goodDetail_bottomLeft .goodDetail_bestSell
+.goodDetail_bestSellContent>ul>li>a:nth-child(1)>img{
+	width: 158px;
+	height: 158px;
+}
+.goodDetail_bottom .goodDetail_bottomLeft .goodDetail_bestSell
+.goodDetail_bestSellContent>ul>li>a:nth-child(2){
+	font-size: 14px;
+	color: #333333;
+	line-height: 24px;
+	margin-top: 10px;
+	display: block;
+}
+.goodDetail_bottom .goodDetail_bottomLeft .goodDetail_bestSell
+.goodDetail_bestSellContent>ul>li>a:nth-child(2):hover{
+	color: #E60000;
+}
+.goodDetail_bottom .goodDetail_bottomLeft .goodDetail_bestSell
+.goodDetail_bestSellContent>ul>li>span{
+	font-size: 12px;
+}
+.goodDetail_bottom .goodDetail_bottomLeft .goodDetail_bestSell
+.goodDetail_bestSellContent>ul>li>span:nth-child(3){
+	width: 100%;
+	height: 20px;
+	display: block;
+	font-size: 12px;
+	color: #666666;
+}
+.goodDetail_bottom .goodDetail_bottomLeft .goodDetail_bestSell
+.goodDetail_bestSellContent>ul>li>span:nth-child(4){
+	font-size: 16px;
+	color: #E60000;
+}
+.goodDetail_bottom .goodDetail_bottomLeft .goodDetail_bestSell
+.goodDetail_bestSellContent>ul>li>span:nth-child(5){
+	color: #999999;
+	text-decoration: line-through;
+}
+.goodDetail_bottom .goodDetail_bottomRight{
+	width: 980px;
+	height: 2164px;
+	background: white;
+	float: right;
+}
+.goodDetail_bottom .goodDetail_bottomRight .goodDetail_nav{
+	width: 980px;
+	height: 58px;
+	background: white;
+	box-shadow: 0px 3px 30px #ddd;
+}
+.goodDetail_bottom .goodDetail_bottomRight .goodDetail_nav>ul{
+	width: 364px;
+	height: 58px;
+	float: left;
+}
+.goodDetail_bottom .goodDetail_bottomRight .goodDetail_nav>ul>li{
+	width: 182px;
+	height: 58px;
+	float: left;
+	line-height: 58px;
+	text-align: center;
+}
+.goodDetail_bottom .goodDetail_bottomRight .goodDetail_nav>ul>li:hover{
+	cursor: pointer;
+}
+.goodDetail_bottom .goodDetail_bottomRight .goodDetail_nav>ul>li>a{
+	color: #3B3B3B;
+}
+.click{
+	background: #3B3B3B;
+}
+.goodDetail_bottom .goodDetail_bottomRight .goodDetail_nav>ul>li.click>a{
+	color: white;
+}
+.goodDetail_bottom .goodDetail_bottomRight .goodDetail_nav
+.goodDetail_navRight{
+	width: 200px;
+	height: 30px;
+	float: right;
+	line-height: 30px;
+	margin-top: 12px;
+}
+.goodDetail_bottom .goodDetail_bottomRight .goodDetail_nav
+.goodDetail_navRight>span{
+	font-size: 13px;
+	color: #E60000;
+}
+.goodDetail_bottom .goodDetail_bottomRight .goodDetail_nav
+.goodDetail_navRight>a{
+	width: 102px;
+	height: 30px;
+	display: block;
+	float: right;
+	line-height: 30px;
+	text-indent: 30px;
+	color: white;
+	font-size: 13px;
+	background: url("../../img/childredSprit.png") no-repeat -335px -228px;
+}
+#bookDetail{
+	width: 980px;
+	height: 330px;
+	margin-top: 30px;
+}
+#bookDetail .copyright,
+#bookDetail .bookSpecial{
+	width: 980px;
+	height: 36px;
+}
+#bookDetail .copyright>span,
+#bookDetail .bookSpecial>span{
+	width: 104px;
+	height: 34px;
+	display: block;
+	line-height: 34px;
+	text-align: center;
+	background: #F5F5F5;
+	border: 1px solid #E9E9E9;
+	color: #333333;
+	font-weight: bold;
+}
+#bookDetail .copyright_content{
+	width: 960px;
+	height: 100px;
+	margin-top: 18px;
+	margin-left: 20px;
+}
+#bookDetail .copyright_content>ul>li{
+	float: left;
+	width: 276px;
+	color: #666666;
+	font-size: 12px;
+	line-height: 22px;
+}
+#bookDetail .copyright_content>ul>li:nth-child(7){
+	margin-right: 600px;
+}
+#bookDetail .bookSpecial_content{
+	width: 900px;
+	height: 92px;
+	margin-left: 20px;
+	margin-top: 18px;
+}
+#bookDetail .bookSpecial_content>p{
+	font-size: 14px;
+	line-height: 23px;
+	color: #666666;
+}
+
+#userReviews{
+	width: 980px;
+	height: 1745px;
+}
+#userReviews .userReviewsTop{
+	width: 978px;
+	height: 55px;
+	border: 1px solid #E9E9E9;
+	background: #F5F5F5;
+}
+#userReviews .userReviewsTop>h2{
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 55px;
+	text-indent: 20px;
+}
+#userReviews .userReviewsContent{
+	width: 100%;
+	height: 1690px;
+}
+#userReviews .userReviewsContent>ul>li{
+	width: 960px;
+	height: 160px;
+	border-bottom: 1px solid #E9E9E9;
+	padding-left: 20px;
+	padding-top: 10px;
+}
+.commentStar{
+	width: 90px;
+	height: 20px;
+	float: left;
+}
+.commentStar>i{
+	width: 13px;
+	height: 13px;
+	float: left;
+	margin-top: 6px;
+	margin-right: 4px;
+	background: url("../../img/homeindex.png") no-repeat;
+}
+.commentStar>i.one{
+	background-position: 0px -386px;
+}
+.commentStar>i.none{
+	background-position: -17px -386px;
+}
+.commentTheme{
+	width: 666px;
+	height: 24px;
+	float: left;
+	line-height: 24px;
+	font-size: 14px;
+	color: #666666;
+	font-weight: bold;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+.commentContent{
+	width: 950px;
+	height: 70px;
+	margin-top: 10px;
+	float: left;
+}
+.commentContent>p{
+	width: 900px;
+	height: 70px;
+	line-height: 22px;
+	color: #666666;
+	font-size: 13px;
+}
+.readerInfo{
+	width: 140px;
+	height: 22px;
+	float: left;
+	line-height: 22px;
+	margin-top: 12px;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+.readerInfo>span,
+.commentTime>span{
+	font-size: 13px;
+	color: #999999;
+}
+.commentTime{
+	width: 140px;
+	height: 22px;
+	float: left;
+	margin-top: 12px;
+	text-align: center;
+}

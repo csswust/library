@@ -1,0 +1,134 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	font-family: "微软雅黑";
+}
+body{
+	background-color: #F6F4F5;
+}
+a{
+	text-decoration: none;
+}
+
+
+#registerMid,
+#loginMid{
+	width: 1000px;
+	height: 680px;
+	margin: 20px auto;
+	background-color: white;
+	padding-top: 60px;
+}
+.registerMid_top{
+	width: 910px;
+	height: 26px;
+	margin: 0px auto;
+	line-height: 26px;
+	border-left: 3px solid #E60000;
+}
+.registerMid_top>span{
+	font-size: 22px;
+	font-weight: bold;
+	margin-left: 15px;
+}
+.registerMid_top>div{
+	float: right;
+	line-height: 32px;
+	font-size: 14px;
+	color: #c1c1c1;
+}
+.registerMid_top>div>a{
+	font-size: 15px;
+	color: #999999;
+}
+.registerMid_top>div>a:hover{
+	text-decoration: underline;
+}
+.userInfo{
+	width: 750px;
+	height: 450px;
+	margin: 40px auto;
+}
+.userInfo .infoList{
+	width: 100%;
+	height: 42px;
+	margin-bottom: 32px;
+}
+.userInfo input{
+	width: 330px;
+	height: 42px;
+	border-radius: 5px;
+	border: 1px solid #DCDCDC;
+	outline: none;
+	font-size: 16px;
+	padding-left: 10px;
+	margin-right: 6px;
+	color: #999999;
+}
+.userInfo input:focus{
+	border-radius: 5px;
+	border-color: #333333;
+	color: #333333;
+}
+.userInfo .infoList:nth-child(1){
+	margin-left: 15px;
+}
+.userInfo .sub>input{
+	width: 382px;
+	height: 50px;
+	margin-left: 85px;
+	margin-top: 40px;
+	background-color: #E60000;
+	border-color: #E60000;
+	cursor: pointer;
+	color: white;
+	text-align: center;
+}
+/*验证码*/
+.userInfo .infoList:nth-child(5){
+	margin-left: 16px;
+	position: relative;
+}
+.userInfo .infoList:nth-child(5)>input{
+	width: 197px;
+}
+.codeContent{
+	width: 76px;
+	height: 42px;
+	border: 1px solid #DCDCDC;
+	border-radius: 5px;
+	font-size: 20px;
+	text-align: center;
+	line-height: 42px;
+	cursor: pointer;
+	position: absolute;
+	left: 280px;
+	top: 0px;
+}
+.userInfo .infoList:nth-child(5)>span{
+	width: 60px;
+	height: 40px;
+	display: block;
+	text-align: center;
+	line-height: 40px;
+	font-size: 14px;
+	position: absolute;
+	left: 360px;
+	top: 0px;
+	color: #1c51a1;
+}
+.userInfo .infoList:nth-child(5)>span:hover{
+	text-decoration: underline;
+	cursor: pointer;
+}
+.verificationStyle{
+	width: 320px;
+	height: 40px;
+	line-height: 40px;
+	color: #E60000;
+	display: block;
+	float: right;
+}
+.error{
+	color: #E60000;
+}

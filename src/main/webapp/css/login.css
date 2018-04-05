@@ -1,0 +1,120 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	font-family: "微软雅黑";
+}
+li{
+	list-style-type: none;
+}
+#loginMid .registerMid_top{
+	width: 780px;
+}
+#loginMid .userInfo{
+	width: 700px;
+	height: 320px;
+	margin-bottom: 0px;
+}
+#loginMid .userInfo .infoList:nth-child(3){
+	margin-left: 16px;
+	position: relative;
+}
+#loginMid .userInfo .infoList:nth-child(3)>input{
+	width: 197px;
+}
+.codeContent{
+	width: 76px;
+	height: 42px;
+	border: 1px solid #DCDCDC;
+	border-radius: 5px;
+	font-size: 20px;
+	text-align: center;
+	line-height: 42px;
+	cursor: pointer;
+	position: absolute;
+	left: 280px;
+	top: 0px;
+}
+#loginMid .userInfo .infoList:nth-child(3)>span{
+	width: 60px;
+	height: 40px;
+	display: block;
+	text-align: center;
+	line-height: 40px;
+	font-size: 14px;
+	position: absolute;
+	left: 360px;
+	top: 0px;
+	color: #1c51a1;
+}
+#loginMid .userInfo .infoList:nth-child(3)>span:hover{
+	text-decoration: underline;
+	cursor: pointer;
+}
+.verificationStyle{
+	width: 270px;
+	height: 40px;
+	display: block;
+	float: right;
+}
+.error{
+	color: #E60000;
+}
+#loginMid .userInfo .sub>input{
+	width: 360px;
+	margin-top: 30px;
+}
+
+.forgetPassword{
+	width: 360px;
+	height: 24px;
+	margin-left: 240px;
+	line-height: 24px;
+}
+.forgetPassword>a{
+	font-size: 14px;
+	color: #666a6b;
+}
+.forgetPassword>a:hover{
+	text-decoration: underline;
+}
+.forgetPassword>a:nth-child(1){
+	float: left;
+}
+.forgetPassword>a:nth-child(2){
+	float: right;
+}
+.otherLogin{
+	width: 360px;
+	height: 30px;
+	margin-left: 240px;
+	margin-top: 30px;
+}
+.otherLogin>a{
+	width: 160px;
+	height: 30px;
+	display: block;
+	line-height: 30px;
+	font-size: 14px;
+	float: left;
+	color: #666666;
+}
+.otherLogin>a:hover{
+	text-decoration: underline;
+}
+.otherLogin>a:nth-child(1){
+	margin-right: 30px;
+}
+.otherLogin>a>span{
+	width: 30px;
+	height: 30px;
+	display: block;
+	float: left;
+	margin-right: 10px;
+	background: url("../img/registloginSprit.png") no-repeat;
+}
+.otherLogin>a:nth-child(1)>span{
+	background-position: 0px -20px;
+}
+.otherLogin>a:nth-child(2)>span{
+	background-position: -32px -20px;
+}

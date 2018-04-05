@@ -1,0 +1,26 @@
+*{
+	margin: 0px;
+	height: 0px;
+}
+#registerMid .userInfo .infoList{
+	width: 100%;
+	height: 42px;
+	margin-bottom: 32px;
+}
+input{
+	width: 330px;
+	height: 42px;
+	border-radius: 5px;
+	border: 1px solid #DCDCDC;
+	outline: none;
+	font-size: 16px;
+	padding-left: 10px;
+}
+#verificationCode>input{
+	width: 197px;
+}
+.codeContent{
+	width: 80px;
+	height: 100px;
+	font-size: 35px;
+}

@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>填写订单信息</title>
+		<link rel="stylesheet" type="text/css" href="../css/publicPart.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/ShoppingCart/checkOut.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/ShoppingCart/writeAddress.css"/>
+	</head>
+	<body>
+		<!--顶部导航开始-->
+		<div id="writeAddress_topNav">
+			<div class="topNav_main">
+				<div class="topNav_mainLeft">
+					<span>欢迎登录Sunny图书网</span>
+					<span>请</span>
+					<span><a href="#">登录</a></span>
+					<span>|</span>
+					<span><a href="#">注册</a></span>
+				</div>
+				<div class="topNav_mainRight">
+					<ul>
+						<li><a href="#">购物车</a></li>
+						<li><a href="#">我的订单</a></li>
+						<li>
+							<a href="#">我的账户<b class="icon"></b></a>
+							<div class="topNav_mainRightMenu">
+								<ul>
+									<li><a href="#">我的收藏夹</a></li>
+									<li><a href="#">账户余额</a></li>
+									<li><a href="#">我的优惠券</a></li>
+									<li><a href="#">我的积分</a></li>
+									<li><a href="#">收货地址</a></li>
+									<li><a href="#">我的书评</a></li>
+									<li><a href="#">我的消息</a></li>
+									<li><a href="#">积分换券</a></li>
+								</ul>
+							</div>
+						</li>
+						<li><a href="#">帮助中心</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--顶部导航结束-->
+		
+		<!--logo部分开始-->
+		<div id="myShoppingCart_mid">
+			<div class="registerTopContent">
+				<div class="registerTopContent_left">
+					<a href="index.html">
+						<img src="../img/首页/logo.png"/>
+					</a>
+				</div>
+				<div class="registerTopContent_right">
+					<div class="right1"><span>正版好图书</span></div>
+					<div class="right2"><span>全场满69包邮</span></div>
+					<div class="right3"><span>特价书一折起</span></div>
+				</div>
+			</div>
+		</div>
+		<!--logo部分结束-->
+		
+		<!--填写地址部分开始-->
+		<div id="writeAddress">
+			<div class="writeAddress_nav">
+				<span>我的购物车</span>
+				<span>填写核对订单信息</span>
+				<span>成功提交订单</span>
+			</div>
+			<div class="writeAddress_title">
+				<h2>填写核对订单信息</h2>
+				<span>下单后你有48个小时的支付时间。</span>
+			</div>
+			<div class="writeAddress_Main">
+				<div class="writeAddress_MainContent">
+					
+					<!--增加收货地址部分开始-->
+					<div class="addAddress">
+						<div class="border_top_cart">
+							<script type="text/javascript">
+							    var checkoutConfig={
+							        addressMatch:'common',
+							        addressMatchVarName:'data',
+							        invoice:{
+							            NA:"0",
+							            personal:"1",
+							            company:"2",
+							            electronic:"4"
+							        }
+							    };
+							    var miniCartDisable=true;
+							</script>
+							<div class="container">
+							    <div class="checkout-box">
+							        <form  id="checkoutForm" action="#" method="post">
+							            <div class="checkout-box-bd">
+							                    <!-- 地址状态 0：默认选择；1：新增地址；2：修改地址 -->
+							                <input type="hidden" name="Checkout[addressState]" id="addrState"   value="0">
+							                <!-- 收货地址 -->
+							                <div class="xm-box">
+							                    <div class="box-hd ">
+												    <h2 class="title">收货地址</h2>
+												</div>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+							<div class="box-bd">
+							    <div class="clearfix xm-address-list" id="checkoutAddrList">
+							        <dl class="item" >
+							            <dt>
+							                <strong class="itemConsignee">Sunny</strong>
+							                <span class="itemTag tag">学校</span>
+							            </dt>
+							            <dd>
+							                <p class="tel itemTel">12345678910</p>
+							                <p class="itemRegion">四川 绵阳市 涪城区</p>
+							                <p class="itemStreet">青义镇西南科技大学(621000)</p>
+							                <span class="edit-btn J_editAddr">编辑</span>
+							        	</dd>
+							            <dd style="display:none">
+							                <input type="radio" name="Checkout[address]" class="addressId"  value="10140916720030323">
+							            </dd>
+							        </dl>
+							        <div class="item use-new-addr"  id="J_useNewAddr" data-state="off">
+							            <span class="iconfont icon-add">
+							             	<img src="../img/ShoppingCart/add_cart.png" />
+							            </span> 
+							                              使用新地址
+							        </div>
+							    </div>
+							    <input type="hidden" name="newAddress[type]" id="newType" value="common">
+							    <input type="hidden" name="newAddress[consignee]" id="newConsignee">
+							    <input type="hidden" name="newAddress[province]" id="newProvince">
+							    <input type="hidden" name="newAddress[city]" id="newCity">
+							    <input type="hidden" name="newAddress[district]" id="newCounty">
+							    <input type="hidden" name="newAddress[address]" id="newStreet">
+							    <input type="hidden" name="newAddress[zipcode]" id="newZipcode">
+							    <input type="hidden" name="newAddress[tel]" id="newTel">
+							    <input type="hidden" name="newAddress[tag_name]" id="newTag">
+							    <!--点击弹出新增/收货地址界面start-->
+							    <div class="xm-edit-addr-box" id="J_editAddrBox">
+							        <div class="bd">
+							            <div class="item">
+							                <label>收货人姓名<span>*</span></label> 
+							                <input type="text" name="userAddress[consignee]" id="Consignee" class="input" placeholder="收货人姓名" maxlength="15" autocomplete='off'>
+							                <p class="tip-msg tipMsg"></p>
+							            </div>
+							            <div class="item">
+							                <label>联系电话<span>*</span></label> 
+							                <input type="text" name="userAddress[tel]" class="input" id="Telephone" placeholder="11位手机号" autocomplete='off'>
+							                <p class="tel-modify-tip" id="telModifyTip"></p>
+							                <p class="tip-msg tipMsg"></p>
+							            </div>
+							            <div class="item">
+							                <label>地址<span>*</span></label>
+							                <select name="userAddress[province]" id="Provinces" class="select-1">
+							                    <option>省份/自治区</option>
+							                </select>
+							                <select name="userAddress[city]"  id="Citys" class="select-2" disabled>
+							                    <option>城市/地区/自治州</option>
+							                </select>
+							                <select name="userAddress[county]"  id="Countys" class="select-3" disabled>
+							                    <option>区/县</option>
+							                </select>
+							                <textarea   name="userAddress[street]" class="input-area" id="Street" placeholder="路名或街道地址，门牌号"></textarea>
+							                <p class="tip-msg tipMsg"></p>
+							            </div>
+							            <div class="item">
+							                <label>邮政编码<span>*</span></label> 
+							                <input type="text" name="userAddress[zipcode]" id="Zipcode" class="input" placeholder="邮政编码"  autocomplete='off'>
+							                <p class="zipcode-tip" id="zipcodeTip"></p>
+							                <p class="tip-msg tipMsg"></p>
+							            </div>
+							            <div class="item">
+							                <label>地址标签<span>*</span></label> 
+							                <input type="text" name="userAddress[tag]" id="Tag" class="input" placeholder='地址标签：如"家"、"公司"。限5个字内'  >
+							                <p class="tip-msg tipMsg"></p>
+							            </div>
+							        </div>
+							        <div class="ft clearfix">
+							            <button type="button" class="btn btn-lineDake btn-small " id="J_editAddrCancel">取消</button>
+							            <button type="button" class="btn btn-primary  btn-small " id="J_editAddrOk">保存</button>
+							        </div>
+							    </div>
+							    <!--点击弹出新增/收货地址界面end-->
+							    <div class="xm-edit-addr-backdrop" id="J_editAddrBackdrop"></div>
+							</div>     
+						
+							<script id="newAddrTemplate" type="text/x-dot-template">
+							        <dl class="item selected" data-isnew="true" data-consignee="{{=it.consignee}}" data-tel="{{=it.tel}}" data-province="{{=it.province}}" data-provincename="{{=it.provinceName}}" data-city="{{=it.city}}" data-cityname="{{=it.cityName}}" data-county="{{=it.county}}" data-countyname="{{=it.countyName}}" data-zipcode="{{=it.zipcode}}" data-street="{{=it.street}}" data-tag="{{=it.tag}}">
+							            <dt>
+							                <strong class="itemConsignee">{{=it.consignee}}</strong>
+							                {{? it.tag }}
+							                    <span  class="itemTag tag">{{=it.tag}}</span>
+							                {{?}}
+							            </dt>
+							            <dd>
+							                <p class="tel itemTel">{{=it.tel}}</p>
+							                <p  class="itemRegion">{{=it.provinceName}} {{=it.cityName}} {{=it.countyName}}</p>
+							                <p  class="itemStreet">{{=it.street}} ({{=it.zipcode}})</p>
+							                <span class="edit-btn J_editAddr">编辑</span>
+							            </dd>
+							        </dl>
+							</script>
+						    <script src="js/base.min.js"></script>
+						    <script type="text/javascript" src="js/address_all.js"></script>
+							<script type="text/javascript" src="js/checkout.min.js"></script> 
+					 	</div>
+					</div>
+					<!--增加收货地址部分结束-->
+					
+					
+					<!--送货方式部分开始-->
+					<div class="deliveryMode">
+						<div class="addressTop">
+							<h2>送货方式</h2>
+						</div>
+						<div class="addressBottom">
+							<a href="#">快递配送（免运费）</a>
+						</div>
+					</div>
+					<!--送货方式部分结束-->
+					
+					<!--支付方式部分开始-->
+					<div class="paymentMethod">
+						<div class="addressTop">
+							<h2>支付方式</h2>
+						</div>
+						<div class="addressBottom">
+							<a href="#">在线支付</a>
+							<div class="payList">
+								<ul>
+									<li>
+										<input type="radio" name="payOnlineBank" id="zfb" value="" />
+										<label for="zfb"><img src="../img/ShoppingCart/bank/zfb.png"/></label>
+									</li>
+									<li>
+										<input type="radio" name="payOnlineBank" id="gdyh" value="" />
+										<label for="gdyh"><img src="../img/ShoppingCart/bank/payOnline_gdyh.gif"/></label>
+									</li>
+									<li>
+										<input type="radio" name="payOnlineBank" id="gfyh" value="" />
+										<label for="gfyh"><img src="../img/ShoppingCart/bank/payOnline_gfyh.gif"/></label>
+									</li>
+									<li>
+										<input type="radio" name="payOnlineBank" id="gsyh" value="" />
+										<label for="gsyh"><img src="../img/ShoppingCart/bank/payOnline_gsyh.gif"/></label>
+									</li>
+									<li>
+										<input type="radio" name="payOnlineBank" id="jsyh" value="" />
+										<label for="jsyh"><img src="../img/ShoppingCart/bank/payOnline_jsyh.gif"/></label>
+									</li>
+									<li>
+										<input type="radio" name="payOnlineBank" id="jtyh" value="" />
+										<label for="jtyh"><img src="../img/ShoppingCart/bank/payOnline_jtyh.gif"/></label>
+									</li>
+									<li>
+										<input type="radio" name="payOnlineBank" id="msyh" value="" />
+										<label for="msyh"><img src="../img/ShoppingCart/bank/payOnline_msyh.gif"/></label>
+									</li>
+									<li>
+										<input type="radio" name="payOnlineBank" id="nyyh" value="" />
+										<label for="nyyh"><img src="../img/ShoppingCart/bank/payOnline_nyyh.gif"/></label>
+									</li>
+									<li>
+										<input type="radio" name="payOnlineBank" id="payh" value="" />
+										<label for="payh"><img src="../img/ShoppingCart/bank/payOnline_payh.gif"/></label>
+									</li>
+									<li>
+										<input type="radio" name="payOnlineBank" id="pufa" value="" />
+										<label for="pufa"><img src="../img/ShoppingCart/bank/payOnline_pufa.gif"/></label>
+									</li>
+									<li>
+										<input type="radio" name="payOnlineBank" id="xyyh" value="" />
+										<label for="xyyh"><img src="../img/ShoppingCart/bank/payOnline_xyyh.gif"/></label>
+									</li>
+									<li>
+										<input type="radio" name="payOnlineBank" id="youzheng" value="" />
+										<label for="youzheng"><img src="../img/ShoppingCart/bank/payOnline_youzheng.gif"/></label>
+									</li>
+									<li>
+										<input type="radio" name="payOnlineBank" id="zgyh" value="" />
+										<label for="zgyh"><img src="../img/ShoppingCart/bank/payOnline_zgyh.gif"/></label>
+									</li>
+									<li>
+										<input type="radio" name="payOnlineBank" id="zsyh" value="" />
+										<label for="zsyh"><img src="../img/ShoppingCart/bank/payOnline_zsyh.gif"/></label>
+									</li>
+									<li>
+										<input type="radio" name="payOnlineBank" id="zxyh" value="" />
+										<label for="zxyh"><img src="../img/ShoppingCart/bank/payOnline_zxyh.gif"/></label>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!--支付方式部分结束-->
+					
+					<!--图书清单部分开始-->
+					<div class="address_bookList">
+						<div class="addressTop">
+							<h2>图书清单</h2>
+						</div>
+						<div class="addressBottom address_bookListContent">
+							<div class="bookList_title">
+								<div class="bookList_title_name">
+									<span>图书名称</span>
+								</div>
+								<div class="bookList_title_price">
+									<span>定价</span>
+								</div>
+								<div class="bookList_title_sell">
+									<span>优惠价</span>
+								</div>
+								<div class="bookList_title_number">
+									<span>数量</span>
+								</div>
+								<div class="bookList_title_sum">
+									<span>小计</span>
+								</div>
+							</div>
+							<div class="bookList_Content">
+								<ul>
+									<li>
+										<div class="bookList_Content_name">
+											<a href="#">一见钟情的概率</a>
+										</div>
+										<div class="bookList_Content_price">
+											<span>￥25.0</span>
+										</div>
+										<div class="bookList_Content_sell">
+											<span>￥16.3</span>
+										</div>
+										<div class="bookList_Content_num">
+											<span>1</span>
+										</div>
+										<div class="bookList_Content_sum">
+											<span>￥16.3</span>
+										</div>
+									</li>
+									<li>
+										<div class="bookList_Content_name">
+											<a href="#">解忧杂货店</a>
+										</div>
+										<div class="bookList_Content_price">
+											<span>￥39.5</span>
+										</div>
+										<div class="bookList_Content_sell">
+											<span>￥29.6</span>
+										</div>
+										<div class="bookList_Content_num">
+											<span>1</span>
+										</div>
+										<div class="bookList_Content_sum">
+											<span>￥29.6</span>
+										</div>
+									</li>
+									<li>
+										<div class="bookList_Content_name">
+											<a href="#">毛毛虫纸板书:小蝌蚪找妈妈+好乖乖+两只老鼠胆子大(套装3册)</a>
+										</div>
+										<div class="bookList_Content_price">
+											<span>￥78.0</span>
+										</div>
+										<div class="bookList_Content_sell">
+											<span>￥52.3</span>
+										</div>
+										<div class="bookList_Content_num">
+											<span>4</span>
+										</div>
+										<div class="bookList_Content_sum">
+											<span>￥209.2</span>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!--图书清单部分结束-->
+					
+					<!--用户留言部分开始-->
+					<div class="leaveWord">
+						<div class="leaveWord_top">
+							<div class="leaveWord_topLeft">
+								<h2>会员留言：</h2>
+								<textarea></textarea>
+							</div>
+							<div class="leaveWord_topRight">
+								<ul>
+									<li>
+										<div>订单总额：</div>
+										<div>255.1元</div>
+									</li>
+									<li>
+										<div>活动优惠：</div>
+										<div>-0元</div>
+									</li>
+									<li>
+										<div>优惠券抵扣：</div>
+										<div>-0元</div>
+									</li>
+									<li>
+										<div>运费：</div>
+										<div>0元</div>
+									</li>
+									<li>
+										<div>应付总额：</div>
+										<div>255.1<span>元</span></div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="leaveWord_bottom">
+							<div class="leaveWord_bottomContent">
+								<a href="#">返回购物车</a>
+								<a href="#">立即下单</a>
+							</div>
+						</div>
+					</div>
+					<!--用户留言部分结束-->
+				</div>
+			</div>
+		</div>
+		<!--填写地址部分结束-->
+		
+		
+		<!--底部导航部分开始-->
+		<div class="shoppingCart_goodList_footer">
+			<div class="shoppingCart_goodList_footerTop">
+				<ul>
+					<li>新手上路</li>
+					<li><a href="#">购物流程演示</a></li>
+					<li><a href="#">注册用户 更改注册信息</a></li>
+					<li><a href="#">购物常见问题</a></li>
+					<li><a href="#">关于特价书的常见问题</a></li>
+				</ul>
+				<ul>
+					<li>购买问题</li>
+					<li><a href="#">订单跟踪</a></li>
+					<li><a href="#">付款方式</a></li>
+					<li><a href="#">账户余额    申请提现</a></li>
+					<li><a href="#">配送方式及费用、范围</a></li>
+					<li><a href="#">集团购买</a></li>
+				</ul>
+				<ul>
+					<li>售后服务</li>
+					<li><a href="#">退换货流程</a></li>
+					<li><a href="#">投诉与建议</a></li>
+				</ul>
+				<ul>
+					<li>特色服务</li>
+					<li><a href="#">会员等级与积分</a></li>
+					<li><a href="#">图书馨卡</a></li>
+					<li><a href="#">邮件订阅</a></li>
+					<li><a href="#">邀请好友购买返5元</a></li>
+				</ul>
+				<ul>
+					<li>其他信息</li>
+					<li><a href="#">本站简介</a></li>
+					<li><a href="#">联系我们</a></li>
+					<li><a href="#">招聘英才</a></li>
+					<li><a href="#">网站联盟</a></li>
+					<li><a href="#">友情链接</a></li>
+				</ul>
+				<div class="focusUs">
+					<span>关注我们的微信号</span>
+					<img src="../img/focuUs.jpg"/>
+				</div>
+			</div>
+			<div class="shoppingCart_goodList_footerBottom">
+				<div class="footerBottom_left">
+					<a href="#"><img src="../img/首页/chengxin.jpg"/></a>
+					<a href="#"><img src="../img/首页/ectrust.gif"/></a>
+				</div>
+				<div class="footerBottom_right">
+					<ul>
+						<li><a href="#">经营许可证编号：川ICP备********号-*</a></li>
+						<li><a href="#">川信市监发[2018]***号</a></li>
+						<li>火星公安分局备案编号：**********</li>
+						<li><a href="#">营业执照</a></li>
+						<li><a href="#">出版物经营许可证 川出发川批字第直******</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--底部导航部分结束-->
+		
+		<script type="text/javascript" src="../js/jquery-1.12.1.min.js"></script>
+		<script type="text/javascript" src="../js/ShoppingCart/jquery_cart.js" ></script>
+		<script type="text/javascript" src="../js/ShoppingCart/base.min.js" ></script>
+		<script type="text/javascript" src="../js/ShoppingCart/address_all.js" ></script>
+		<script type="text/javascript" src="../js/ShoppingCart/checkout.min.js" ></script>
+	</body>
+</html>
