@@ -49,4 +49,12 @@ public class APIResult {
     public void setData(String key, Object vlaue) {
         data.put(key, vlaue);
     }
+
+    public Map<String, Object> getData() {
+        return data;
+    }
+
+    public void setData(Map<String, Object> data) {
+        this.data = data;
+    }
 }
