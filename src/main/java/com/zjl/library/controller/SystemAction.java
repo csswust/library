@@ -88,7 +88,7 @@ public class SystemAction extends BaseAction {
             file = new File(ueditorPath + path);
         } else if (isImagePath) {
             // 临时路径
-            String imagePath = Config.get(SiteKey.UPLOAD_TEMP_DIR, SiteKey.UPLOAD_TEMP_DIR_DE);
+            String imagePath = Config.get(SiteKey.UPLOAD_IMAGE_DIR, SiteKey.UPLOAD_IMAGE_DIR_DE);
             file = new File(imagePath + path);
         } else {
             // 非标准路径
