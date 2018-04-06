@@ -24,7 +24,7 @@ public class BookInfoAction extends BaseAction {
 
     @RequestMapping(value = "/selectByCondition", method = {RequestMethod.GET, RequestMethod.POST})
     public Object selectByCondition(
-            @RequestParam BookInfo bookInfo,
+            BookInfo bookInfo,
             @RequestParam Integer page,
             @RequestParam Integer rows) {
         APIResult apiResult = new APIResult();
