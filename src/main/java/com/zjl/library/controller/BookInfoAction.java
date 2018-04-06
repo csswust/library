@@ -22,7 +22,7 @@ public class BookInfoAction extends BaseAction {
     @Autowired
     private BookInfoDao bookInfoDao;
 
-    @RequestMapping(value = "/selectByCondition", method = RequestMethod.GET)
+    @RequestMapping(value = "/selectByCondition", method = {RequestMethod.GET, RequestMethod.POST})
     public Object selectByCondition(
             @RequestParam BookInfo bookInfo,
             @RequestParam Integer page,
