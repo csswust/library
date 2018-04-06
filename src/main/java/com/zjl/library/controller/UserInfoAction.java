@@ -65,4 +65,24 @@ public class UserInfoAction extends BaseAction {
         }
         return apiResult;
     }
+
+    @RequestMapping(value = "/register", method = {RequestMethod.GET, RequestMethod.POST})
+    public Object register(
+            @RequestParam String username,
+            @RequestParam String password,
+            @RequestParam String email) {
+        APIResult apiResult = new APIResult();
+        UserInfo userInfo = userInfoDao.selectByUsername(username);
+        if (userInfo != null) {
+            apiResult.setStatusAndDesc(-1, "此用户名已存在");
+        } else {
+            UserInfo record = new UserInfo();
+            record.setUsername(username);
+            record.setPassword(password);
+            record.setEmail(email);
+            int status = userInfoDao.insertSelective(record);
+            apiResult.setStatus(status);
+        }
+        return apiResult;
+    }
 }
