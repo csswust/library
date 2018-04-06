@@ -72,6 +72,18 @@ public class UserInfoAction extends BaseAction {
             @RequestParam String password,
             @RequestParam String email) {
         APIResult apiResult = new APIResult();
+        if (StringUtils.isBlank(username)) {
+            apiResult.setStatusAndDesc(-403, "username不能为空");
+            return apiResult;
+        }
+        if (StringUtils.isBlank(password)) {
+            apiResult.setStatusAndDesc(-403, "password");
+            return apiResult;
+        }
+        if (StringUtils.isBlank(email)) {
+            apiResult.setStatusAndDesc(-403, "email不能为空");
+            return apiResult;
+        }
         UserInfo userInfo = userInfoDao.selectByUsername(username);
         if (userInfo != null) {
             apiResult.setStatusAndDesc(-1, "此用户名已存在");
