@@ -5,6 +5,7 @@ import com.zjl.library.controller.common.BaseAction;
 import com.zjl.library.dao.BookInfoDao;
 import com.zjl.library.dao.common.BaseQuery;
 import com.zjl.library.entity.BookInfo;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -25,12 +26,17 @@ public class BookInfoAction extends BaseAction {
     @RequestMapping(value = "/selectByCondition", method = {RequestMethod.GET, RequestMethod.POST})
     public Object selectByCondition(
             BookInfo bookInfo,
+            @RequestParam String sTitle,
             @RequestParam Integer page,
             @RequestParam Integer rows) {
         APIResult apiResult = new APIResult();
-        int total = bookInfoDao.selectByConditionGetCount(bookInfo, new BaseQuery());
-        List<BookInfo> bookInfoList = bookInfoDao.selectByCondition(
-                bookInfo, new BaseQuery(page, rows));
+        BaseQuery baseQuery = new BaseQuery();
+        if (StringUtils.isNotBlank(sTitle)) {
+            baseQuery.setCustom("sTitle", sTitle);
+        }
+        int total = bookInfoDao.selectByConditionGetCount(bookInfo, baseQuery);
+        baseQuery.setPageRows(page, rows);
+        List<BookInfo> bookInfoList = bookInfoDao.selectByCondition(bookInfo, new BaseQuery());
         apiResult.setData("bookInfoList", bookInfoList);
         apiResult.setData("total", total);
         return apiResult;
