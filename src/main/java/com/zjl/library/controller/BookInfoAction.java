@@ -40,7 +40,7 @@ public class BookInfoAction extends BaseAction {
         if (StringUtils.isNotBlank(sPress)) baseQuery.setCustom("sPress", sPress);
         int total = bookInfoDao.selectByConditionGetCount(bookInfo, baseQuery);
         baseQuery.setPageRows(page, rows);
-        List<BookInfo> bookInfoList = bookInfoDao.selectByCondition(bookInfo, new BaseQuery());
+        List<BookInfo> bookInfoList = bookInfoDao.selectByCondition(bookInfo, baseQuery);
         apiResult.setData("bookInfoList", bookInfoList);
         apiResult.setData("total", total);
         return apiResult;
