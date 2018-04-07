@@ -27,6 +27,8 @@ public class BookInfoAction extends BaseAction {
     public Object selectByCondition(
             BookInfo bookInfo,
             @RequestParam String sTitle,
+            @RequestParam String sAuthor,
+            @RequestParam String sPress,
             @RequestParam Integer page,
             @RequestParam Integer rows) {
         APIResult apiResult = new APIResult();
@@ -34,6 +36,8 @@ public class BookInfoAction extends BaseAction {
         if (StringUtils.isNotBlank(sTitle)) {
             baseQuery.setCustom("sTitle", sTitle);
         }
+        if (StringUtils.isNotBlank(sAuthor)) baseQuery.setCustom("sAuthor", sAuthor);
+        if (StringUtils.isNotBlank(sPress)) baseQuery.setCustom("sPress", sPress);
         int total = bookInfoDao.selectByConditionGetCount(bookInfo, baseQuery);
         baseQuery.setPageRows(page, rows);
         List<BookInfo> bookInfoList = bookInfoDao.selectByCondition(bookInfo, new BaseQuery());
