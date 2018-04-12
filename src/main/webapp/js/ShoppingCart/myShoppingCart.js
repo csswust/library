@@ -208,13 +208,13 @@ $(function(){
         var calBtn = $('.calBtn a');
         $sonCheck.each(function () {
             if ($(this).is(':checked')) {
-                var goods = parseInt($(this).parents('.myShoppingCart_orderList').find('.sum_price').html().substring(1));
+                var goods = parseFloat($(this).parents('.myShoppingCart_orderList').find('.sum_price').html().substring(1));
                 var num =  parseInt($(this).parents('.myShoppingCart_orderList').find('.sum').val());
                 total_money += goods;
                 total_count += num;
             }
         });
-        $('.total_text').html('￥'+total_money);
+        $('.total_text').html('￥'+total_money.toFixed(2));
         $('.piece_num').html(total_count);
 
 

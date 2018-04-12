@@ -104,6 +104,11 @@
 }
 #goodList .goodList_left .goodList_leftContent
 .goodList_bookInfo .goodList_bookInfoContent
+.goodList_bookDetail .bookInfo>span:nth-child(3){
+	margin: 0px;
+}
+#goodList .goodList_left .goodList_leftContent
+.goodList_bookInfo .goodList_bookInfoContent
 .goodList_bookDetail .bookPrice{
 	width: 100%;
 	height: 30px;
@@ -118,20 +123,23 @@
 }
 #goodList .goodList_left .goodList_leftContent
 .goodList_bookInfo .goodList_bookInfoContent
-.goodList_bookDetail .bookPrice>span:nth-child(1){
+.goodList_bookDetail .bookPrice>span:nth-child(1),
+#goodList .goodList_left .goodList_leftContent
+.goodList_bookInfo .goodList_bookInfoContent
+.goodList_bookDetail .bookPrice>span:nth-child(2).book_money{
 	font-size: 18px;
 	color: #E60000;
 }
 #goodList .goodList_left .goodList_leftContent
 .goodList_bookInfo .goodList_bookInfoContent
-.goodList_bookDetail .bookPrice>span:nth-child(2){
+.goodList_bookDetail .bookPrice>span:nth-child(3){
 	color: #666666;
 	margin-left: 6px;
 	margin-right: 10px;
 }
 #goodList .goodList_left .goodList_leftContent
 .goodList_bookInfo .goodList_bookInfoContent
-.goodList_bookDetail .bookPrice>span:nth-child(4){
+.goodList_bookDetail .bookPrice>span:nth-child(6).book_price{
 	text-decoration: line-through;
 }
 #goodList .goodList_left .goodList_leftContent
@@ -165,60 +173,71 @@
 	margin-top: 30px;
 	float: left;
 }
-#goodList .goodList_left .goodList_page>ul{
-	width: 392px;
-	height: 30px;
-	margin: 0px auto;
-	margin-top: 40px;
+#goodList .goodList_left .goodList_page .m-style{
+	margin-top: 34px;
 }
-#goodList .goodList_left .goodList_page>ul>li{
-	width: 30px;
-	height: 30px;
-	line-height: 30px;
-	text-align: center;
-	border: 1px solid #DADADA;
-	float: left;
-	border-left: none;
-}
-#goodList .goodList_left .goodList_page>ul>li>a{
-	font-size: 14px;
-	color: #666666;
-}
-#goodList .goodList_left .goodList_page>ul>li:nth-child(2){
-	border-left: 1px solid #DADADA;
-}
-#goodList .goodList_left .goodList_page>ul>li:nth-child(5){
-	border-top: none;
-	border-bottom: none;
-}
-#goodList .goodList_left .goodList_page>ul>li.prevPage,
-#goodList .goodList_left .goodList_page>ul>li.nextPage{
-	width: 72px;
-	height: 30px;
-	border-left: 1px solid #DADADA;
-}
-#goodList .goodList_left .goodList_page>ul>li.prevPage{
-	margin-right: 12px;
-	
-}
-#goodList .goodList_left .goodList_page>ul>li.nextPage{
-	margin-left: 12px;
-}
-#goodList .goodList_left .goodList_page>ul>li:hover{
-	border-color: #E60000;
-	background: #E60000;
-}
-#goodList .goodList_left .goodList_page>ul>li:nth-child(5):hover{
-	background: white;
-	border-color: #DADADA;
-}
-#goodList .goodList_left .goodList_page>ul>li:hover>a{
-	color: white;
-}
+/*#goodList .goodList_left .goodList_page>ul{*/
+	/*width: 392px;*/
+	/*height: 30px;*/
+	/*margin: 0px auto;*/
+	/*margin-top: 40px;*/
+/*}*/
+/*#goodList .goodList_left .goodList_page>ul>li{*/
+	/*width: 30px;*/
+	/*height: 30px;*/
+	/*line-height: 30px;*/
+	/*text-align: center;*/
+	/*border: 1px solid #DADADA;*/
+	/*float: left;*/
+	/*border-left: none;*/
+/*}*/
+/*#goodList .goodList_left .goodList_page>ul>li>a{*/
+	/*font-size: 14px;*/
+	/*color: #666666;*/
+/*}*/
+/*#goodList .goodList_left .goodList_page>ul>li:nth-child(2){*/
+	/*border-left: 1px solid #DADADA;*/
+/*}*/
+/*#goodList .goodList_left .goodList_page>ul>li:nth-child(5){*/
+	/*border-top: none;*/
+	/*border-bottom: none;*/
+/*}*/
+/*#goodList .goodList_left .goodList_page>ul>li.prevPage,*/
+/*#goodList .goodList_left .goodList_page>ul>li.nextPage{*/
+	/*width: 72px;*/
+	/*height: 30px;*/
+	/*border-left: 1px solid #DADADA;*/
+/*}*/
+/*#goodList .goodList_left .goodList_page>ul>li.prevPage{*/
+	/*margin-right: 12px;*/
+	/**/
+/*}*/
+/*#goodList .goodList_left .goodList_page>ul>li.nextPage{*/
+	/*margin-left: 12px;*/
+/*}*/
+/*#goodList .goodList_left .goodList_page>ul>li.activePage{*/
+	/*border-color: #E60000;*/
+	/*background: #E60000;*/
+/*}*/
+/*#goodList .goodList_left .goodList_page>ul>li.activePage>a{*/
+	/*color: white;*/
+/*}*/
+/*#goodList .goodList_left .goodList_page>ul>li:hover{*/
+	/*border-color: #E60000;*/
+	/*background: #E60000;*/
+/*}*/
+/*#goodList .goodList_left .goodList_page>ul>li:nth-child(5):hover{*/
+	/*background: white;*/
+	/*border-color: #DADADA;*/
+/*}*/
+/*#goodList .goodList_left .goodList_page>ul>li:hover>a{*/
+	/*color: white;*/
+/*}*/
 
 #goodList .goodList_right{
 	width: 230px;
 	float: right;
+	margin-bottom: 112px;
 }
 #goodList .goodList_right .goodList_rightTop,
 #goodList .goodList_right .goodList_rightBottom{

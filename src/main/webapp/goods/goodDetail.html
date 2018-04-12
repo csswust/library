@@ -15,14 +15,14 @@
 				<div class="topNav_mainLeft">
 					<span>欢迎登录Sunny图书网</span>
 					<span>请</span>
-					<span><a href="#">登录</a></span>
+					<span><a href="../login.html" target="_blank">登录</a></span>
 					<span>|</span>
-					<span><a href="#">注册</a></span>
+					<span><a href="../register.html" target="_blank">注册</a></span>
 				</div>
 				<div class="topNav_mainRight">
 					<ul>
-						<li><a href="#">购物车</a></li>
-						<li><a href="#">我的订单</a></li>
+						<li><a href="../ShoppingCart/myShoppingCart.html" target="_blank">购物车</a></li>
+						<li><a href="../ShoppingCart/orderList.html" target="_blank">我的订单</a></li>
 						<li>
 							<a href="#">我的账户<b class="icon"></b></a>
 							<div class="topNav_mainRightMenu">
@@ -52,8 +52,8 @@
 			</div>
 			<div class="searchRight">
 				<div class="searchBox">
-					<input type="text" name="keyword" id="keyword" value="小王子" onfocus="javascript:if(this.value=='小王子')this.value='';" onBlur="if(value==''){value='小王子'}" />
-					<a href="#">搜 索</a>
+					<input type="text" name="keyword" id="keyword" value="" onfocus="javascript:if(this.value=='小王子')this.value='';" onBlur="if(value==''){value='小王子'}" />
+					<a href="#" id="searchButton">搜 索</a>
 				</div>
 				<div class="searchBook">
 					<ul>
@@ -64,7 +64,7 @@
 					</ul>
 				</div>
 				<div class="moreSearch">
-					<a href="#">高级搜索</a>
+					<a href="../advancedSearch.html" target="_blank">高级搜索</a>
 				</div>
 			</div>
 		</div>
@@ -103,15 +103,15 @@
 					<span class="goodDetail_author">作者：<a href="#">本书编委会</a></span>
 					<span class="goodDetail_press">出版社：<a href="#">江苏美术出版社</a></span>
 					<span class="goodDetail_time">出版时间：<span>2015-05-01</span></span>
-					<span class="goodDetail_size">开本：<span>32开</span></span>
-					<span class="goodDetail_page">页数：<span>182页</span></span>
+					<span class="goodDetail_size">开本：<span>32</span><span>开</span></span>
+					<span class="goodDetail_page">页数：<span>182</span><span>页</span></span>
 					<span class="goodDetail_category">本书类别：<a href="#">小说</a></span>
 					<div class="goodDetail_price">
 						<span>本书价格：</span>
-						<span>¥5.5</span>
+						<span>¥</span><span>5.5</span>
 						<span>（4.3折）</span>
 						<span>定价:</span>
-						<span>¥12.8</span>
+						<span>¥</span><span>12.8</span>
 					</div>
 					<a href="#" class="goodDetail_addShoppingCart">加入购物车</a>
 				</div>
@@ -285,7 +285,7 @@
 							<li><a href="#userReviews">商品评论</a></li>
 						</ul>
 						<div class="goodDetail_navRight">
-							<span>本书价格：¥5.5</span>
+							<span>本书价格：¥<span>5.5</span></span>
 							<a href="#">加入购物车</a>
 						</div>
 					</div>
@@ -539,5 +539,7 @@
 		
 		<script type="text/javascript" src="../js/jquery-1.12.1.min.js" ></script>
 		<script type="text/javascript" src="../js/goods/goodDetail.js" ></script>
+		<script type="text/javascript" src="../js/dataInteraction/publicData.js" ></script>
+		<script type="text/javascript" src="../js/dataInteraction/goodDetailData.js" ></script>
 	</body>
 </html>

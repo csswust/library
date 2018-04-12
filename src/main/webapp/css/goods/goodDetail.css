@@ -73,11 +73,12 @@
 .goodDetail_price>span:nth-child(1){
 	margin-left: 10px;
 }
-.goodDetail_price>span:nth-child(2){
+.goodDetail_price>span:nth-child(2),
+.goodDetail_price>span:nth-child(3){
 	font-size: 18px;
 	color: #E60000;
 }
-.goodDetail_price>span:nth-child(5){
+.goodDetail_price>span:nth-child(7){
 	text-decoration: line-through;
 }
 .goodDetail_addShoppingCart{

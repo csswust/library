@@ -12,32 +12,25 @@ $(function(){
 		login: function(){
 			$.ajax({
 				type: "POST",
-				url: "",
+				url: "/library/user/login",
 				dataType: "json",
+                async: false,
 				data: {
 					username: program.username,
-					confirmPassword: program.confirmPassword
+					password: program.confirmPassword
 				},
 				success: function (result){
 					console.log(result);
-//					var exp = new Date();
-					document.cookie = "userId=" + escape(result.userId);
-					document.cookie = "username=" + escape(result.username);
-					if(result.loginRe.status == "1"){
+					if(result.status == "1"){
 						window.location.href = "index.html";
 					}
 					else{
-						document.getElementById("dialogs").innerHTML='<h3>' + result.loginRe.desc + '</h3>';  
+						document.getElementById("dialogs").innerHTML='<h3>' + result.desc + '</h3>';
             			dialog();
-//						program.alertInfo("alert-error", result.loginRe.desc);
 					}
 				},
 				error: function(){
-					document.getElementById("dialogs").innerHTML="<h3>登录失败！</h3>";  
-            		dialog();
-//					program.alertInfo("alert-error", "登录失败！");
-					$("#userName").val("");
-					$("#confirmPassword").val("");
+					console.log("请求错误");
 				}
 			});
 		},
@@ -49,16 +42,20 @@ $(function(){
             } else {
             	document.getElementById("dialogs").innerHTML="<h3>账号和密码不能为空！</h3>";  
             	dialog();
-//              program.alertInfo("alert-danger", "账号和密码不能为空！");
             }
-        }
+        },
 	}
-	 $("#send").click(function () {
+	$("#send").click(function () {
 	        program.judge();
-	  });
-	    $("body").keydown(function () {
-	        if (event.keyCode == "13") {        //keyCode=13是回车键
-	            program.judge();
-	        }
-	    });
+	});
+	$("body").keydown(function () {
+		if (event.keyCode == "13") {        //keyCode=13是回车键
+			program.judge();
+		}
+	});
+
+
+	//
+
+
 });

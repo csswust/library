@@ -45,7 +45,7 @@ a{
 	text-decoration: underline;
 }
 .userInfo{
-	width: 750px;
+	width: 764px;
 	height: 450px;
 	margin: 40px auto;
 }
@@ -131,4 +131,7 @@ a{
 }
 .error{
 	color: #E60000;
+}
+.right{
+	color: green;
 }
