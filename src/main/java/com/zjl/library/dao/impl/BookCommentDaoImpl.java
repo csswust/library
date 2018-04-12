@@ -20,10 +20,12 @@ public class BookCommentDaoImpl extends CommonMapper<BookComment, BaseQuery> imp
         record.setId(null);
         record.setCreateTime(date);
         record.setModifyTime(date);
+        // record.setModifyUserId(getUserId());
     }
 
     @Override
-    public void updatInit(BookComment record, Date date) {
+    public void updateInit(BookComment record, Date date) {
         record.setModifyTime(date);
+        // record.setModifyUserId(getUserId());
     }
 }

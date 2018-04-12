@@ -20,10 +20,12 @@ public class ShoppingCartDaoImpl extends CommonMapper<ShoppingCart, BaseQuery> i
         record.setId(null);
         record.setCreateTime(date);
         record.setModifyTime(date);
+        // record.setModifyUserId(getUserId());
     }
 
     @Override
-    public void updatInit(ShoppingCart record, Date date) {
+    public void updateInit(ShoppingCart record, Date date) {
         record.setModifyTime(date);
+        // record.setModifyUserId(getUserId());
     }
 }

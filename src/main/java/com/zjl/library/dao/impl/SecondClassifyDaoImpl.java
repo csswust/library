@@ -20,10 +20,12 @@ public class SecondClassifyDaoImpl extends CommonMapper<SecondClassify, BaseQuer
         record.setId(null);
         record.setCreateTime(date);
         record.setModifyTime(date);
+        // record.setModifyUserId(getUserId());
     }
 
     @Override
-    public void updatInit(SecondClassify record, Date date) {
+    public void updateInit(SecondClassify record, Date date) {
         record.setModifyTime(date);
+        // record.setModifyUserId(getUserId());
     }
 }

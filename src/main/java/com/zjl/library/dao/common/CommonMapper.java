@@ -21,7 +21,7 @@ public abstract class CommonMapper<T, Q extends BaseQuery> extends SqlSessionDao
 
     public abstract void insertInit(T record, Date date);
 
-    public abstract void updatInit(T record, Date date);
+    public abstract void updateInit(T record, Date date);
 
     @Override
     public int deleteByPrimaryKey(Integer id) {
@@ -108,7 +108,7 @@ public abstract class CommonMapper<T, Q extends BaseQuery> extends SqlSessionDao
         if (record == null) {
             return 0;
         }
-        updatInit(record, new Date());
+        updateInit(record, new Date());
         try {
             return getSqlSession().update(getPackage() + "updateByPrimaryKeySelective", record);
         } catch (Exception e) {
@@ -122,7 +122,7 @@ public abstract class CommonMapper<T, Q extends BaseQuery> extends SqlSessionDao
         if (record == null) {
             return 0;
         }
-        updatInit(record, new Date());
+        updateInit(record, new Date());
         try {
             return getSqlSession().update(getPackage() + "updateByPrimaryKeyWithBLOBs", record);
         } catch (Exception e) {
@@ -136,7 +136,7 @@ public abstract class CommonMapper<T, Q extends BaseQuery> extends SqlSessionDao
         if (record == null) {
             return 0;
         }
-        updatInit(record, new Date());
+        updateInit(record, new Date());
         try {
             return getSqlSession().update(getPackage() + "updateByPrimaryKey", record);
         } catch (Exception e) {

@@ -12,10 +12,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
- * Created by 972536780 on 2018/4/6.
+ * Created by 972536780 on 2018/4/1.
  */
 @RestController
 @RequestMapping("/bookInfo")
@@ -44,5 +47,45 @@ public class BookInfoAction extends BaseAction {
         apiResult.setData("bookInfoList", bookInfoList);
         apiResult.setData("total", total);
         return apiResult;
+    }
+
+    @RequestMapping(value = "/selectById", method = {RequestMethod.GET, RequestMethod.POST})
+    public BookInfo selectById(@RequestParam Integer id) {
+        return bookInfoDao.selectByPrimaryKey(id);
+    }
+
+    @RequestMapping(value = "/insertOne", method = {RequestMethod.GET, RequestMethod.POST})
+    public Map<String, Object> insertOne(BookInfo bookInfo) {
+        Map<String, Object> res = new HashMap<>();
+        int result = bookInfoDao.insertSelective(bookInfo);
+        res.put("status", result);
+        return res;
+    }
+
+    @RequestMapping(value = "/updateById", method = {RequestMethod.GET, RequestMethod.POST})
+    public Map<String, Object> updateById(BookInfo bookInfo) {
+        Map<String, Object> res = new HashMap<>();
+        int result = bookInfoDao.updateByPrimaryKeySelective(bookInfo);
+        res.put("status", result);
+        return res;
+    }
+
+    @RequestMapping(value = "/deleteByIds", method = {RequestMethod.GET, RequestMethod.POST})
+    public Map<String, Object> deleteByIds(@RequestParam String ids) {
+        if (ids == null || StringUtils.isBlank(ids)) return null;
+        Map<String, Object> res = new HashMap<>();
+        int result = bookInfoDao.deleteByIds(ids);
+        res.put("status", result);
+        return res;
+    }
+
+    @RequestMapping(value = "/insertBatch", method = {RequestMethod.GET, RequestMethod.POST})
+    public Map<String, Object> insertBatch(@RequestParam BookInfo[] bookInfoList) {
+        if (bookInfoList == null) return null;
+        Map<String, Object> res = new HashMap<>();
+        int status = bookInfoDao.insertBatch(Arrays.asList(bookInfoList));
+        if (status == bookInfoList.length) res.put("status", status);
+        else res.put("status", 0);
+        return res;
     }
 }

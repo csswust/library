@@ -20,10 +20,12 @@ public class BookOrderDaoImpl extends CommonMapper<BookOrder, BaseQuery> impleme
         record.setId(null);
         record.setCreateTime(date);
         record.setModifyTime(date);
+        // record.setModifyUserId(getUserId());
     }
 
     @Override
-    public void updatInit(BookOrder record, Date date) {
+    public void updateInit(BookOrder record, Date date) {
         record.setModifyTime(date);
+        // record.setModifyUserId(getUserId());
     }
 }

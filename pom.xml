@@ -24,6 +24,12 @@
     </properties>
 
     <dependencies>
+        <!-- 模板 -->
+        <dependency>
+            <groupId>freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <version>2.3.9</version>
+        </dependency>
         <!--md5加密-->
         <dependency>
             <groupId>commons-codec</groupId>

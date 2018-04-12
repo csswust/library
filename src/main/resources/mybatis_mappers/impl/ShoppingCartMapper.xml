@@ -6,7 +6,7 @@
         <include refid="Base_Column_List"/>
         FROM shopping_cart
         WHERE 1 = 1
-        <if test="record.id != null">
+            <if test="record.id != null">
             AND
             id = #{record.id}
         </if>
@@ -34,6 +34,7 @@
             AND
             modify_time = #{record.modifyTime}
         </if>
+
         <include refid="custom_condition"/>
         <if test="start != null and rows != null">
             LIMIT #{start}, #{rows}
@@ -44,7 +45,7 @@
         count(*)
         FROM shopping_cart
         WHERE 1 = 1
-        <if test="record.id != null">
+            <if test="record.id != null">
             AND
             id = #{record.id}
         </if>
@@ -72,6 +73,7 @@
             AND
             modify_time = #{record.modifyTime}
         </if>
+
         <include refid="custom_condition"/>
         <if test="start != null and rows != null">
             LIMIT #{start}, #{rows}
@@ -81,16 +83,16 @@
         delete from shopping_cart
         where id in
         <foreach collection="list" item="item" index="index" open="(" close=")" separator=",">
-            #{item}
+        #{item}
         </foreach>
     </delete>
     <select id="selectByIdsList" resultMap="BaseResultMap" parameterType="java.util.Map">
         select
-        <include refid="Base_Column_List" />
+        <include refid="Base_Column_List"/>
         from shopping_cart
         where id in
         <foreach collection="list" item="item" index="index" open="(" close=")" separator=",">
-            #{item}
+        #{item}
         </foreach>
     </select>
     <select id="insertBatch" parameterType="java.util.Map">

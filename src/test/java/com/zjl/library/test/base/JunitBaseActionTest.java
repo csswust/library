@@ -1,4 +1,4 @@
-package com.zjl.library.test;
+package com.zjl.library.test.base;
 
 import org.junit.After;
 import org.junit.Before;

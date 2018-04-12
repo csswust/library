@@ -8,7 +8,7 @@
         <include refid="Blob_Column_List"/>
         FROM order_book
         WHERE 1 = 1
-        <if test="record.id != null">
+            <if test="record.id != null">
             AND
             id = #{record.id}
         </if>
@@ -36,6 +36,7 @@
             AND
             note = #{record.note}
         </if>
+
         <include refid="custom_condition"/>
         <if test="start != null and rows != null">
             LIMIT #{start}, #{rows}
@@ -46,7 +47,7 @@
         count(*)
         FROM order_book
         WHERE 1 = 1
-        <if test="record.id != null">
+            <if test="record.id != null">
             AND
             id = #{record.id}
         </if>
@@ -74,6 +75,7 @@
             AND
             note = #{record.note}
         </if>
+
         <include refid="custom_condition"/>
         <if test="start != null and rows != null">
             LIMIT #{start}, #{rows}
@@ -83,25 +85,25 @@
         delete from order_book
         where id in
         <foreach collection="list" item="item" index="index" open="(" close=")" separator=",">
-            #{item}
+        #{item}
         </foreach>
     </delete>
     <select id="selectByIdsList" resultMap="ResultMapWithBLOBs" parameterType="java.util.Map">
         select
-        <include refid="Base_Column_List" />
+        <include refid="Base_Column_List"/>
         ,
         <include refid="Blob_Column_List"/>
         from order_book
         where id in
         <foreach collection="list" item="item" index="index" open="(" close=")" separator=",">
-            #{item}
+        #{item}
         </foreach>
     </select>
     <select id="insertBatch" parameterType="java.util.Map">
         insert into order_book
-        (order_id, book_id, number, create_time, modify_time) values
+        (order_id, book_id, number, create_time, modify_time, note) values
         <foreach collection="list" item="item" index="index" separator=",">
-            (#{item.orderId}, #{item.bookId}, #{item.number}, #{item.createTime}, #{item.modifyTime})
+            (#{item.orderId}, #{item.bookId}, #{item.number}, #{item.createTime}, #{item.modifyTime}, #{item.note})
         </foreach>
     </select>
 </mapper>

@@ -16,6 +16,8 @@ public interface UserInfoDao {
 
     int updateByPrimaryKeySelective(UserInfo record);
 
+    int updateByPrimaryKeyWithBLOBs(UserInfo record);
+
     int updateByPrimaryKey(UserInfo record);
 
     int deleteByIds(String ids);

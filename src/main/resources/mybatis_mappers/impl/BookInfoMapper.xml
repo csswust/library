@@ -8,7 +8,7 @@
         <include refid="Blob_Column_List"/>
         FROM book_info
         WHERE 1 = 1
-        <if test="record.id != null">
+            <if test="record.id != null">
             AND
             id = #{record.id}
         </if>
@@ -68,6 +68,7 @@
             AND
             book_spcial = #{record.bookSpcial}
         </if>
+
         <include refid="custom_condition"/>
         <if test="start != null and rows != null">
             LIMIT #{start}, #{rows}
@@ -78,7 +79,7 @@
         count(*)
         FROM book_info
         WHERE 1 = 1
-        <if test="record.id != null">
+            <if test="record.id != null">
             AND
             id = #{record.id}
         </if>
@@ -138,6 +139,7 @@
             AND
             book_spcial = #{record.bookSpcial}
         </if>
+
         <include refid="custom_condition"/>
         <if test="start != null and rows != null">
             LIMIT #{start}, #{rows}
@@ -147,25 +149,25 @@
         delete from book_info
         where id in
         <foreach collection="list" item="item" index="index" open="(" close=")" separator=",">
-            #{item}
+        #{item}
         </foreach>
     </delete>
     <select id="selectByIdsList" resultMap="ResultMapWithBLOBs" parameterType="java.util.Map">
         select
-        <include refid="Base_Column_List" />
+        <include refid="Base_Column_List"/>
         ,
         <include refid="Blob_Column_List"/>
         from book_info
         where id in
         <foreach collection="list" item="item" index="index" open="(" close=")" separator=",">
-            #{item}
+        #{item}
         </foreach>
     </select>
     <select id="insertBatch" parameterType="java.util.Map">
         insert into book_info
-        (tile, image, author, press_time, press, second_id, money, price, ISBN, book_size, book_page, create_time, modify_time) values
+        (tile, image, author, press_time, press, second_id, money, price, ISBN, book_size, book_page, create_time, modify_time, book_spcial) values
         <foreach collection="list" item="item" index="index" separator=",">
-            (#{item.tile}, #{item.image}, #{item.author}, #{item.pressTime}, #{item.press}, #{item.secondId}, #{item.money}, #{item.price}, #{item.isbn}, #{item.bookSize}, #{item.bookPage}, #{item.createTime}, #{item.modifyTime})
+            (#{item.tile}, #{item.image}, #{item.author}, #{item.pressTime}, #{item.press}, #{item.secondId}, #{item.money}, #{item.price}, #{item.isbn}, #{item.bookSize}, #{item.bookPage}, #{item.createTime}, #{item.modifyTime}, #{item.bookSpcial})
         </foreach>
     </select>
 </mapper>

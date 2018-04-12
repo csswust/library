@@ -20,10 +20,12 @@ public class BookInfoDaoImpl extends CommonMapper<BookInfo, BaseQuery> implement
         record.setId(null);
         record.setCreateTime(date);
         record.setModifyTime(date);
+        // record.setModifyUserId(getUserId());
     }
 
     @Override
-    public void updatInit(BookInfo record, Date date) {
+    public void updateInit(BookInfo record, Date date) {
         record.setModifyTime(date);
+        // record.setModifyUserId(getUserId());
     }
 }

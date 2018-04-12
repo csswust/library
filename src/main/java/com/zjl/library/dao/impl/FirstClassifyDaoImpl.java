@@ -20,10 +20,12 @@ public class FirstClassifyDaoImpl extends CommonMapper<FirstClassify, BaseQuery>
         record.setId(null);
         record.setCreateTime(date);
         record.setModifyTime(date);
+        // record.setModifyUserId(getUserId());
     }
 
     @Override
-    public void updatInit(FirstClassify record, Date date) {
+    public void updateInit(FirstClassify record, Date date) {
         record.setModifyTime(date);
+        // record.setModifyUserId(getUserId());
     }
 }

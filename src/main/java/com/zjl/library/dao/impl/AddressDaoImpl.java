@@ -20,10 +20,12 @@ public class AddressDaoImpl extends CommonMapper<Address, BaseQuery> implements 
         record.setId(null);
         record.setCreateTime(date);
         record.setModifyTime(date);
+        // record.setModifyUserId(getUserId());
     }
 
     @Override
-    public void updatInit(Address record, Date date) {
+    public void updateInit(Address record, Date date) {
         record.setModifyTime(date);
+        // record.setModifyUserId(getUserId());
     }
 }
