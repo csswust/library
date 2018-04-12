@@ -32,8 +32,8 @@ public class BookInfoAction extends BaseAction {
             @RequestParam(required = false) String sTitle,
             @RequestParam(required = false) String sAuthor,
             @RequestParam(required = false) String sPress,
-            @RequestParam Integer page,
-            @RequestParam Integer rows) {
+            @RequestParam(required = false) Integer page,
+            @RequestParam(required = false) Integer rows) {
         APIResult apiResult = new APIResult();
         BaseQuery baseQuery = new BaseQuery();
         if (StringUtils.isNotBlank(sTitle)) {
