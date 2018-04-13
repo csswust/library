@@ -41,6 +41,10 @@ $(function () {
                         var rander = template("getcontent", list[i]);
                         $(".goodList_leftContent").append(rander);
                     }
+                    $(".addShoppingCart").click(function () {
+                        var bookListId = this.name;
+                        addShoppingCart.addShoppingCart_success(bookListId);
+                    });
                 }
             });
         }
@@ -75,4 +79,28 @@ $(function () {
         program.stitle = $("#keyword").val();
         program.bookList();
     });
+
+    //添加购物车
+    var addShoppingCart = {
+        book_number: "1",
+        addShoppingCart_success: function (bookListId) {
+            $.ajax({
+                type: "POST",
+                url: "/library/shoppingCart/insertOne",
+                dataType: "json",
+                async: false,
+                data:{
+                    bookId: bookListId,
+                    number: addShoppingCart.book_number
+                },
+                success: function (result) {
+                    console.log(result);
+                    if(result.status == 1){
+                        window.location.href = "../ShoppingCart/addShoppingCart_success.html?id="+ result.id;
+                    }
+                }
+            });
+        }
+    };
+
 });

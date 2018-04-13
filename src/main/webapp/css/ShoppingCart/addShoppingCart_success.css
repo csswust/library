@@ -63,6 +63,12 @@ li{
 	height: 54px;
 	margin: 6px 0px 0px 6px;
 }
+#addShoppingCart_content .addShoppingCart_contentBottom
+.addShoppingCart_goodInfo .book_name{
+	width: 100%;
+	height:30px;
+	line-height: 20px;
+}
 #addShoppingCart_content .addShoppingCart_contentBottom 
 .addShoppingCart_goodInfo .book_name>a{
 	float: left;
@@ -85,14 +91,21 @@ li{
 #addShoppingCart_content .addShoppingCart_contentBottom 
 .addShoppingCart_goodInfo .book_price>span{
 	font-size: 12px;
+}
+#addShoppingCart_content .addShoppingCart_contentBottom 
+.addShoppingCart_goodInfo .book_price>span:nth-child(1),
+#addShoppingCart_content .addShoppingCart_contentBottom
+.addShoppingCart_goodInfo .book_price>span:nth-child(2){
+	color: #E60000;
+}
+#addShoppingCart_content .addShoppingCart_contentBottom
+.addShoppingCart_goodInfo .book_price>span:nth-child(2){
 	margin-right: 20px;
 }
 #addShoppingCart_content .addShoppingCart_contentBottom 
-.addShoppingCart_goodInfo .book_price>span:nth-child(1){
-	color: #E60000;
-}
-#addShoppingCart_content .addShoppingCart_contentBottom 
-.addShoppingCart_goodInfo .book_price>span:nth-child(2){
+.addShoppingCart_goodInfo .book_price>span:nth-child(3),
+#addShoppingCart_content .addShoppingCart_contentBottom
+.addShoppingCart_goodInfo .book_price>span:nth-child(4){
 	color: #999999;
 	text-decoration: line-through;
 }
