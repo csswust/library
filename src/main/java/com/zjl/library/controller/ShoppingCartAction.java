@@ -53,6 +53,7 @@ public class ShoppingCartAction extends BaseAction {
         shoppingCart.setStatus(0);
         int result = shoppingCartDao.insertSelective(shoppingCart);
         res.put("status", result);
+        res.put("id", shoppingCart.getId());
         return res;
     }
 
