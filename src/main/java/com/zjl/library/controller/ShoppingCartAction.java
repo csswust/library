@@ -1,8 +1,10 @@
 package com.zjl.library.controller;
 
 import com.zjl.library.controller.common.BaseAction;
+import com.zjl.library.dao.BookInfoDao;
 import com.zjl.library.dao.ShoppingCartDao;
 import com.zjl.library.dao.common.BaseQuery;
+import com.zjl.library.entity.BookInfo;
 import com.zjl.library.entity.ShoppingCart;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +26,8 @@ import java.util.Map;
 public class ShoppingCartAction extends BaseAction {
     @Autowired
     private ShoppingCartDao shoppingCartDao;
+    @Autowired
+    private BookInfoDao bookInfoDao;
 
     @RequestMapping(value = "/selectByCondition", method = {RequestMethod.GET, RequestMethod.POST})
     public Map<String, Object> selectByCondition(
@@ -41,14 +45,21 @@ public class ShoppingCartAction extends BaseAction {
     }
 
     @RequestMapping(value = "/selectById", method = {RequestMethod.GET, RequestMethod.POST})
-    public ShoppingCart selectById(@RequestParam Integer id) {
-        return shoppingCartDao.selectByPrimaryKey(id);
+    public Object selectById(@RequestParam Integer id) {
+        Map<String, Object> res = new HashMap<>();
+        ShoppingCart shoppingCart = shoppingCartDao.selectByPrimaryKey(id);
+        res.put("shoppingCart", shoppingCart);
+        if (shoppingCart != null) {
+            BookInfo bookInfo = bookInfoDao.selectByPrimaryKey(shoppingCart.getBookId());
+            res.put("bookInfo", bookInfo);
+        }
+        return res;
     }
 
     @RequestMapping(value = "/insertOne", method = {RequestMethod.GET, RequestMethod.POST})
     public Map<String, Object> insertOne(ShoppingCart shoppingCart) {
         Map<String, Object> res = new HashMap<>();
-        int userId = getUserId();
+        int userId = 1;
         shoppingCart.setUserId(userId);
         shoppingCart.setStatus(0);
         int result = shoppingCartDao.insertSelective(shoppingCart);
