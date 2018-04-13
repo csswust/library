@@ -48,6 +48,10 @@ public class BaseAction extends Base {
 
     public Integer getUserId() {
         HttpSession session = request.getSession();
-        return (Integer) session.getAttribute("userId");
+        try {
+            return (Integer) session.getAttribute("userId");
+        } catch (Exception e) {
+            return 1;
+        }
     }
 }
