@@ -48,6 +48,9 @@ public class ShoppingCartAction extends BaseAction {
     @RequestMapping(value = "/insertOne", method = {RequestMethod.GET, RequestMethod.POST})
     public Map<String, Object> insertOne(ShoppingCart shoppingCart) {
         Map<String, Object> res = new HashMap<>();
+        int userId = getUserId();
+        shoppingCart.setUserId(userId);
+        shoppingCart.setStatus(0);
         int result = shoppingCartDao.insertSelective(shoppingCart);
         res.put("status", result);
         return res;
