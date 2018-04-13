@@ -3,8 +3,10 @@ package com.zjl.library.controller;
 import com.zjl.library.common.APIResult;
 import com.zjl.library.controller.common.BaseAction;
 import com.zjl.library.dao.BookInfoDao;
+import com.zjl.library.dao.SecondClassifyDao;
 import com.zjl.library.dao.common.BaseQuery;
 import com.zjl.library.entity.BookInfo;
+import com.zjl.library.entity.SecondClassify;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,6 +27,8 @@ import java.util.Map;
 public class BookInfoAction extends BaseAction {
     @Autowired
     private BookInfoDao bookInfoDao;
+    @Autowired
+    private SecondClassifyDao secondClassifyDao;
 
     @RequestMapping(value = "/selectByCondition", method = {RequestMethod.GET, RequestMethod.POST})
     public Object selectByCondition(
@@ -50,8 +54,15 @@ public class BookInfoAction extends BaseAction {
     }
 
     @RequestMapping(value = "/selectById", method = {RequestMethod.GET, RequestMethod.POST})
-    public BookInfo selectById(@RequestParam Integer id) {
-        return bookInfoDao.selectByPrimaryKey(id);
+    public Object selectById(@RequestParam Integer id) {
+        Map<String, Object> res = new HashMap<>();
+        BookInfo bookInfo = bookInfoDao.selectByPrimaryKey(id);
+        if (bookInfo != null) {
+            SecondClassify secondClassify = secondClassifyDao.selectByPrimaryKey(bookInfo.getSecondId());
+            res.put("secondClassify", secondClassify);
+        }
+        res.put("bookInfo", bookInfo);
+        return res;
     }
 
     @RequestMapping(value = "/insertOne", method = {RequestMethod.GET, RequestMethod.POST})
