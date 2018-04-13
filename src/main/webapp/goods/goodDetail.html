@@ -95,25 +95,8 @@
 		<!--商品详情部分开始-->
 		<div id="goodDetail">
 			<div class="goodDetail_top">
-				<div class="goodDetail_topLeft"><!--放置书籍的主要图片进行介绍-->
-					<a href="#"><img src="../img/goodDetail/main.jpg"/></a>
-				</div>
-				<div class="goodDetail_topMid"><!--放置书籍的主要详情进行介绍-->
-					<h2 class="goodDetail_title">装在套子里的人-契诃夫短篇小说精选</h2>
-					<span class="goodDetail_author">作者：<a href="#">本书编委会</a></span>
-					<span class="goodDetail_press">出版社：<a href="#">江苏美术出版社</a></span>
-					<span class="goodDetail_time">出版时间：<span>2015-05-01</span></span>
-					<span class="goodDetail_size">开本：<span>32</span><span>开</span></span>
-					<span class="goodDetail_page">页数：<span>182</span><span>页</span></span>
-					<span class="goodDetail_category">本书类别：<a href="#">小说</a></span>
-					<div class="goodDetail_price">
-						<span>本书价格：</span>
-						<span>¥</span><span>5.5</span>
-						<span>（4.3折）</span>
-						<span>定价:</span>
-						<span>¥</span><span>12.8</span>
-					</div>
-					<a href="#" class="goodDetail_addShoppingCart">加入购物车</a>
+				<div class="bookDetailContent"><!--放置书籍的主要图片进行介绍-->
+
 				</div>
 				<div class="goodDetail_topRight">
 					<div class="goodDetail_topRight_title">
@@ -289,29 +272,8 @@
 							<a href="#">加入购物车</a>
 						</div>
 					</div>
-					<div id="bookDetail">
-						<div class="copyright">
-							<span>版权信息</span>
-						</div>
-						<div class="copyright_content">
-							<ul>
-								<li>ISBN：<span>9787534488061</span></li>
-								<li>条形码：<span>9787534488061; 978-7-5344-8806-1</span></li>
-								<li>装帧：<span>暂无</span></li>
-								<li>版次：<span>暂无</span></li>
-								<li>册数：<span>暂无</span></li>
-								<li>重量：<span>暂无</span></li>
-								<li>印刷次数：<span>暂无</span></li>
-								<li>所属分类：<span>小说</span></li>
-							</ul>
-						</div>
-						
-						<div class="bookSpecial">
-							<span>本书特色</span>
-						</div>
-						<div class="bookSpecial_content">
-							<p>契诃夫是俄国的***短篇小说巨匠和俄国19世纪末期*后一位批判现实主义艺术大师，是一个有强烈幽默感的作家，他的小说紧凑精炼，言简意赅，给读者以独立思考的余地。其剧作对20世纪戏剧产生了很大的影响。他坚持现实主义传统，注重描写俄国人民的日常生活，塑造具有典型性格的小人物，借此真实反映出当时俄国社会的状况，无情地揭露了沙皇统治下的不合理的社会制度和社会的丑恶现象。代表作有《装在套子里的人》、《小公务员之死》、《变色龙》等。本书精选了契诃夫十余篇短篇小说，以飨读者。</p>
-						</div>
+					<div id="bookDetail" class="bookDetailMain">
+
 					</div>
 					<div id="userReviews">
 						<div class="userReviewsTop">
@@ -395,7 +357,7 @@
 			</div>
 		</div>
 		<!--商品详情部分结束-->
-		
+
 		<!--编辑推荐开始-->
 		<div id="editorRecommend">
 			<div class="editorRecommendTop">
@@ -455,7 +417,7 @@
 			</div>
 		</div>
 		<!--编辑推销结束-->
-		
+
 		<!--商品列表底部开始-->
 		<div class="advancedSearch_homePage_footer">
 			<div class="advancedSearch_homePage_footerTop">
@@ -535,11 +497,62 @@
 			</div>
 		</div>
 		<!--商品列表底部结束-->
-		
-		
+
+
 		<script type="text/javascript" src="../js/jquery-1.12.1.min.js" ></script>
 		<script type="text/javascript" src="../js/goods/goodDetail.js" ></script>
+		<script type="text/javascript" src="../js/artTemplate.js" ></script>
 		<script type="text/javascript" src="../js/dataInteraction/publicData.js" ></script>
 		<script type="text/javascript" src="../js/dataInteraction/goodDetailData.js" ></script>
+		<script id="bookDetail_content" type="text/html">
+			<div class="bookDetailContent">
+				<div class="goodDetail_topLeft"><!--放置书籍的主要图片进行介绍-->
+					<a href="#"><img src="/library/system/download?isImagePath=true&path={{bookInfo.image}}"/></a>
+				</div>
+				<div class="goodDetail_topMid"><!--放置书籍的主要详情进行介绍-->
+					<h2 class="goodDetail_title">{{bookInfo.tile}}</h2>
+					<span class="goodDetail_author">作者：<a href="#">{{bookInfo.author}}</a></span>
+					<span class="goodDetail_press">出版社：<a href="#">{{bookInfo.press}}</a></span>
+					<span class="goodDetail_time">出版时间：<span>{{bookInfo.pressTime}}</span></span>
+					<span class="goodDetail_size">开本：<span>{{bookInfo.bookSize}}</span><span>开</span></span>
+					<span class="goodDetail_page">页数：<span>{{bookInfo.bookPage}}</span><span>页</span></span>
+					<span class="goodDetail_category">本书类别：<a href="#">{{secondClassify.name}}</a></span>
+					<div class="goodDetail_price">
+						<span>本书价格：</span>
+						<span>¥</span><span>{{bookInfo.money}}</span>
+						<span>（4.3折）</span>
+						<span>定价:</span>
+						<span>¥</span><span>{{bookInfo.price}}</span>
+					</div>
+					<a href="javascript:;" class="goodDetail_addShoppingCart">加入购物车</a>
+				</div>
+			</div>
+		</script>
+		<script id="bookDetail_main" type="text/html">
+			<div class="bookDetailMain">
+				<div class="copyright">
+					<span>版权信息</span>
+				</div>
+				<div class="copyright_content">
+					<ul>
+						<li>ISBN：<span>{{bookInfo.isbn}}</span></li>
+						<li>条形码：<span>9787534488061; 978-7-5344-8806-1</span></li>
+						<li>装帧：<span>暂无</span></li>
+						<li>版次：<span>暂无</span></li>
+						<li>册数：<span>暂无</span></li>
+						<li>重量：<span>暂无</span></li>
+						<li>印刷次数：<span>暂无</span></li>
+						<li>所属分类：<span>小说</span></li>
+					</ul>
+				</div>
+
+				<div class="bookSpecial">
+					<span>本书特色</span>
+				</div>
+				<div class="bookSpecial_content">
+					<p>{{bookInfo.bookSpcial}}</p>
+				</div>
+			</div>
+		</script>
 	</body>
 </html>
