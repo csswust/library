@@ -118,7 +118,7 @@ a:hover{
 }
 .myShoppingCart_box .order_info{
 	width: 1000px;
-	height: 58px;
+	height: 28px;
 	line-height: 58px;
 	position: relative;
 	font-size: 14px;
@@ -145,6 +145,8 @@ a:hover{
 
 /*商品列表*/
 .myShoppingCart_box .order_content{
+	width: 1000px;
+	height: 122px;
 	border: 1px solid #E9E9E9;
 }
 .myShoppingCart_box .order_content a{
@@ -365,7 +367,7 @@ a:hover{
 	left: 0px;
 	bottom: 0px;
 	right: 0px;
-	background: rgba(0,0,0,.6);
+	/*background: rgba(0,0,0,.6);*/
 	z-index: 9999999;
 	display: none;
 }
@@ -442,6 +444,7 @@ a:hover{
 	height: 410px;
 	background: white;
 	margin: 0px auto;
+	margin-top: 120px;
 }
 .websiteRecommend .websiteRecommend_list{
 	width: 1000px;

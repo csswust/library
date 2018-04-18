@@ -13,7 +13,7 @@ $(function(){
 			$(this).next('label').removeClass('mark');
 		}
 	});
-	
+
 	//设置全选与单选商品的函数
 	$wholeCheckbox.click(function(){
 		var $checkboxs = $myShoppingCart_box.find('input[type="checkbox"]');
@@ -26,7 +26,7 @@ $(function(){
 		}
 		totalMoney();
 	});
-	
+
 	$sonCheck.each(function(){
 		$(this).click(function(){
 			//判断：所有单个商品是否勾选
@@ -74,7 +74,7 @@ $(function(){
 				//否则，全局全选按钮取消选中状态
 				$wholeCheckbox.prop("checked",false);
 				$wholeCheckbox.next("label").addClass("mark");
-				
+
 				//订单下的checkbox选中状态
 				$(this).parents(".myShoppingCart_box").find(".son_check").prop("checked",false);
 				$(this).parents(".myShoppingCart_box").find(".son_check").next("label").removeClass("mark");
@@ -169,14 +169,14 @@ $(function(){
 	});
 	
 	//移除商品的操作
-	var $myShoppingCart_orderList = null;
-	var $order_content = "";
-	$(".delBtn").click(function(){
-		$myShoppingCart_orderList = $(this).parents(".myShoppingCart_orderList");
-		$order_content = $myShoppingCart_orderList.parents(".order_content");
-		$(".model_box").fadeIn(300);
-		$(".model_content").fadeIn(300);
-	});
+	// var $myShoppingCart_orderList = null;
+	// var $order_content = "";
+	// $(".delBtn").click(function(){
+	// 	$myShoppingCart_orderList = $(this).parents(".myShoppingCart_orderList");
+	// 	$order_content = $myShoppingCart_orderList.parents(".order_content");
+	// 	$(".model_box").fadeIn(300);
+	// 	$(".model_content").fadeIn(300);
+	// });
 	
 	//关闭自定义模态框
 	$(".closeModel").click(function(){
@@ -191,15 +191,15 @@ $(function(){
 	};
 	
 	//点击确定后移除商品
-	$(".dialog-sure").click(function(){
-		$myShoppingCart_orderList.remove();
-		if($order_content.html().trim() == null || $order_content.html().trim().length == 0){
-			$order_content.parents(".myShoppingCart_box").remove();
-		}
-		closeM();
-		$sonCheck = $(".son_check");
-		totalMoney();
-	});
+	// $(".dialog-sure").click(function(){
+	// 	$myShoppingCart_orderList.remove();
+	// 	if($order_content.html().trim() == null || $order_content.html().trim().length == 0){
+	// 		$order_content.parents(".myShoppingCart_box").remove();
+	// 	}
+	// 	closeM();
+	// 	$sonCheck = $(".son_check");
+	// 	totalMoney();
+	// });
 	
 	//总计金额
 	function totalMoney() {
@@ -228,4 +228,11 @@ $(function(){
             }
         }
     };
+
+
+
+
+
+
+
 });
