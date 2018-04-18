@@ -44,7 +44,7 @@ public class ShoppingCartAction extends BaseAction {
                 new BaseQuery(page, rows));
         List<BookInfo> bookInfoList = selectRecordByIds(
                 getFieldByList(shoppingCartList, "bookId", ShoppingCart.class),
-                "bookId", (BaseDao) bookInfoDao, BookInfo.class);
+                "id", (BaseDao) bookInfoDao, BookInfo.class);
         Integer total = shoppingCartDao.selectByConditionGetCount(shoppingCart, new BaseQuery());
         res.put("total", total);
         res.put("list", shoppingCartList);
