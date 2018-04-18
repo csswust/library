@@ -3,6 +3,7 @@ package com.zjl.library.controller;
 import com.zjl.library.controller.common.BaseAction;
 import com.zjl.library.dao.BookInfoDao;
 import com.zjl.library.dao.ShoppingCartDao;
+import com.zjl.library.dao.common.BaseDao;
 import com.zjl.library.dao.common.BaseQuery;
 import com.zjl.library.entity.BookInfo;
 import com.zjl.library.entity.ShoppingCart;
@@ -17,6 +18,9 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import static com.zjl.library.service.common.BatchQueryService.getFieldByList;
+import static com.zjl.library.service.common.BatchQueryService.selectRecordByIds;
 
 /**
  * Created by 972536780 on 2018/4/1.
@@ -38,9 +42,13 @@ public class ShoppingCartAction extends BaseAction {
         Map<String, Object> res = new HashMap<>();
         List<ShoppingCart> shoppingCartList = shoppingCartDao.selectByCondition(shoppingCart,
                 new BaseQuery(page, rows));
+        List<BookInfo> bookInfoList = selectRecordByIds(
+                getFieldByList(shoppingCartList, "bookId", ShoppingCart.class),
+                "bookId", (BaseDao) bookInfoDao, BookInfo.class);
         Integer total = shoppingCartDao.selectByConditionGetCount(shoppingCart, new BaseQuery());
         res.put("total", total);
         res.put("list", shoppingCartList);
+        res.put("bookInfoList", bookInfoList);
         return res;
     }
 
