@@ -54,7 +54,6 @@ $(function () {
                     if(result.status == 1){
                         window.location.href = "../ShoppingCart/addShoppingCart_success.html?id="+ result.id;
                     }
-
                 }
             });
         }

@@ -31,8 +31,8 @@
 					<div class="book_detail"><a href="#"><img src="../img/ShoppingCart/addShoppingCart.jpg"/></a></div>
 					<div class="book_name"><a href="#">毛毛虫纸板书:小蝌蚪找妈妈+好乖乖+两只老鼠胆子大(套装3册)</a></div>
 					<div class="book_price">
-						<span>￥52.3</span>
-						<span>￥78.0</span>
+						<span>￥</span><span>52.3</span>
+						<span>￥</span><span>78.0</span>
 					</div>
 				</div>
 				<div class="addShoppingCart_contentButton">
@@ -99,5 +99,20 @@
 				</div>
 			</div>
 		</div>
+
+		<script type="text/javascript" src="../js/jquery-1.12.1.min.js" ></script>
+		<script type="text/javascript" src="../js/artTemplate.js" ></script>
+		<script type="text/javascript" src="../js/dataInteraction/publicData.js" ></script>
+		<script type="text/javascript" src="../js/dataInteraction/addShoppingCartSuccessData.js" ></script>
+		<script id="addShoppingCartSuccess" type="text/html">
+			<div class="addShoppingCart_goodInfo">
+				<div class="book_detail"><a href="#"><img src="/library/system/download?isImagePath=true&path={{image}}"/></a></div>
+				<div class="book_name"><a href="#">{{tile}}</a></div>
+				<div class="book_price">
+					<span>￥</span><span>{{money}}</span>
+					<span>￥</span><span>{{price}}</span>
+				</div>
+			</div>
+		</script>
 	</body>
 </html>
