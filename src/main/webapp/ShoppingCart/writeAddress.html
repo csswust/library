@@ -205,9 +205,10 @@
 							            </dd>
 							        </dl>
 							</script>
-						    <script src="js/base.min.js"></script>
-						    <script type="text/javascript" src="js/address_all.js"></script>
-							<script type="text/javascript" src="js/checkout.min.js"></script> 
+
+						    <!--<script src="../js/ShoppingCart/base.min.js"></script>-->
+						    <!--<script type="text/javascript" src="../js/ShoppingCart/address_all.js"></script>-->
+							<!--<script type="text/javascript" src="../js/ShoppingCart/checkout.min.js"></script>-->
 					 	</div>
 					</div>
 					<!--增加收货地址部分结束-->
@@ -341,40 +342,40 @@
 											<span>￥16.3</span>
 										</div>
 									</li>
-									<li>
-										<div class="bookList_Content_name">
-											<a href="#">解忧杂货店</a>
-										</div>
-										<div class="bookList_Content_price">
-											<span>￥39.5</span>
-										</div>
-										<div class="bookList_Content_sell">
-											<span>￥29.6</span>
-										</div>
-										<div class="bookList_Content_num">
-											<span>1</span>
-										</div>
-										<div class="bookList_Content_sum">
-											<span>￥29.6</span>
-										</div>
-									</li>
-									<li>
-										<div class="bookList_Content_name">
-											<a href="#">毛毛虫纸板书:小蝌蚪找妈妈+好乖乖+两只老鼠胆子大(套装3册)</a>
-										</div>
-										<div class="bookList_Content_price">
-											<span>￥78.0</span>
-										</div>
-										<div class="bookList_Content_sell">
-											<span>￥52.3</span>
-										</div>
-										<div class="bookList_Content_num">
-											<span>4</span>
-										</div>
-										<div class="bookList_Content_sum">
-											<span>￥209.2</span>
-										</div>
-									</li>
+									<!--<li>-->
+										<!--<div class="bookList_Content_name">-->
+											<!--<a href="#">解忧杂货店</a>-->
+										<!--</div>-->
+										<!--<div class="bookList_Content_price">-->
+											<!--<span>￥39.5</span>-->
+										<!--</div>-->
+										<!--<div class="bookList_Content_sell">-->
+											<!--<span>￥29.6</span>-->
+										<!--</div>-->
+										<!--<div class="bookList_Content_num">-->
+											<!--<span>1</span>-->
+										<!--</div>-->
+										<!--<div class="bookList_Content_sum">-->
+											<!--<span>￥29.6</span>-->
+										<!--</div>-->
+									<!--</li>-->
+									<!--<li>-->
+										<!--<div class="bookList_Content_name">-->
+											<!--<a href="#">毛毛虫纸板书:小蝌蚪找妈妈+好乖乖+两只老鼠胆子大(套装3册)</a>-->
+										<!--</div>-->
+										<!--<div class="bookList_Content_price">-->
+											<!--<span>￥78.0</span>-->
+										<!--</div>-->
+										<!--<div class="bookList_Content_sell">-->
+											<!--<span>￥52.3</span>-->
+										<!--</div>-->
+										<!--<div class="bookList_Content_num">-->
+											<!--<span>4</span>-->
+										<!--</div>-->
+										<!--<div class="bookList_Content_sum">-->
+											<!--<span>￥209.2</span>-->
+										<!--</div>-->
+									<!--</li>-->
 								</ul>
 							</div>
 						</div>
@@ -493,5 +494,32 @@
 		<script type="text/javascript" src="../js/ShoppingCart/base.min.js" ></script>
 		<script type="text/javascript" src="../js/ShoppingCart/address_all.js" ></script>
 		<script type="text/javascript" src="../js/ShoppingCart/checkout.min.js" ></script>
+		<script type="text/javascript" src="../js/jquery.pagination.js" ></script>
+		<script type="text/javascript" src="../js/artTemplate.js" ></script>
+		<script type="text/javascript" src="../js/dataInteraction/publicData.js" ></script>
+		<script type="text/javascript" src="../js/dataInteraction/writeAddressData.js" ></script>
+		<script id="bookOrderList" type="text/html">
+			<div class="bookList_Content">
+				<ul>
+					<li>
+						<div class="bookList_Content_name">
+							<a href="#">{{tile}}</a>
+						</div>
+						<div class="bookList_Content_price">
+							<span>￥{{price}}</span>
+						</div>
+						<div class="bookList_Content_sell">
+							<span>￥{{money}}</span>
+						</div>
+						<div class="bookList_Content_num">
+							<span>{{number}}</span>
+						</div>
+						<div class="bookList_Content_sum">
+							<span>￥{{sumCount}}</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</script>
 	</body>
 </html>
