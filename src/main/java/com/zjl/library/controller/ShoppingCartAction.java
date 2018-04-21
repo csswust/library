@@ -39,6 +39,7 @@ public class ShoppingCartAction extends BaseAction {
             @RequestParam(required = false) Integer page,
             @RequestParam(required = false) Integer rows) {
         if (shoppingCart == null) return null;
+        shoppingCart.setStatus(0);
         Map<String, Object> res = new HashMap<>();
         List<ShoppingCart> shoppingCartList = shoppingCartDao.selectByCondition(shoppingCart,
                 new BaseQuery(page, rows));
