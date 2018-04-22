@@ -297,11 +297,11 @@ li{
 	height: 80px;
 	line-height: 110px;
 }
-.leaveWord .leaveWord_top .leaveWord_topRight>ul>li:last-child>div:nth-child(2){
-	font-size: 24px;
-}
 .leaveWord .leaveWord_top .leaveWord_topRight>ul>li:last-child>div:nth-child(2)>span{
 	font-size: 14px;
+}
+.leaveWord .leaveWord_top .leaveWord_topRight>ul>li:last-child>div:nth-child(2)>span:nth-child(1){
+	font-size: 24px;
 }
 .leaveWord .leaveWord_bottom{
 	width: 960px;

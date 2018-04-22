@@ -34,7 +34,6 @@ $(function () {
                     program.count = result.data.total;
                     var list = result.data.bookInfoList;
 
-
                     $(".goodList_leftContent").empty();
                     for(var i = 0; i < list.length; i++){
                         list[i].pressTime=list[i].pressTime.split(" ")[0];//获取日期的年、月、日

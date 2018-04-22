@@ -4,9 +4,10 @@
 $(function () {
    var writeAddress = {
        list_id: "",
+       sum:0,
        myOrderBookList: function () {
             $.ajax({
-                type: "POST",
+                type: "GET",
                 url: "/library/bookOrder/selectById",
                 dataType: "json",
                 async: false,
@@ -14,21 +15,25 @@ $(function () {
                     id: writeAddress.id
                 },
                 success: function (result) {
-                    // alert(2);
                     console.log(result);
+                    var orderList = result.data.orderBookList;
+                    var bookList = result.data.bookInfoList;
+                    console.log(bookList);
+                    console.log(orderList);
+                    console.log(orderList.length);
 
-                    // var orderList = result.orderBookList;
-                    var bookList = result.bookInfoList;
-                    console.log(result.bookInfoList);
                     $(".bookList_Content").empty();
-                    bookList.number = result.orderBookList.number;
-
-                    bookList.sumCount = bookList.number * bookList.money;
-                    var writeAddressRander = template("bookOrderList", bookList[i]);
-                    $(".bookList_Content").append(writeAddressRander);
+                    var html ="";
+                    for(var i = 0; i < orderList.length; i++){
+                        bookList[i].id = orderList[i].bookId;
+                        bookList[i].number = orderList[i].number;
+                        bookList[i].sumCount = bookList[i].number * bookList[i].money;
+                        writeAddress.sum += bookList[i].sumCount;
+                        html += template("bookOrderList", bookList[i]);
+                    }
+                    $(".bookList_Content").append(html);
                 }
             });
-
        }
    }
     var request = new urlSearch();//实例化
@@ -41,4 +46,6 @@ $(function () {
     // console.log(len);
 
     writeAddress.myOrderBookList();
+    $("#sum").text(writeAddress.sum + "元");
+    $("#sumMoney").text(writeAddress.sum);
 });
