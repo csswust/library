@@ -11,7 +11,7 @@ $(function () {
         book_press: "",
         book_money: "",
         book_price: "",
-        book_spcial: "",
+        book_special: "",
         page: "1",
         row: 13,
         bookInfoList: [],
@@ -33,7 +33,6 @@ $(function () {
                     console.log(result);
                     program.count = result.data.total;
                     var list = result.data.bookInfoList;
-
 
                     $(".goodList_leftContent").empty();
                     for(var i = 0; i < list.length; i++){

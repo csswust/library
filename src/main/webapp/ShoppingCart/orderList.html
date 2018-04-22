@@ -102,57 +102,6 @@
 								<a href="#">撰写书评</a>
 							</div>
 						</li>
-						<li>
-							<div class="orderList_Main_orderNum">
-								<span>123456123456</span>
-							</div>
-							<div class="orderList_Main_sumMoney">
-								<span>¥230.00</span>
-							</div>
-							<div class="orderList_Main_date">
-								<span>2018-02-24</span>
-							</div>
-							<div class="orderList_Main_State">
-								<span>已收货</span>
-							</div>
-							<div class="orderList_Main_operation">
-								<a href="#">撰写书评</a>
-							</div>
-						</li>
-						<li>
-							<div class="orderList_Main_orderNum">
-								<span>123456123456</span>
-							</div>
-							<div class="orderList_Main_sumMoney">
-								<span>¥230.00</span>
-							</div>
-							<div class="orderList_Main_date">
-								<span>2018-02-24</span>
-							</div>
-							<div class="orderList_Main_State">
-								<span>待收货</span>
-							</div>
-							<div class="orderList_Main_operation">
-								<!--<a href="#">撰写书评</a>-->
-							</div>
-						</li>
-						<li>
-							<div class="orderList_Main_orderNum">
-								<span>123456123456</span>
-							</div>
-							<div class="orderList_Main_sumMoney">
-								<span>¥230.00</span>
-							</div>
-							<div class="orderList_Main_date">
-								<span>2018-02-24</span>
-							</div>
-							<div class="orderList_Main_State">
-								<span>已收货</span>
-							</div>
-							<div class="orderList_Main_operation">
-								<a href="#">撰写书评</a>
-							</div>
-						</li>
 					</ul>
 				</div>
 			</div>
@@ -219,5 +168,35 @@
 			</div>
 		</div>
 		<!--底部导航部分结束-->
+
+		<script type="text/javascript" src="../js/jquery-1.12.1.min.js"></script>
+		<script type="text/javascript" src="../js/jquery.pagination.js" ></script>
+		<script type="text/javascript" src="../js/artTemplate.js" ></script>
+		<script type="text/javascript" src="../js/dataInteraction/orderListData.js" ></script>
+		<script id="orderList" type="text/html">
+			<div class="orderList_Main">
+				<ul>
+					<li>
+						<div class="orderList_Main_orderNum">
+							<span>{{id}}</span>
+						</div>
+						<div class="orderList_Main_sumMoney">
+							<span>¥230.00</span>
+						</div>
+						<div class="orderList_Main_date">
+							<span>{{createTime}}</span>
+						</div>
+						<div class="orderList_Main_State">
+							<span>{{orderStatus}}</span>
+						</div>
+						<div class="orderList_Main_operation">
+							{{if status == 1}}
+								<a href="javascript:;" id="writeComment">撰写书评</a>
+							{{/if}}
+						</div>
+					</li>
+				</ul>
+			</div>
+		</script>
 	</body>
 </html>
