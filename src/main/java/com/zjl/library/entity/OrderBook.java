@@ -11,6 +11,8 @@ public class OrderBook {
 
     private Integer number;
 
+    private Double subtotal;
+
     private Date createTime;
 
     private Date modifyTime;
@@ -47,6 +49,14 @@ public class OrderBook {
 
     public void setNumber(Integer number) {
         this.number = number;
+    }
+
+    public Double getSubtotal() {
+        return subtotal;
+    }
+
+    public void setSubtotal(Double subtotal) {
+        this.subtotal = subtotal;
     }
 
     public Date getCreateTime() {

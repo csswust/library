@@ -5,7 +5,7 @@ import java.util.Date;
 public class BookInfo {
     private Integer id;
 
-    private String tile;
+    private String title;
 
     private String image;
 
@@ -31,7 +31,9 @@ public class BookInfo {
 
     private Date modifyTime;
 
-    private String bookSpcial;
+    private String bookIntroduction;
+
+    private String bookSpecial;
 
     public Integer getId() {
         return id;
@@ -41,12 +43,12 @@ public class BookInfo {
         this.id = id;
     }
 
-    public String getTile() {
-        return tile;
+    public String getTitle() {
+        return title;
     }
 
-    public void setTile(String tile) {
-        this.tile = tile == null ? null : tile.trim();
+    public void setTitle(String title) {
+        this.title = title == null ? null : title.trim();
     }
 
     public String getImage() {
@@ -145,11 +147,19 @@ public class BookInfo {
         this.modifyTime = modifyTime;
     }
 
-    public String getBookSpcial() {
-        return bookSpcial;
+    public String getBookIntroduction() {
+        return bookIntroduction;
     }
 
-    public void setBookSpcial(String bookSpcial) {
-        this.bookSpcial = bookSpcial == null ? null : bookSpcial.trim();
+    public void setBookIntroduction(String bookIntroduction) {
+        this.bookIntroduction = bookIntroduction == null ? null : bookIntroduction.trim();
+    }
+
+    public String getBookSpecial() {
+        return bookSpecial;
+    }
+
+    public void setBookSpecial(String bookSpecial) {
+        this.bookSpecial = bookSpecial == null ? null : bookSpecial.trim();
     }
 }

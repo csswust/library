@@ -12,9 +12,9 @@
             AND
             id = #{record.id}
         </if>
-        <if test="record.tile != null">
+        <if test="record.title != null">
             AND
-            tile = #{record.tile}
+            title = #{record.title}
         </if>
         <if test="record.image != null">
             AND
@@ -64,9 +64,13 @@
             AND
             modify_time = #{record.modifyTime}
         </if>
-        <if test="record.bookSpcial != null">
+        <if test="record.bookIntroduction != null">
             AND
-            book_spcial = #{record.bookSpcial}
+            book_introduction = #{record.bookIntroduction}
+        </if>
+        <if test="record.bookSpecial != null">
+            AND
+            book_special = #{record.bookSpecial}
         </if>
 
         <include refid="custom_condition"/>
@@ -83,9 +87,9 @@
             AND
             id = #{record.id}
         </if>
-        <if test="record.tile != null">
+        <if test="record.title != null">
             AND
-            tile = #{record.tile}
+            title = #{record.title}
         </if>
         <if test="record.image != null">
             AND
@@ -135,9 +139,13 @@
             AND
             modify_time = #{record.modifyTime}
         </if>
-        <if test="record.bookSpcial != null">
+        <if test="record.bookIntroduction != null">
             AND
-            book_spcial = #{record.bookSpcial}
+            book_introduction = #{record.bookIntroduction}
+        </if>
+        <if test="record.bookSpecial != null">
+            AND
+            book_special = #{record.bookSpecial}
         </if>
 
         <include refid="custom_condition"/>
@@ -165,9 +173,9 @@
     </select>
     <select id="insertBatch" parameterType="java.util.Map">
         insert into book_info
-        (tile, image, author, press_time, press, second_id, money, price, ISBN, book_size, book_page, create_time, modify_time, book_spcial) values
+        (title, image, author, press_time, press, second_id, money, price, ISBN, book_size, book_page, create_time, modify_time, book_introduction, book_special) values
         <foreach collection="list" item="item" index="index" separator=",">
-            (#{item.tile}, #{item.image}, #{item.author}, #{item.pressTime}, #{item.press}, #{item.secondId}, #{item.money}, #{item.price}, #{item.isbn}, #{item.bookSize}, #{item.bookPage}, #{item.createTime}, #{item.modifyTime}, #{item.bookSpcial})
+            (#{item.title}, #{item.image}, #{item.author}, #{item.pressTime}, #{item.press}, #{item.secondId}, #{item.money}, #{item.price}, #{item.isbn}, #{item.bookSize}, #{item.bookPage}, #{item.createTime}, #{item.modifyTime}, #{item.bookIntroduction}, #{item.bookSpecial})
         </foreach>
     </select>
 </mapper>

@@ -7,6 +7,10 @@ public class BookComment {
 
     private Integer userId;
 
+    private Integer orderId;
+
+    private Integer bookId;
+
     private String title;
 
     private Integer score;
@@ -31,6 +35,22 @@ public class BookComment {
 
     public void setUserId(Integer userId) {
         this.userId = userId;
+    }
+
+    public Integer getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(Integer orderId) {
+        this.orderId = orderId;
+    }
+
+    public Integer getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(Integer bookId) {
+        this.bookId = bookId;
     }
 
     public String getTitle() {

@@ -14,6 +14,10 @@
             AND
             address_id = #{record.addressId}
         </if>
+        <if test="record.totalMoney != null">
+            AND
+            total_money = #{record.totalMoney}
+        </if>
         <if test="record.status != null">
             AND
             status = #{record.status}
@@ -44,6 +48,10 @@
         <if test="record.addressId != null">
             AND
             address_id = #{record.addressId}
+        </if>
+        <if test="record.totalMoney != null">
+            AND
+            total_money = #{record.totalMoney}
         </if>
         <if test="record.status != null">
             AND
@@ -81,9 +89,9 @@
     </select>
     <select id="insertBatch" parameterType="java.util.Map">
         insert into book_order
-        (address_id, status, create_time, modify_time) values
+        (address_id, total_money, status, create_time, modify_time) values
         <foreach collection="list" item="item" index="index" separator=",">
-            (#{item.addressId}, #{item.status}, #{item.createTime}, #{item.modifyTime})
+            (#{item.addressId}, #{item.totalMoney}, #{item.status}, #{item.createTime}, #{item.modifyTime})
         </foreach>
     </select>
 </mapper>

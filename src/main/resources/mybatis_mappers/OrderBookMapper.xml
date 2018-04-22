@@ -6,6 +6,7 @@
         <result column="order_id" property="orderId" jdbcType="INTEGER" />
         <result column="book_id" property="bookId" jdbcType="INTEGER" />
         <result column="number" property="number" jdbcType="INTEGER" />
+        <result column="subtotal" property="subtotal" jdbcType="DOUBLE" />
         <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
         <result column="modify_time" property="modifyTime" jdbcType="TIMESTAMP" />
     </resultMap>
@@ -13,7 +14,7 @@
         <result column="note" property="note" jdbcType="LONGVARCHAR" />
     </resultMap>
     <sql id="Base_Column_List" >
-        id, order_id, book_id, `number`, create_time, modify_time
+        id, order_id, book_id, `number`, subtotal, create_time, modify_time
     </sql>
     <sql id="Blob_Column_List" >
         note
@@ -32,11 +33,11 @@
     </delete>
     <insert id="insert" parameterType="com.zjl.library.entity.OrderBook" useGeneratedKeys="true" keyProperty="id" >
         insert into order_book (order_id, book_id, `number`, 
-            create_time, modify_time, note
-            )
+            subtotal, create_time, modify_time, 
+            note)
         values (#{orderId,jdbcType=INTEGER}, #{bookId,jdbcType=INTEGER}, #{number,jdbcType=INTEGER}, 
-            #{createTime,jdbcType=TIMESTAMP}, #{modifyTime,jdbcType=TIMESTAMP}, #{note,jdbcType=LONGVARCHAR}
-            )
+            #{subtotal,jdbcType=DOUBLE}, #{createTime,jdbcType=TIMESTAMP}, #{modifyTime,jdbcType=TIMESTAMP}, 
+            #{note,jdbcType=LONGVARCHAR})
     </insert>
     <insert id="insertSelective" parameterType="com.zjl.library.entity.OrderBook" useGeneratedKeys="true" keyProperty="id" >
         insert into order_book
@@ -49,6 +50,9 @@
             </if>
             <if test="number != null" >
                 `number`,
+            </if>
+            <if test="subtotal != null" >
+                subtotal,
             </if>
             <if test="createTime != null" >
                 create_time,
@@ -69,6 +73,9 @@
             </if>
             <if test="number != null" >
                 #{number,jdbcType=INTEGER},
+            </if>
+            <if test="subtotal != null" >
+                #{subtotal,jdbcType=DOUBLE},
             </if>
             <if test="createTime != null" >
                 #{createTime,jdbcType=TIMESTAMP},
@@ -93,6 +100,9 @@
             <if test="number != null" >
                 `number` = #{number,jdbcType=INTEGER},
             </if>
+            <if test="subtotal != null" >
+                subtotal = #{subtotal,jdbcType=DOUBLE},
+            </if>
             <if test="createTime != null" >
                 create_time = #{createTime,jdbcType=TIMESTAMP},
             </if>
@@ -110,6 +120,7 @@
         set order_id = #{orderId,jdbcType=INTEGER},
             book_id = #{bookId,jdbcType=INTEGER},
             `number` = #{number,jdbcType=INTEGER},
+            subtotal = #{subtotal,jdbcType=DOUBLE},
             create_time = #{createTime,jdbcType=TIMESTAMP},
             modify_time = #{modifyTime,jdbcType=TIMESTAMP},
             note = #{note,jdbcType=LONGVARCHAR}
@@ -120,6 +131,7 @@
         set order_id = #{orderId,jdbcType=INTEGER},
             book_id = #{bookId,jdbcType=INTEGER},
             `number` = #{number,jdbcType=INTEGER},
+            subtotal = #{subtotal,jdbcType=DOUBLE},
             create_time = #{createTime,jdbcType=TIMESTAMP},
             modify_time = #{modifyTime,jdbcType=TIMESTAMP}
         where id = #{id,jdbcType=INTEGER}

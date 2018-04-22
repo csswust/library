@@ -45,9 +45,9 @@ public class Generator {
             }
             Model model = Generator.getModel(file);
             System.out.println(JSON.toJSONString(model));
-            DaoImplGenerator.generator(model);
+            //DaoImplGenerator.generator(model);
             MapperImplGenerator.generator(model);
-            ActionGenerator.generator(model);
+            //ActionGenerator.generator(model);
         }
     }
 

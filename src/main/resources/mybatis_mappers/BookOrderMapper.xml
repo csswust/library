@@ -4,12 +4,13 @@
     <resultMap id="BaseResultMap" type="com.zjl.library.entity.BookOrder" >
         <id column="id" property="id" jdbcType="INTEGER" />
         <result column="address_id" property="addressId" jdbcType="INTEGER" />
+        <result column="total_money" property="totalMoney" jdbcType="DOUBLE" />
         <result column="status" property="status" jdbcType="INTEGER" />
         <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
         <result column="modify_time" property="modifyTime" jdbcType="TIMESTAMP" />
     </resultMap>
     <sql id="Base_Column_List" >
-        id, address_id, `status`, create_time, modify_time
+        id, address_id, total_money, `status`, create_time, modify_time
     </sql>
     <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
         select 
@@ -22,16 +23,19 @@
         where id = #{id,jdbcType=INTEGER}
     </delete>
     <insert id="insert" parameterType="com.zjl.library.entity.BookOrder" useGeneratedKeys="true" keyProperty="id" >
-        insert into book_order (address_id, `status`, create_time, 
-            modify_time)
-        values (#{addressId,jdbcType=INTEGER}, #{status,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
-            #{modifyTime,jdbcType=TIMESTAMP})
+        insert into book_order (address_id, total_money, `status`, 
+            create_time, modify_time)
+        values (#{addressId,jdbcType=INTEGER}, #{totalMoney,jdbcType=DOUBLE}, #{status,jdbcType=INTEGER}, 
+            #{createTime,jdbcType=TIMESTAMP}, #{modifyTime,jdbcType=TIMESTAMP})
     </insert>
     <insert id="insertSelective" parameterType="com.zjl.library.entity.BookOrder" useGeneratedKeys="true" keyProperty="id" >
         insert into book_order
         <trim prefix="(" suffix=")" suffixOverrides="," >
             <if test="addressId != null" >
                 address_id,
+            </if>
+            <if test="totalMoney != null" >
+                total_money,
             </if>
             <if test="status != null" >
                 `status`,
@@ -46,6 +50,9 @@
         <trim prefix="values (" suffix=")" suffixOverrides="," >
             <if test="addressId != null" >
                 #{addressId,jdbcType=INTEGER},
+            </if>
+            <if test="totalMoney != null" >
+                #{totalMoney,jdbcType=DOUBLE},
             </if>
             <if test="status != null" >
                 #{status,jdbcType=INTEGER},
@@ -64,6 +71,9 @@
             <if test="addressId != null" >
                 address_id = #{addressId,jdbcType=INTEGER},
             </if>
+            <if test="totalMoney != null" >
+                total_money = #{totalMoney,jdbcType=DOUBLE},
+            </if>
             <if test="status != null" >
                 `status` = #{status,jdbcType=INTEGER},
             </if>
@@ -79,6 +89,7 @@
     <update id="updateByPrimaryKey" parameterType="com.zjl.library.entity.BookOrder" >
         update book_order
         set address_id = #{addressId,jdbcType=INTEGER},
+            total_money = #{totalMoney,jdbcType=DOUBLE},
             `status` = #{status,jdbcType=INTEGER},
             create_time = #{createTime,jdbcType=TIMESTAMP},
             modify_time = #{modifyTime,jdbcType=TIMESTAMP}

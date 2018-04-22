@@ -7,6 +7,8 @@ public class BookOrder {
 
     private Integer addressId;
 
+    private Double totalMoney;
+
     private Integer status;
 
     private Date createTime;
@@ -27,6 +29,14 @@ public class BookOrder {
 
     public void setAddressId(Integer addressId) {
         this.addressId = addressId;
+    }
+
+    public Double getTotalMoney() {
+        return totalMoney;
+    }
+
+    public void setTotalMoney(Double totalMoney) {
+        this.totalMoney = totalMoney;
     }
 
     public Integer getStatus() {
