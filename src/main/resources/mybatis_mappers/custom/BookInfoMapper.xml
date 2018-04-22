@@ -4,7 +4,7 @@
     <sql id="custom_condition">
         <if test="query.customParam.sTitle != null">
             AND
-            tile like CONCAT('%',#{query.customParam.sTitle},'%')
+            title like CONCAT('%',#{query.customParam.sTitle},'%')
         </if>
         <if test="query.customParam.sAuthor != null">
             AND
