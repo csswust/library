@@ -56,21 +56,32 @@ public class BookOrderAction extends BaseAction {
             return apiResult;
         }
         int orderId = bookOrder.getId(), count = 0;
+        double totalMoney = 0.0;
         for (int i = 0; i < idList.size(); i++) {
             ShoppingCart shoppingCart = shoppingCartDao.selectByPrimaryKey(idList.get(i));
             if (shoppingCart == null) continue;
             if (shoppingCart.getId() == null) continue;
             if (shoppingCart.getBookId() == null) continue;
+            BookInfo bookInfo = bookInfoDao.selectByPrimaryKey(shoppingCart.getBookId());
+            if (bookInfo == null) continue;
+            if (bookInfo.getMoney() == null) continue;
             OrderBook orderBook = new OrderBook();
             orderBook.setBookId(shoppingCart.getBookId());
             orderBook.setOrderId(orderId);
             orderBook.setNumber(shoppingCart.getNumber());
+            double subtotal = orderBook.getNumber() * bookInfo.getMoney();
+            totalMoney += subtotal;
+            orderBook.setSubtotal(subtotal);
             count += orderBookDao.insertSelective(orderBook);
             ShoppingCart record = new ShoppingCart();
             record.setId(shoppingCart.getId());
             record.setStatus(1);
             shoppingCartDao.updateByPrimaryKeySelective(record);
         }
+        BookOrder record = new BookOrder();
+        record.setId(orderId);
+        record.setTotalMoney(totalMoney);
+        bookOrderDao.updateByPrimaryKeySelective(record);
         apiResult.setData("orderId", orderId);
         apiResult.setData("count", count);
         apiResult.setStatusAndDesc(1, "创建订单成功");
