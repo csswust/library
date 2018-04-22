@@ -27,6 +27,8 @@ $(function () {
 
                     $(".myShoppingCart_box").empty();
                     for(var i = 0; i < bookList.length; i++) {
+                        bookList[i].list_id = shoppingCartList[i].id;
+                        // console.log(bookList[i].list_id);
                         bookList[i].reduceShoppingCartId = shoppingCartList[i].id;
                         bookList[i].addShoppingCartId = shoppingCartList[i].id;
                         bookList[i].number = result.list[i].number;
@@ -115,9 +117,45 @@ $(function () {
     });
 
 
-
+    var createOrder = {
+        id:"",
+        arr:"",
+        createOrderList: function () {
+            $.ajax({
+                type: "POST",
+                url: "/library/bookOrder/createOrder",
+                dataType: "json",
+                async: false,
+                data:{
+                    ids: createOrder.arr
+                },
+                success: function (result) {
+                    if(result.status == -1){
+                        alert(result.desc);
+                    }else if(result.status == 1){
+                        alert(result.desc);
+                        window.location.href = "writeAddress.html?createOrderId=" + result.data.orderId;
+                    }
+                },
+                error:function () {
+                    alert(1111111);
+                }
+            });
+        }
+    }
 
     $(".calBtn").click(function () {
-        window.location.href =  "writeAddress.html";
+        obj = document.getElementsByClassName("son_check");
+        check_val = [];
+        for(k in obj){
+            if(obj[k].checked){
+                check_val.push(obj[k].id);
+            }
+        }
+        // alert(check_val);
+        // console.log(check_val);
+        createOrder.arr = check_val.join(",");
+        console.log(check_val);
+        createOrder.createOrderList();
     });
 });
