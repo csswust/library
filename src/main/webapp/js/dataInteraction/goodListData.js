@@ -32,6 +32,8 @@ $(function () {
                 success: function (result) {
                     console.log(result);
                     program.count = result.data.total;
+                    console.log(result.data.total);
+
                     var list = result.data.bookInfoList;
 
                     $(".goodList_leftContent").empty();
