@@ -1,8 +1,13 @@
 package com.zjl.library.controller;
 
+import com.zjl.library.common.APIResult;
 import com.zjl.library.controller.common.BaseAction;
+import com.zjl.library.dao.BookInfoDao;
+import com.zjl.library.dao.BookOrderDao;
 import com.zjl.library.dao.OrderBookDao;
 import com.zjl.library.dao.common.BaseQuery;
+import com.zjl.library.entity.BookInfo;
+import com.zjl.library.entity.BookOrder;
 import com.zjl.library.entity.OrderBook;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +29,10 @@ import java.util.Map;
 public class OrderBookAction extends BaseAction {
     @Autowired
     private OrderBookDao orderBookDao;
+    @Autowired
+    private BookOrderDao bookOrderDao;
+    @Autowired
+    private BookInfoDao bookInfoDao;
 
     @RequestMapping(value = "/selectByCondition", method = {RequestMethod.GET, RequestMethod.POST})
     public Map<String, Object> selectByCondition(
@@ -41,8 +50,17 @@ public class OrderBookAction extends BaseAction {
     }
 
     @RequestMapping(value = "/selectById", method = {RequestMethod.GET, RequestMethod.POST})
-    public OrderBook selectById(@RequestParam Integer id) {
-        return orderBookDao.selectByPrimaryKey(id);
+    public Object selectById(@RequestParam Integer id) {
+        APIResult apiResult = new APIResult();
+        OrderBook orderBook = orderBookDao.selectByPrimaryKey(id);
+        apiResult.setData("orderBook", orderBook);
+        if (orderBook != null) {
+            BookOrder bookOrder = bookOrderDao.selectByPrimaryKey(orderBook.getOrderId());
+            BookInfo bookInfo = bookInfoDao.selectByPrimaryKey(orderBook.getBookId());
+            apiResult.setData("bookOrder", bookOrder);
+            apiResult.setData("bookInfo", bookInfo);
+        }
+        return apiResult;
     }
 
     @RequestMapping(value = "/insertOne", method = {RequestMethod.GET, RequestMethod.POST})
