@@ -2,16 +2,10 @@ package com.zjl.library.controller;
 
 import com.zjl.library.common.APIResult;
 import com.zjl.library.controller.common.BaseAction;
-import com.zjl.library.dao.BookInfoDao;
-import com.zjl.library.dao.BookOrderDao;
-import com.zjl.library.dao.OrderBookDao;
-import com.zjl.library.dao.ShoppingCartDao;
+import com.zjl.library.dao.*;
 import com.zjl.library.dao.common.BaseDao;
 import com.zjl.library.dao.common.BaseQuery;
-import com.zjl.library.entity.BookInfo;
-import com.zjl.library.entity.BookOrder;
-import com.zjl.library.entity.OrderBook;
-import com.zjl.library.entity.ShoppingCart;
+import com.zjl.library.entity.*;
 import com.zjl.library.utils.ArrayUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,10 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static com.zjl.library.service.common.BatchQueryService.getFieldByList;
 import static com.zjl.library.service.common.BatchQueryService.selectRecordByIds;
@@ -42,6 +33,8 @@ public class BookOrderAction extends BaseAction {
     private OrderBookDao orderBookDao;
     @Autowired
     private BookInfoDao bookInfoDao;
+    @Autowired
+    private BookCommentDao bookCommentDao;
 
     @RequestMapping(value = "/createOrder", method = {RequestMethod.GET, RequestMethod.POST})
     public Object createOrder(@RequestParam String ids) {
@@ -118,10 +111,21 @@ public class BookOrderAction extends BaseAction {
         List<BookInfo> bookInfoList = selectRecordByIds(
                 getFieldByList(orderBookList, "bookId", OrderBook.class),
                 "id", (BaseDao) bookInfoDao, BookInfo.class);
+        List<BookComment> bookCommentList = new ArrayList<>();
+        for (BookInfo bookInfo : bookInfoList) {
+            BookComment CommentCondition = new BookComment();
+            CommentCondition.setOrderId(id);
+            CommentCondition.setBookId(bookInfo.getId());
+            List<BookComment> temp = bookCommentDao.selectByCondition(
+                    CommentCondition, new BaseQuery(1, 1));
+            if (temp == null || temp.size() == 0) bookCommentList.add(null);
+            else bookCommentList.add(temp.get(0));
+        }
         apiResult.setStatusAndDesc(1, "查询成功");
         apiResult.setData("bookOrder", bookOrder);
         apiResult.setData("orderBookList", orderBookList);
         apiResult.setData("bookInfoList", bookInfoList);
+        apiResult.setData("bookCommentList", bookCommentList);
         return apiResult;
     }
 
