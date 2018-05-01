@@ -35,16 +35,20 @@ $(function () {
                     console.log(result.data.total);
 
                     var list = result.data.bookInfoList;
-
-                    $(".goodList_leftContent").empty();
-                    for(var i = 0; i < list.length; i++){
-                        list[i].pressTime=list[i].pressTime.split(" ")[0];//获取日期的年、月、日
-                        var rander = template("getcontent", list[i]);
-                        $(".goodList_leftContent").append(rander);
+                    var html = "";
+                    for (var i = 0; i < list.length; i++) {
+                        list[i].pressTime = list[i].pressTime.split(" ")[0];//获取日期的年、月、日
+                        list[i].detailId = list[i].id;
+                        html += template("getcontent", list[i]);
                     }
+                    document.getElementById("content").innerHTML = html;
                     $(".addShoppingCart").click(function () {
                         var bookListId = this.name;
                         addShoppingCart.addShoppingCart_success(bookListId);
+                    });
+                    $(".goodList_bookTitle").click(function () {
+                        var bookId = this.id;
+                        window.location.href = "goodDetail.html?bookId=" + bookId;
                     });
                 }
             });
@@ -70,8 +74,8 @@ $(function () {
             endPage: '末页',
             prevContent: '上页',
             nextContent: '下页',
-            callback:function(api){
-                program.page =api.getCurrent();
+            callback: function (api) {
+                program.page = api.getCurrent();
                 program.bookList()
             }
         });
@@ -90,14 +94,14 @@ $(function () {
                 url: "/library/shoppingCart/insertOne",
                 dataType: "json",
                 async: false,
-                data:{
+                data: {
                     bookId: bookListId,
                     number: addShoppingCart.book_number
                 },
                 success: function (result) {
                     console.log(result);
-                    if(result.status == 1){
-                        window.location.href = "../ShoppingCart/addShoppingCart_success.html?id="+ result.id;
+                    if (result.status == 1) {
+                        window.location.href = "../ShoppingCart/addShoppingCart_success.html?id=" + result.id;
                     }
                 }
             });

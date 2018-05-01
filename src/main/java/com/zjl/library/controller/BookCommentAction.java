@@ -63,8 +63,7 @@ public class BookCommentAction extends BaseAction {
     public Map<String, Object> insertOne(BookComment bookComment) {
         System.out.println(bookComment.getContent());
         Map<String, Object> res = new HashMap<>();
-//        bookComment.setUserId(getUserId());
-        bookComment.setUserId(1);
+        bookComment.setUserId(getUserId());
         int result = bookCommentDao.insertSelective(bookComment);
         res.put("status", result);
         return res;

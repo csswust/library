@@ -30,11 +30,44 @@ $(function () {
                     $(".bookDetailMain").append(bookDetail_main_rander);
                 }
             });
+        },
+        bookComments:function () {
+            $.ajax({
+                type: "GET",
+                url: "/library/bookComment/selectByCondition",
+                dataType: "json",
+                async: false,
+                data:{
+                    bookId: bookDetail_program.bookId
+                },
+                success: function (result) {
+                    console.log(result);
+                    $("#total").text(result.total);
+                    var bookCommentList = result.list;
+                    var userInfoList = result.userInfoList;
+                    var html = "";
+                    for(var i=0; i<bookCommentList.length; i++){
+                        var comment = bookCommentList[i];
+                        var arr = [];
+                        comment.userName = userInfoList[i].username;
+                        for(var j=0; j<comment.score; j++){
+                            arr.push("one");
+                        }
+                        for(var j=comment.score; j<5; j++){
+                            arr.push("none");
+                        }
+                        comment.arr = arr;
+                        html += template("themes",comment);
+                    }
+                    document.getElementById("content").innerHTML = html;
+                }
+            });
         }
     };
     var request = new urlSearch();
-    bookDetail_program.bookId = request.id;
+    bookDetail_program.bookId = request.bookId;
     bookDetail_program.bookDetail();
+    bookDetail_program.bookComments();
 
     //添加购物车
     var addShoppingCart = {
