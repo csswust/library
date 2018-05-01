@@ -12,7 +12,7 @@ $(function(){
 		login: function(){
 			$.ajax({
 				type: "POST",
-				url: "/library/user/login",
+				url: "/library/userInfo/login",
 				dataType: "json",
                 async: false,
 				data: {
@@ -53,9 +53,4 @@ $(function(){
 			program.judge();
 		}
 	});
-
-
-	//
-
-
 });

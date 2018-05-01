@@ -24,26 +24,22 @@ $(function () {
                     var orderListContent = result.list;
                     console.log(orderListContent);
                     var bookList = result.bookInfoList;
-
                     $(".orderList_Main").empty();
                     var html ="";
                     for(var i = 0; i < orderList.orderNumber ; i++){
-                        // console.log(orderListContent[i].id);
-
+                        orderListContent[i].orderId =orderListContent[i].id
                         orderListContent[i].createTime = orderListContent[i].createTime.split(" ")[0];
                         if(orderListContent[i].status == 1){
                             orderListContent[i].orderStatus = "已收货";
-                            console.log(orderListContent[i].id);
-                            $("#writeComment").click(function () {
-                                window.location.href = "../goods/writeGoodComment.html?orderId=" + orderListContent[i].id;
-                            })
                         }else{
                             orderListContent[i].orderStatus = "待付款";
                         }
-
                         html += template("orderList", orderListContent[i]);
                     }
                     $(".orderList_Main").append(html);
+                    $(".writeComment").click(function () {
+                        window.location.href = "../goods/writeGoodComment.html?orderId=" + this.id;
+                    });
                 }
             });
         }

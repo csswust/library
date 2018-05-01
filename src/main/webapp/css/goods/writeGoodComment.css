@@ -37,6 +37,7 @@ li{
 	height: 340px;
 	padding-top: 30px;
 	float: left;
+	margin-bottom: 60px;
 }
 #writeGoodComment .writeGoodComment_content
 .writeGoodComment_contentLeft .bookTitle,
@@ -153,7 +154,7 @@ li{
 .writeGoodComment_bottom{
 	width: 100%;
 	height: 50px;
-	padding-top: 10px;
+	/*padding-top: 60px;*/
 	clear: both;
 }
 #writeGoodComment .writeGoodComment_content 
