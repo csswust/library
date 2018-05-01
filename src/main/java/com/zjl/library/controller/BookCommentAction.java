@@ -2,8 +2,13 @@ package com.zjl.library.controller;
 
 import com.zjl.library.controller.common.BaseAction;
 import com.zjl.library.dao.BookCommentDao;
+import com.zjl.library.dao.UserInfoDao;
+import com.zjl.library.dao.common.BaseDao;
 import com.zjl.library.dao.common.BaseQuery;
 import com.zjl.library.entity.BookComment;
+import com.zjl.library.entity.BookInfo;
+import com.zjl.library.entity.OrderBook;
+import com.zjl.library.entity.UserInfo;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +21,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static com.zjl.library.service.common.BatchQueryService.getFieldByList;
+import static com.zjl.library.service.common.BatchQueryService.selectRecordByIds;
+
 /**
  * Created by 972536780 on 2018/4/1.
  */
@@ -24,6 +32,8 @@ import java.util.Map;
 public class BookCommentAction extends BaseAction {
     @Autowired
     private BookCommentDao bookCommentDao;
+    @Autowired
+    private UserInfoDao userInfoDao;
 
     @RequestMapping(value = "/selectByCondition", method = {RequestMethod.GET, RequestMethod.POST})
     public Map<String, Object> selectByCondition(
@@ -35,8 +45,12 @@ public class BookCommentAction extends BaseAction {
         List<BookComment> bookCommentList = bookCommentDao.selectByCondition(bookComment,
                 new BaseQuery(page, rows));
         Integer total = bookCommentDao.selectByConditionGetCount(bookComment, new BaseQuery());
+        List<UserInfo> userInfoList = selectRecordByIds(
+                getFieldByList(bookCommentList, "userId", BookComment.class),
+                "id", (BaseDao) userInfoDao, UserInfo.class);
         res.put("total", total);
         res.put("list", bookCommentList);
+        res.put("userInfoList", userInfoList);
         return res;
     }
 
