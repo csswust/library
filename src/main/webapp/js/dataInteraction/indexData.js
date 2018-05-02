@@ -35,8 +35,24 @@ $(function () {
                 }
 
             });
+        },
+        logout: function () {
+            $.ajax({
+                type: "POST",
+                url: "/library/userInfo/logout",
+                dataType: "json",
+                async: false,
+                data: {},
+                success: function (result) {
+                  alert(result.desc);
+                }
+            });
         }
     }
     program.initMassage();
     program.queryUserInfo();
+    $("#logout").click(function () {
+        program.logout();
+        location.reload();
+    });
 });

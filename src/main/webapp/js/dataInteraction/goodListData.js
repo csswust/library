@@ -14,6 +14,7 @@ $(function () {
         book_special: "",
         page: "1",
         row: 13,
+        total: 0,
         bookInfoList: [],
         bookList: function () {
             $.ajax({
@@ -31,7 +32,7 @@ $(function () {
                 },
                 success: function (result) {
                     console.log(result);
-                    program.count = result.data.total;
+                    program.total = result.data.total;
                     console.log(result.data.total);
 
                     var list = result.data.bookInfoList;
@@ -67,8 +68,14 @@ $(function () {
     program.stitle = request.index_title;
 
     program.bookList();
+    $("#searchButton").click(function () {
+        program.stitle = $("#keyword").val();
+        program.bookList();
+    });
     $(function () {
         $('.M-box2').pagination({
+            totalData: program.total,
+            showData: program.row,
             coping: true,
             homePage: '首页',
             endPage: '末页',
@@ -80,11 +87,6 @@ $(function () {
             }
         });
     });
-    $("#searchButton").click(function () {
-        program.stitle = $("#keyword").val();
-        program.bookList();
-    });
-
     //添加购物车
     var addShoppingCart = {
         book_number: "1",

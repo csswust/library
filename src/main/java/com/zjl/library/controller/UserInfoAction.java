@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -65,6 +66,16 @@ public class UserInfoAction extends BaseAction {
         }
         return apiResult;
     }
+
+    @RequestMapping(value = "/logout", method = {RequestMethod.GET, RequestMethod.POST})
+    public Object logout(HttpServletRequest request) {
+        APIResult apiResult = new APIResult();
+        this.clearSession(request);
+        apiResult.setDesc("退出成功");
+        apiResult.setStatus(1);
+        return apiResult;
+    }
+
 
     @RequestMapping(value = "/register", method = {RequestMethod.GET, RequestMethod.POST})
     public Object register(

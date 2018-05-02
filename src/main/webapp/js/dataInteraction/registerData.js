@@ -11,13 +11,13 @@ $(function(){
         register: function () {
             $.ajax({
                 type: "POST",
-                url: "/library/user/register",
+                url: "/library/userInfo/register",
                 dataType: "json",
                 data: {
                     username: program.username,
                     email: program.useremail,
-                    password: program.setpassword,
-                    confimpassword: program.confirmPassword
+                    password: program.setpassword
+                    // confimpassword: program.confirmPassword
                 },
                 success: function (result) {
                     console.log(result);
