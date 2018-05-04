@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图书详情</title>
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link href="../../static/frame/css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+    <link href="../../static/frame/css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+    <link href="../../static/frame/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="../../static/frame/css/animate.min.css" rel="stylesheet">
+    <link href="../../static/frame/css/style.min862f.css?v=4.1.0" rel="stylesheet">
+    <link href="../../static/admin/css/formHelper.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../../static/unit/webuploader/webuploader.css">
+</head>
+
+<body class="gray-bg">
+<div class="wrapper wrapper-content animated rotateInDownLeft">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <form class="form-horizontal" id="admin_add_form">
+                        
+                        <div class="form-group">
+                            <label class="col-xs-2 text-right control-label control-label-helper" for="account">书名</label>
+                            <div class="col-xs-9">
+                                <input id="account" type="text" class="form-control" name="account" maxlength="18">
+                            </div>
+                        </div>
+						
+						<div class="form-group">
+                            <label class="col-xs-2 text-right control-label control-label-helper" for="image">图片</label>
+                            <div class="col-xs-9">
+                                <input id="image" type="text" class="form-control" name="image">
+                            </div>
+                        </div>
+						
+                        <div class="form-group">
+                            <label class="col-xs-2 text-right control-label control-label-helper" for="author">作者</label>
+                            <div class="col-xs-9">
+                                <input id="author" type="text" class="form-control" name="author">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-xs-2 text-right control-label control-label-helper" for="ISBN">ISBN</label>
+                            <div class="col-xs-9">
+                                <input id="ISBN" type="text" class="form-control" name="ISBN" maxlength="18">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-xs-2 text-right control-label control-label-helper" for="price">定价</label>
+                            <div class="col-xs-9">
+                                <input id="price" type="text" class="form-control" name="price" maxlength="18">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-xs-2 text-right control-label control-label-helper" for="money">售价</label>
+                            <div class="col-xs-9">
+                                <input id="money" type="text" class="form-control" name="money" maxlength="18">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-xs-2 text-right control-label control-label-helper" for="classification">所属分类</label>
+                            <div class="col-xs-9">
+                                <input id="classification" type="text" class="form-control" name="classification" maxlength="18">
+                            </div>
+                        </div>
+                        
+                        <!---->
+						<div class="form-group">
+                            <label class="col-xs-2 text-right control-label control-label-helper" for="bookPressTime">出版时间</label>
+                            <div class="col-xs-9">
+                                <input id="bookPressTime" type="text" class="form-control" name="bookPressTime" maxlength="18">
+                            </div>
+                        </div>                        
+                        
+                        <div class="form-group">
+                            <label class="col-xs-2 text-right control-label control-label-helper" for="bookPress">出版社</label>
+                            <div class="col-xs-9">
+                                <input id="bookPress" type="text" class="form-control" name="bookPress" maxlength="18">
+                            </div>
+                        </div>
+						
+						<div class="form-group">
+                            <label class="col-xs-2 text-right control-label control-label-helper" for="bookSize">开本</label>
+                            <div class="col-xs-9">
+                                <input id="bookSize" type="text" class="form-control" name="bookSize" maxlength="18">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-xs-2 text-right control-label control-label-helper" for="bookPage">页数</label>
+                            <div class="col-xs-9">
+                                <input id="bookPage" type="text" class="form-control" name="bookPage" maxlength="18">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-xs-2 text-right control-label control-label-helper" for="bookIntroduction">图书简介</label>
+                            <div class="col-xs-9">
+                                <!--<input id="classification" type="text" class="form-control" name="classification" maxlength="18">-->
+                                <textarea id="bookIntroduction" class="form-control"></textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-xs-2 text-right control-label control-label-helper" for="bookSpecial">图书特色</label>
+                            <div class="col-xs-9">
+                                <!--<input id="classification" type="text" class="form-control" name="classification" maxlength="18">-->
+                                <textarea id="bookSpecial" class="form-control"></textarea>
+                            </div>
+                        </div>
+                        <!--<div class="form-group">
+                            <label class="col-xs-2 text-right control-label control-label-helper">状态</label>
+
+                            <div class="col-xs-9">
+                                <div class="radio i-checks">
+                                    <label><input type="radio" value="0" name="state" title="状态-禁用">禁用</label>
+                                    <label><input type="radio" checked="checked" value="1" name="state" title="状态-启用">启用</label>
+                                </div>
+                            </div>
+                        </div>-->
+
+                        <div class="form-group">
+                            <div class="col-xs-8 col-xs-offset-2">
+                                <button class="btn btn-primary" type="submit" id="submit_btn">保存内容</button>
+                                <button class="btn btn-white" type="button" id="cancel_btn">取消</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- frame JS start -->
+<script src="../../static/frame/js/jquery.min.js?v=2.1.4"></script>
+<script src="../../static/frame/js/bootstrap.min.js?v=3.3.6"></script>
+<script src="../../static/frame/js/content.min.js?v=1.0.0"></script>
+<script src="../../static/frame/js/plugins/iCheck/icheck.min.js"></script>
+<script src="../../static/frame/js/plugins/validate/jquery.validate.min.js"></script>
+<script src="../../static/frame/js/plugins/validate/messages_zh.min.js"></script>
+<script src="../../static/frame/js/plugins/iCheck/icheck.min.js"></script>
+<script src="../../static/frame/js/plugins/layer/layer.min.js"></script>
+<script src="../../static/frame/js/plugins/layer/extend/layer.ext.js"></script>
+<script src="../../static/unit/webuploader/webuploader.js"></script>
+
+<!-- frame JS end -->
+
+<!-- page JS start -->
+<script src="../../static/admin/js/function.js"></script>
+<script src="../../static/admin/js/public.js"></script>
+
+<!-- page JS end -->
+</body>
+</html>

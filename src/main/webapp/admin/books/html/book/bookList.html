@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>图书列表</title>
+	<link rel="shortcut icon" href="../../favicon.ico">
+	<link href="../../static/frame/css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+	<link href="../../static/frame/css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+	<!-- Data Tables -->
+	<link href="../../static/frame/css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
+	<link href="../../static/frame/css/animate.min.css" rel="stylesheet">
+	<link href="../../static/frame/css/style.min862f.css?v=4.1.0" rel="stylesheet">
+</head>
+
+<body class="gray-bg">
+<div class="wrapper wrapper-content animated fadeInRight">
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="ibox float-e-margins">
+				<div class="ibox-title">
+					<h5>图书信息</h5>
+					<div class="ibox-tools">
+						<button type="button" class="btn-white btn-outline btn-xs add_btn add-book" title="添加新图书">
+							<i class="fa fa-plus"></i>&nbsp;添加
+						</button>
+						&nbsp;
+						<button type="button" class="btn-white btn-outline btn-xs refresh_btn" title="刷新">
+							<i class="fa fa-refresh"></i>&nbsp;刷新
+						</button>
+						&nbsp;
+						<button type="button" class="btn-white btn-outline btn-xs multi_del_btn" title="一键删除">
+							<i class="fa fa-trash"></i>&nbsp;一键删除
+						</button>
+					</div>
+				</div>
+				<div class="ibox-content">
+					<form role="form" class="form-inline text-center">
+						<div class="form-group">
+							<div class="input-group">
+								<input type="text" name="keywords" placeholder="请输入您要搜索的书名..." class="form-control" title="搜索框" value="" style="width:300px;">
+								<span class="input-group-btn">
+                                        <button type="button" class="btn btn-primary search_btn" title="搜索"><i class="fa fa-search"></i>&nbsp;搜索</button>
+                                        <button type="button" class="btn btn-default undo_btn" title="取消搜索"><i class="fa fa-undo"></i>&nbsp;取消</button>
+                                    </span>
+							</div>
+						</div>
+					</form>
+					<table class="table table-striped table-bordered table-hover" id="list">
+						<thead>
+							<tr>
+								<th class="text-center" style="width:10px;"><input title="全选" type="checkbox" name="check_all" value="0" /></th>
+								<th class="text-center" style="width:60px;">序号</th>
+								<td class="text-center" style="width:80px;">图片</td>
+								<th class="text-center" style="width:80px;">书名</th>
+								<th class="text-center" style="width:80px;">作者</th>
+								<th class="text-center" style="width:150px">ISBN</th>
+								<th class="text-center" style="width:60px;">定价</th>
+								<th class="text-center" style="width:60px;">售价</th>
+								<th class="text-center" style="width:100px;">所属分类</th>
+								<th class="text-center" style="width:80px;">操作</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="text-center" style="width:10px;"><input title="全选" type="checkbox" name="check_all" value="0" /></td>
+								<td class="text-center" style="width:60px;">1</td>
+								<td class="text-center" style="width:80px;">1</td>
+								<td class="text-center" style="width:80px;">山楂树</td>
+								<td class="text-center" style="width:80px;">Sunny</td>
+								<td class="text-center" style="width:150px">12345678910</td>
+								<td class="text-center" style="width:60px;">¥24.00</td>
+								<td class="text-center" style="width:60px;">¥12.00</td>
+								<td class="text-center" style="width:100px;">小说</td>
+								<td class="text-center" style="width:80px;">
+									<button class="btn-white btn-outline btn-xs details-control book-detail" title="查看更多">
+										<i class="fa fa-eye"></i>
+									</button>
+									<button class="btn-white btn-outline btn-xs edit_btn book-edit" title="编辑">
+										<i class="fa fa-pencil-square"></i>
+									</button>
+									<button class="btn-white btn-outline btn-xs del_btn" title="删除" data-id="'+cellData+'">
+										<i class="fa fa-close"></i>
+									</button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- frame JS start -->
+<script src="../../static/frame/js/jquery.min.js?v=2.1.4"></script>
+<script src="../../static/frame/js/bootstrap.min.js?v=3.3.6"></script>
+<script src="../../static/frame/js/plugins/jeditable/jquery.jeditable.js"></script>
+<script src="../../static/frame/js/plugins/dataTables/jquery.dataTables.js"></script>
+<script src="../../static/frame/js/plugins/dataTables/dataTables.bootstrap.js"></script>
+<script src="../../static/frame/js/content.min.js?v=1.0.0"></script>
+<script src="../../static/frame/js/plugins/layer/layer.min.js"></script>
+<!-- frame JS end -->
+
+<!-- admin JS start -->
+<script src="../../static/admin/js/datatable.render.js"></script>
+<script src="../../static/admin/js/function.js"></script>
+<script src="../../static/admin/js/temp.js"></script>
+<script src="../../static/admin/js/bookList.js"></script>
+<!-- admin JS end -->
+</body>
+</html>

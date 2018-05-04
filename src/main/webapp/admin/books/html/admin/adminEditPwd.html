@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>修改密码</title>
+        <link rel="shortcut icon" href="../../favicon.ico">
+        <link href="../../static/frame/css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+        <link href="../../static/frame/css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+        <link href="../../static/frame/css/plugins/iCheck/custom.css" rel="stylesheet">
+        <link href="../../static/frame/css/animate.min.css" rel="stylesheet">
+        <link href="../../static/frame/css/style.min862f.css?v=4.1.0" rel="stylesheet">
+        <link href="../../static/admin/css/formHelper.css" rel="stylesheet">
+    </head>
+
+    <body class="gray-bg">
+        <div class="wrapper wrapper-content animated rotateInDownLeft">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-content">
+                            <form class="form-horizontal" id="admin_edit_pwd">
+
+                                <div class="form-group">
+                                    <label class="col-xs-3 text-right control-label control-label-helper" for="old_pwd">旧密码</label>
+                                    <div class="col-xs-8">
+                                        <input id="old_pwd" type="text" class="form-control" name="old_pwd">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-xs-3 text-right control-label control-label-helper" for="new_pwd">新密码</label>
+                                    <div class="col-xs-8">
+                                        <input id="new_pwd" type="password" class="form-control" name="new_pwd">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-xs-3 text-right control-label control-label-helper" for="new_pwd_repeat">确认新密码</label>
+                                    <div class="col-xs-8">
+                                        <input id="new_pwd_repeat" type="password" class="form-control" name="new_pwd_repeat">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-xs-8 col-xs-offset-3">
+                                        <button class="btn btn-primary" type="submit" id="submit_btn">保存内容</button>
+                                        <button class="btn btn-white" type="button" id="cancel_btn">取消</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- frame JS start -->
+        <script src="../../static/frame/js/jquery.min.js?v=2.1.4"></script>
+        <script src="../../static/frame/js/bootstrap.min.js?v=3.3.6"></script>
+        <script src="../../static/frame/js/content.min.js?v=1.0.0"></script>
+        <script src="../../static/frame/js/plugins/iCheck/icheck.min.js"></script>
+        <script src="../../static/frame/js/plugins/validate/jquery.validate.min.js"></script>
+        <script src="../../static/frame/js/plugins/validate/messages_zh.min.js"></script>
+        <script src="../../static/frame/js/plugins/iCheck/icheck.min.js"></script>
+        <script src="../../static/frame/js/plugins/layer/layer.min.js"></script>
+        <script src="../../static/frame/js/plugins/layer/extend/layer.ext.js"></script>
+        <!-- frame JS end -->
+
+
+        <!-- page JS start -->
+        <script src="../../static/admin/js/function.js"></script>
+        <script src="../../static/admin/js/adminEditPwd.js"></script>
+        <!-- page JS end -->
+
+    </body>
+</html>
