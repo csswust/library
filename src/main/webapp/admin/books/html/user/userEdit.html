@@ -22,9 +22,9 @@
                 <div class="ibox-content">
                     <form class="form-horizontal" id="admin_add_form">
                         <div class="form-group">
-                            <label class="col-xs-2 text-right control-label control-label-helper" for="account">账号</label>
+                            <label class="col-xs-2 text-right control-label control-label-helper" for="userName">账号</label>
                             <div class="col-xs-9">
-                                <input id="account" type="text" class="form-control" name="account" maxlength="18">
+                                <input id="userName" type="text" class="form-control" name="userName" maxlength="18">
                             </div>
                         </div>
 
@@ -55,7 +55,7 @@
 
                         <div class="form-group">
                             <div class="col-xs-8 col-xs-offset-2">
-                                <button class="btn btn-primary" type="submit" id="submit_btn">保存内容</button>
+                                <button class="btn btn-primary" type="button" id="submit_btn">保存内容</button>
                                 <button class="btn btn-white" type="button" id="cancel_btn">取消</button>
                             </div>
                         </div>
@@ -81,8 +81,11 @@
 <!-- frame JS end -->
 
 <!-- page JS start -->
+<script type="text/javascript" src="../../../../js/dataInteraction/publicData.js"></script>
 <script src="../../static/admin/js/function.js"></script>
 <script src="../../static/admin/js/public.js"></script>
+<script src="../../static/admin/js/dataInteraction/userEditData.js"></script>
+<script src=""></script>
 
 <!-- page JS end -->
 </body>
