@@ -19,7 +19,7 @@
 		<div class="col-sm-12">
 			<div class="ibox float-e-margins">
 				<div class="ibox-title">
-					<h5>会员信息</h5>
+					<h5>用户信息</h5>
 					<div class="ibox-tools">
 						<button type="button" class="btn-white btn-outline btn-xs add_btn add-user" title="添加新用户">
 							<i class="fa fa-plus"></i>&nbsp;添加
@@ -38,7 +38,7 @@
 					<form role="form" class="form-inline text-center">
 						<div class="form-group">
 							<div class="input-group">
-								<input type="text" name="keywords" placeholder="请输入您要搜索的会员姓名..." class="form-control" title="搜索框" value="" style="width:300px;">
+								<input type="text" name="keywords" placeholder="请输入您要搜索的用户姓名..." class="form-control" title="搜索框" value="" style="width:300px;">
 								<span class="input-group-btn">
                                     <button type="button" class="btn btn-primary search_btn" title="搜索"><i class="fa fa-search"></i>&nbsp;搜索</button>
                                     <button type="button" class="btn btn-default undo_btn" title="取消搜索"><i class="fa fa-undo"></i>&nbsp;取消</button>
@@ -52,6 +52,8 @@
 								<th class="text-center" style="width:10px;"><input title="全选" type="checkbox" name="check_all" value="0" /></th>
 								<th class="text-center" style="width:60px;">序号</th>
 								<th class="text-center" style="width:80px;">姓名</th>
+								<th class="text-center" style="width:80px;">邮箱</th>
+								<th class="text-center" style="width:80px;">密码</th>
 								<th class="text-center" style="width:150px">上次登录时间</th>
 								<th class="text-center" style="width:60px;">注册时间</th>
 								<th class="text-center" style="width:80px;">操作</th>
@@ -60,10 +62,12 @@
 						<tbody>
 							<tr>
 								<td class="text-center" style="width:10px;"><input title="选中" type="checkbox" name="check" value="0" /></td>
-								<td class="text-center" style="width:60px;">1</th>
-								<td class="text-center" style="width:80px;">Sunny</th>
-								<td class="text-center" style="width:150px">2018-06-12 12:16:58</th>
-								<td class="text-center" style="width:60px;">2018-06-12 12:16:58</th>
+								<td class="text-center" style="width:60px;">1</td>
+								<td class="text-center" style="width:80px;">Sunny</td>
+								<td class="text-center" style="width:80px;">9999999999@qq.com</td>
+								<td class="text-center" style="width:80px;">123456789010101</td>
+								<td class="text-center" style="width:150px">2018-06-12 12:16:58</td>
+								<td class="text-center" style="width:150px;">2018-06-12 12:16:58</td>
 								<td class="text-center" style="width:80px;">
 									<button class="btn-white btn-outline btn-xs edit-user" title="编辑">
 										<i class="fa fa-edit"></i>
@@ -92,7 +96,14 @@
 
 <!-- admin JS start -->
 <script src="../../static/admin/js/function.js"></script>
+<script src="../../static/admin/js/jquery.pagination.js"></script>
+<script src="../../static/admin/js/artTemplate.js"></script>
 <script src="../../static/admin/js/userList.js"></script>
+
+<script src="../../static/admin/js/dataInteraction/userData.js"></script>
+<script id="userList" type="text/html">
+
+</script>
 <!-- admin JS end -->
 </body>
 </html>

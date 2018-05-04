@@ -17,7 +17,7 @@ $(document).ready(function ()
     //查看图书详情
     $('.book-detail').on('click', function(){
         lay_iframe_fn({
-        	title: '添加图书',
+        	title: '查看图书详情',
         	area: ['550px','600px'],
         	content: 'html/book/bookListDetail.html',
         	end: function(){
