@@ -61,31 +61,12 @@
 								<th class="text-center" style="width:80px;">操作</th>
 							</tr>
 						</thead>
-						<tbody>
-							<tr>
-								<td class="text-center" style="width:10px;"><input title="全选" type="checkbox" name="check_all" value="0" /></td>
-								<td class="text-center" style="width:60px;">1</td>
-								<td class="text-center" style="width:80px;">1</td>
-								<td class="text-center" style="width:80px;">山楂树</td>
-								<td class="text-center" style="width:80px;">Sunny</td>
-								<td class="text-center" style="width:150px">12345678910</td>
-								<td class="text-center" style="width:60px;">¥24.00</td>
-								<td class="text-center" style="width:60px;">¥12.00</td>
-								<td class="text-center" style="width:100px;">小说</td>
-								<td class="text-center" style="width:100px;">
-									<button class="btn-white btn-outline btn-xs details-control book-detail" title="查看更多">
-										<i class="fa fa-eye"></i>
-									</button>
-									<button class="btn-white btn-outline btn-xs edit_btn book-edit" title="编辑">
-										<i class="fa fa-pencil-square"></i>
-									</button>
-									<button class="btn-white btn-outline btn-xs del_btn" title="删除" data-id="'+cellData+'">
-										<i class="fa fa-close"></i>
-									</button>
-								</td>
-							</tr>
+						<tbody id="content">
 						</tbody>
 					</table>
+					<div class="userList_page">
+						<ul id="pagination" class="m-style M-box2"></ul>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -105,7 +86,37 @@
 <script src="../../static/admin/js/datatable.render.js"></script>
 <script src="../../static/admin/js/function.js"></script>
 <script src="../../static/admin/js/temp.js"></script>
+<script src="../../static/admin/js/function.js"></script>
+<script src="../../static/admin/js/jquery.pagination.js"></script>
+<script src="../../static/admin/js/artTemplate.js"></script>
 <script src="../../static/admin/js/bookList.js"></script>
+
+<script src="../../static/admin/js/dataInteraction/bookListData.js"></script>
+<script id="bookList" type="text/html">
+	<tr>
+		<td class="text-center" style="width:10px;"><input title="全选" type="checkbox" name="check_all" value="0" /></td>
+		<td class="text-center" style="width:60px;">{{index}}</td>
+
+		<td class="text-center" style="width:80px;"><img src="{{image}}"></img></td>
+		<td class="text-center" style="width:80px;">{{title}}</td>
+		<td class="text-center" style="width:80px;">{{author}}</td>
+		<td class="text-center" style="width:150px">{{isbn}}</td>
+		<td class="text-center" style="width:60px;">{{price}}</td>
+		<td class="text-center" style="width:60px;">{{money}}</td>
+		<td class="text-center" style="width:100px;">{{secondName}}</td>
+		<td class="text-center" style="width:100px;">
+			<button class="btn-white btn-outline btn-xs details-control book-detail" title="查看更多">
+				<i class="fa fa-eye"></i>
+			</button>
+			<button class="btn-white btn-outline btn-xs edit_btn book-edit" id="{{editId}}" title="编辑">
+				<i class="fa fa-pencil-square"></i>
+			</button>
+			<button class="btn-white btn-outline btn-xs del_btn"  id="deleteId" title="删除" data-id="'+cellData+'">
+				<i class="fa fa-close"></i>
+			</button>
+		</td>
+	</tr>
+</script>
 <!-- admin JS end -->
 </body>
 </html>

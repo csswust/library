@@ -38,7 +38,7 @@
 					<form role="form" class="form-inline text-center">
 						<div class="form-group">
 							<div class="input-group">
-								<input type="text" name="keywords" placeholder="请输入您要搜索的管理员账号..." class="form-control" title="搜索框" value="" style="width:300px;">
+								<input type="text" id="keywords" name="keywords" placeholder="请输入您要搜索的管理员账号..." class="form-control" title="搜索框" value="" style="width:300px;">
 								<span class="input-group-btn">
                                         <button type="button" class="btn btn-primary search_btn" title="搜索"><i class="fa fa-search"></i>&nbsp;搜索</button>
                                         <button type="button" class="btn btn-default undo_btn" title="取消搜索"><i class="fa fa-undo"></i>&nbsp;取消</button>
@@ -57,23 +57,12 @@
 								<th class="text-center" style="width:80px;">操作</th>
 							</tr>
 						</thead>
-						<tbody>
-							<tr>
-								<td class="text-center" style="width:10px;"><input title="选中" type="checkbox" name="check" value="0" /></td>
-								<td class="text-center" style="width:60px;">1</th>
-								<td class="text-center" style="width:80px;">Sunny</th>
-								<td class="text-center" style="width:150px">2018-06-12 12:16:58</th>
-								<td class="text-center" style="width:80px;">
-									<button class="btn-white btn-outline btn-xs edit-admin" title="编辑">
-										<i class="fa fa-edit"></i>
-									</button>&nbsp;&nbsp;
-									<button class="btn-white btn-outline btn-xs delete-admin" title="删除">
-										<i class="fa fa-close"></i>
-									</button>
-								</td>
-							</tr>
+						<tbody id="content">
 						</tbody>
 					</table>
+					<div class="userList_page">
+						<ul id="pagination" class="m-style M-box2"></ul>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -94,6 +83,25 @@
 <script src="../../static/admin/js/function.js"></script>
 <script src="../../static/admin/js/temp.js"></script>
 <script src="../../static/admin/js/adminList.js"></script>
+<script src="../../static/admin/js/jquery.pagination.js"></script>
+<script src="../../static/admin/js/artTemplate.js"></script>
+<script src="../../static/admin/js/dataInteraction/adminListData.js"></script>
+<script id="admins" type="text/html">
+	<tr>
+		<td class="text-center" style="width:10px;"><input title="选中" type="checkbox" name="check" value="0" /></td>
+		<td class="text-center" style="width:60px;">{{index}}</th>
+		<td class="text-center" style="width:80px;">{{username}}</th>
+		<td class="text-center" style="width:150px">{{createTime}}</th>
+		<td class="text-center" style="width:80px;">
+			<button class="btn-white btn-outline btn-xs edit-admin" id="editId" title="编辑">
+				<i class="fa fa-edit"></i>
+			</button>&nbsp;&nbsp;
+			<button class="btn-white btn-outline btn-xs delete-admin" id="deleteId" title="删除">
+				<i class="fa fa-close"></i>
+			</button>
+		</td>
+	</tr>
+</script>
 <!-- admin JS end -->
 </body>
 </html>

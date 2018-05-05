@@ -4,6 +4,7 @@ import com.zjl.library.common.APIResult;
 import com.zjl.library.controller.common.BaseAction;
 import com.zjl.library.dao.BookInfoDao;
 import com.zjl.library.dao.SecondClassifyDao;
+import com.zjl.library.dao.common.BaseDao;
 import com.zjl.library.dao.common.BaseQuery;
 import com.zjl.library.entity.BookInfo;
 import com.zjl.library.entity.SecondClassify;
@@ -18,6 +19,9 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import static com.zjl.library.service.common.BatchQueryService.getFieldByList;
+import static com.zjl.library.service.common.BatchQueryService.selectRecordByIds;
 
 /**
  * Created by 972536780 on 2018/4/1.
@@ -48,7 +52,13 @@ public class BookInfoAction extends BaseAction {
         int total = bookInfoDao.selectByConditionGetCount(bookInfo, baseQuery);
         baseQuery.setPageRows(page, rows);
         List<BookInfo> bookInfoList = bookInfoDao.selectByCondition(bookInfo, baseQuery);
+
+
+        List<SecondClassify> secondClassifyList = selectRecordByIds(
+                getFieldByList(bookInfoList, "secondId", BookInfo.class),
+                "id", (BaseDao) secondClassifyDao, SecondClassify.class);
         apiResult.setData("bookInfoList", bookInfoList);
+        apiResult.setData("secondClassifyList", secondClassifyList);
         apiResult.setData("total", total);
         return apiResult;
     }
@@ -61,6 +71,8 @@ public class BookInfoAction extends BaseAction {
             SecondClassify secondClassify = secondClassifyDao.selectByPrimaryKey(bookInfo.getSecondId());
             res.put("secondClassify", secondClassify);
         }
+        List<SecondClassify> secondClassifyList = secondClassifyDao.selectByCondition(new SecondClassify(), new BaseQuery());
+        res.put("secondClassifyList", secondClassifyList);
         res.put("bookInfo", bookInfo);
         return res;
     }
