@@ -35,6 +35,10 @@ public class BookOrderAction extends BaseAction {
     private BookInfoDao bookInfoDao;
     @Autowired
     private BookCommentDao bookCommentDao;
+    @Autowired
+    private AddressDao addressDao;
+    @Autowired
+    private UserInfoDao userInfoDao;
 
     @RequestMapping(value = "/createOrder", method = {RequestMethod.GET, RequestMethod.POST})
     public Object createOrder(@RequestParam String ids) {
@@ -91,7 +95,23 @@ public class BookOrderAction extends BaseAction {
         List<BookOrder> bookOrderList = bookOrderDao.selectByCondition(bookOrder,
                 new BaseQuery(page, rows));
         Integer total = bookOrderDao.selectByConditionGetCount(bookOrder, new BaseQuery());
+
+        List<Address> addressList = selectRecordByIds(
+                getFieldByList(bookOrderList, "addressId", BookOrder.class),
+                "id", (BaseDao) addressDao, Address.class);
+        List<UserInfo> userInfoList = selectRecordByIds(
+                getFieldByList(addressList, "userId", Address.class),
+                "id", (BaseDao)userInfoDao , UserInfo.class);
+        List<List<OrderBook>> orderBookList = new ArrayList<List<OrderBook>>();
+        for(int i=0; i<bookOrderList.size(); i++){
+            OrderBook record = new OrderBook();
+            record.setOrderId(bookOrderList.get(i).getId());
+            orderBookList.add(orderBookDao.selectByCondition(record, new BaseQuery()));
+        }
         res.put("total", total);
+        res.put("addressList",addressList);
+        res.put("userInfoList",userInfoList);
+        res.put("orderBookList", orderBookList);
         res.put("list", bookOrderList);
         return res;
     }
@@ -121,11 +141,15 @@ public class BookOrderAction extends BaseAction {
             if (temp == null || temp.size() == 0) bookCommentList.add(null);
             else bookCommentList.add(temp.get(0));
         }
+        Address address = addressDao.selectByPrimaryKey(bookOrder.getAddressId());
+        UserInfo userInfo = userInfoDao.selectByPrimaryKey(address.getUserId());
         apiResult.setStatusAndDesc(1, "查询成功");
         apiResult.setData("bookOrder", bookOrder);
         apiResult.setData("orderBookList", orderBookList);
         apiResult.setData("bookInfoList", bookInfoList);
         apiResult.setData("bookCommentList", bookCommentList);
+        apiResult.setData("address",address);
+        apiResult.setData("userInfo",userInfo);
         return apiResult;
     }
 
