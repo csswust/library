@@ -64,10 +64,10 @@ $(function () {
             totalData: program.total,
             showData: program.row,
             coping: true,
-            homePage: '首页',
-            endPage: '末页',
-            prevContent: '上页',
-            nextContent: '下页',
+            homePage: '<<',
+            endPage: '>>',
+            prevContent: '<',
+            nextContent: '>',
             callback: function (api) {
                 program.page = api.getCurrent();
                 program.searchBookCommentList()

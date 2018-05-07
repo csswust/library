@@ -192,8 +192,8 @@ $(document).ready(function ()
 //  }
 });
 
-function ids_click ()
-{
-    // 这里可能会存在错误 $ is undefined
-    $('input[name=check_all]').prop('checked') && $('input[name=check_all]').prop('checked', false);
-}
+// function ids_click ()
+// {
+//     // 这里可能会存在错误 $ is undefined
+//     $('input[name=check_all]').prop('checked') && $('input[name=check_all]').prop('checked', false);
+// }
