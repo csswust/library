@@ -29,7 +29,7 @@ $(function () {
                     var html = "";
                     var firstClassifyList = result.list;
                     for (var i = 0; i < firstClassifyList.length; i++) {
-                        var firstClassify = bookCommentList[i];
+                        var firstClassify = firstClassifyList[i];
                         firstClassify.index = index;
                         index += 1;
                         firstClassify.editId = firstClassify.id;
@@ -76,7 +76,7 @@ $(function () {
             nextContent: '>',
             callback: function (api) {
                 program.page = api.getCurrent();
-                program.searchFirstClassifyList()
+                program.searchFirstClassifyList();
             }
         });
     });

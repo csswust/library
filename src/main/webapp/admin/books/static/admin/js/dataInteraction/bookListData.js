@@ -28,10 +28,10 @@ $(function () {
                     rows: program.rows
                 },
                 success: function (result) {
-                    program.total = result.total;
+                    program.total = result.data.total;
                     var html = "";
-                    var bookInfoList = result.bookInfoList;
-                    var secondClassifyList = result.secondClassifyList;
+                    var bookInfoList = result.data.bookInfoList;
+                    var secondClassifyList = result.data.secondClassifyList;
                     for (var i = 0; i < bookInfoList.length; i++) {
                         var bookInfo = bookInfoList[i];
                         bookInfo.index = index;

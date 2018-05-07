@@ -24,7 +24,6 @@ $(function () {
                 dataType: "json",
                 async: false,
                 data: {
-                    id: program.id,
                     page: program.page,
                     rows: program.rows
                 },
@@ -102,7 +101,7 @@ $(function () {
             nextContent: '>',
             callback: function (api) {
                 program.page = api.getCurrent();
-                program.searchBookInfoList()
+                program.searchBookOrderList()
             }
         });
     });

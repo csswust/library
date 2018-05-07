@@ -76,7 +76,7 @@ $(function () {
             nextContent: '>',
             callback: function (api) {
                 program.page = api.getCurrent();
-                program.bookList()
+                program.searchUserInfoList();
             }
         });
     });

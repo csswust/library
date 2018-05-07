@@ -37,8 +37,8 @@ $(function () {
                         var secondClassify = secondClassifyList[i];
                         secondClassify.index = index;
                         index += 1;
-                        secondClassify.editId = firstClassify.id;
-                        secondClassify.deleteId = firstClassify.id;
+                        secondClassify.editId = secondClassify.id;
+                        secondClassify.deleteId = secondClassify.id;
                         secondClassify.secondName = secondClassify.name;
                         secondClassify.firstName = firstClassifyList[i].name;
                         html += template("classificationSecond", secondClassify);

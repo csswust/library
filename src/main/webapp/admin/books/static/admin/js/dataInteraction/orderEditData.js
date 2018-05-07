@@ -20,7 +20,7 @@ $(function () {
                 dataType: "json",
                 async: false,
                 data: {
-                    id: program.orderId
+                    id: parseInt(program.orderId)
                 },
                 success: function (result) {
                     var bookOrder = result.data.bookOrder;

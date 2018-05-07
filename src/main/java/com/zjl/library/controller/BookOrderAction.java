@@ -142,6 +142,7 @@ public class BookOrderAction extends BaseAction {
             else bookCommentList.add(temp.get(0));
         }
         Address address = addressDao.selectByPrimaryKey(bookOrder.getAddressId());
+
         UserInfo userInfo = userInfoDao.selectByPrimaryKey(address.getUserId());
         apiResult.setStatusAndDesc(1, "查询成功");
         apiResult.setData("bookOrder", bookOrder);
