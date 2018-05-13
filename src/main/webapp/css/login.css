@@ -6,12 +6,15 @@
 li{
 	list-style-type: none;
 }
+#loginMid{
+	height: 600px;
+}
 #loginMid .registerMid_top{
 	width: 780px;
 }
 #loginMid .userInfo{
 	width: 700px;
-	height: 320px;
+	height: 280px;
 	margin-bottom: 0px;
 }
 #loginMid .userInfo .infoList:nth-child(3){
@@ -62,12 +65,13 @@ li{
 #loginMid .userInfo .sub>input{
 	width: 360px;
 	margin-top: 30px;
+	margin-left: 50px;
 }
 
 .forgetPassword{
 	width: 360px;
 	height: 24px;
-	margin-left: 240px;
+	margin-left: 200px;
 	line-height: 24px;
 }
 .forgetPassword>a{
@@ -86,7 +90,7 @@ li{
 .otherLogin{
 	width: 360px;
 	height: 30px;
-	margin-left: 240px;
+	margin-left: 200px;
 	margin-top: 30px;
 }
 .otherLogin>a{

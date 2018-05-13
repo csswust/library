@@ -25,7 +25,7 @@ $(function () {
                     var shoppingCartList = result.list;
                     var bookList = result.bookInfoList;
 
-                    $(".myShoppingCart_box").empty();
+                    var html="";
                     for(var i = 0; i < bookList.length; i++) {
                         bookList[i].list_id = shoppingCartList[i].id;
                         // console.log(bookList[i].list_id);
@@ -33,9 +33,9 @@ $(function () {
                         bookList[i].addShoppingCartId = shoppingCartList[i].id;
                         bookList[i].number = result.list[i].number;
                         bookList[i].sumCount = bookList[i].number * bookList[i].money;
-                        var ShoppingCartrander = template("myShoppingCart_content", bookList[i]);
-                        $(".myShoppingCart_box").append(ShoppingCartrander);
+                        html+= template("myShoppingCart_content", bookList[i]);
                     }
+                    document.getElementById("content").innerHTML = html;
                 }
             });
         }

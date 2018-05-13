@@ -48,4 +48,8 @@ $(function () {
     writeAddress.myOrderBookList();
     $("#sum").text(writeAddress.sum + "元");
     $("#sumMoney").text(writeAddress.sum);
+
+    $("#order").click(function () {
+        window.location.href = "submitOrder.html";
+    });
 });

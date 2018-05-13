@@ -15,13 +15,6 @@ $(function(){
                 $parent.find(".inputError").remove();
                 $parent.append("<span class='msg right'>" + rightMsg + "</span>")
             }
-//			if(this.value == "" || this.value.length < 6){
-//				var errmsg = "请至少输入6位的用户名！"
-//				$parent.append("<span class='error'>"+errmsg+"</span>");
-//			}else{
-//				var rightmsg = "输入数据正确！";
-//				$parent.append("<span>"+rightmsg+"</span>")
-//			}
         }
         //邮箱
         if($(this).is("#userEmail")){
