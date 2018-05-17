@@ -16,7 +16,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -65,6 +67,26 @@ public class SystemAction extends BaseAction {
             }
         }
         return null;
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/upload", method = {RequestMethod.GET, RequestMethod.POST})
+    public Map<String, Object> upload(MultipartFile file, HttpServletRequest request) {
+        String fileName = file.getOriginalFilename();
+        Map<String, Object> map = new HashMap<>();
+        String path = SiteKey.UPLOAD_IMAGE_DIR_DE + "/" + fileName;
+        map.put("path", fileName);
+        System.out.println(path);
+        File dest = new File(path);
+        if (!dest.getParentFile().exists()) {
+            dest.getParentFile().mkdir();
+        }
+        try {
+            file.transferTo(dest);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return map;
     }
 
     @ResponseBody

@@ -12,11 +12,12 @@
 		<div id="writeAddress_topNav">
 			<div class="topNav_main">
 				<div class="topNav_mainLeft">
-					<span>欢迎登录Sunny图书网</span>
-					<span>请</span>
-					<span><a href="../login.html" target="_blank">登录</a></span>
-					<span>|</span>
-					<span><a href="../register.html" target="_blank">注册</a></span>
+					<span id="discription"></span>
+					<span id="please">请</span>
+					<span><a href="../login.html" id="loginSpan">登录</a></span>
+					<span id="line">|</span>
+					<span><a href="../register.html"  id="registSpan">注册</a></span>
+					<span><a href="javascript:void(0)" id="logout">[安全退出]</a></span>
 				</div>
 				<div class="topNav_mainRight">
 					<ul>
@@ -341,7 +342,7 @@
 								<ul>
 									<li>
 										<div>订单总额：</div>
-										<div id="sum"></div>
+										<div id="sum">{{subtotal}}</div>
 									</li>
 									<li>
 										<div>活动优惠：</div>
@@ -357,7 +358,7 @@
 									</li>
 									<li>
 										<div>应付总额：</div>
-										<div><span id="sumMoney"></span><span>元</span></div>
+										<div><span id="sumMoney">{{subtotal}}</span><span>元</span></div>
 									</li>
 								</ul>
 							</div>
@@ -445,6 +446,7 @@
 		<script type="text/javascript" src="../js/jquery.pagination.js" ></script>
 		<script type="text/javascript" src="../js/artTemplate.js" ></script>
 		<script type="text/javascript" src="../js/dataInteraction/publicData.js" ></script>
+		<script type="text/javascript" src="../js/dataInteraction/indexData.js"></script>
 		<script type="text/javascript" src="../js/dataInteraction/writeAddressData.js" ></script>
 
 		<script id="bookOrderList" type="text/html">

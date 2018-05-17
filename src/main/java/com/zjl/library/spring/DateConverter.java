@@ -14,7 +14,14 @@ public class DateConverter implements Converter<String, Date> {
         try {
             return dateFormat.parse(source);
         } catch (ParseException e) {
-            return null;
+            SimpleDateFormat dateFormat01 = new SimpleDateFormat("yyyy-MM-dd");
+            dateFormat01.setLenient(false);
+            try {
+                return dateFormat01.parse(source);
+            } catch (ParseException e1) {
+               e.printStackTrace();
+               return null;
+            }
         }
     }
 }

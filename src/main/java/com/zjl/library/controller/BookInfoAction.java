@@ -15,10 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static com.zjl.library.service.common.BatchQueryService.getFieldByList;
 import static com.zjl.library.service.common.BatchQueryService.selectRecordByIds;
@@ -80,6 +77,8 @@ public class BookInfoAction extends BaseAction {
     @RequestMapping(value = "/insertOne", method = {RequestMethod.GET, RequestMethod.POST})
     public Map<String, Object> insertOne(BookInfo bookInfo) {
         Map<String, Object> res = new HashMap<>();
+        bookInfo.setCreateTime(new Date());
+        System.out.println(bookInfo.getPressTime());
         int result = bookInfoDao.insertSelective(bookInfo);
         res.put("status", result);
         return res;

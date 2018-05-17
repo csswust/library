@@ -45,7 +45,7 @@ public class BookOrderAction extends BaseAction {
         APIResult apiResult = new APIResult();
         List<Integer> idList = ArrayUtil.StringToArray(ids, ",");
         BookOrder bookOrder = new BookOrder();
-        bookOrder.setAddressId(0);
+        bookOrder.setAddressId(1);
         bookOrder.setStatus(0);
         int status = bookOrderDao.insertSelective(bookOrder);
         if (status == 0 || bookOrder.getId() == null) {

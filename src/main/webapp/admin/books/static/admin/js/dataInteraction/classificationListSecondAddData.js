@@ -32,7 +32,7 @@ $(function () {
         addSecondClassify: function () {
             $.ajax({
                 type: "GET",
-                url: "/library/secondClassify/updateById",
+                url: "/library/secondClassify/insertOne",
                 dataType: "json",
                 async: false,
                 data: {

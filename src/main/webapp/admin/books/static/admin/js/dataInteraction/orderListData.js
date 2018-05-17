@@ -82,13 +82,70 @@ $(function () {
                     location.reload();
                 }
             });
+        },
+        selectBookOrderById: function () {
+            $.ajax({
+                type: "GET",
+                url: "/library/bookOrder/selectByCondition",
+                dataType: "json",
+                async: false,
+                data: {
+                    page: program.page,
+                    id: program.id,
+                    rows: program.rows
+                },
+                success: function (result) {
+                    program.total = result.total;
+                    var addressList = result.addressList;
+                    var userInfoList = result.userInfoList;
+                    var orderBookList = result.orderBookList;
+                    var bookOrderList = result.list;
+                    var html = "";
+                    var secondClassifyList = result.secondClassifyList;
+                    for (var i = 0; i < bookOrderList.length; i++) {
+                        var bookOrder = bookOrderList[i];
+                        bookOrder.index = index;
+                        index += 1;
+                        bookOrder.orderId = bookOrderList[i].id;
+                        bookOrder.editId = bookOrderList[i].id;
+                        bookOrder.deleteId = bookOrderList[i].id;
+                        bookOrder.userName = userInfoList[i].username;
+                        bookOrder.addressInfo = addressList[i].addressInfo;
+                        var sum = 0;
+                        for (var j = 0; j < orderBookList[i].length; j++) {
+                            sum += orderBookList[i][j].subtotal;
+                        }
+                        bookOrder.subtotal = sum;
+                        if (bookOrderList[i].status == 1) {
+                            bookOrder.status = "已付款";
+                        } else {
+                            bookOrder.status = "未付款";
+                        }
+                        bookOrder.createTime = bookOrderList[i].createTime;
+                        html += template("orderList", bookOrder);
+                    }
+                    document.getElementById("content").innerHTML = html;
+                    $(".delete-order").click(function () {
+                        program.id = this.id;
+                        program.deleteOrderById();
+                    });
+                    $(".edit-order").click(function () {
+                        window.location.href = "orderEdit.html?id=" + this.id;
+                    });
+                }
+
+            });
         }
     };
 
     program.searchBookOrderList();
-    $(".fa-search").click(function () {
+    // $(".fa-search").click(function () {
+    //     program.id = $("#keywords").val();
+    //     program.searchBookOrderList();
+    // });
+    $(".search_btn").click(function () {
         program.id = $("#keywords").val();
-        program.searchBookOrderList();
+        program.selectBookOrderById();
     });
     $(function () {
         $('.M-box2').pagination({

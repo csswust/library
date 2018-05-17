@@ -138,7 +138,7 @@ $(function () {
                     }
                 },
                 error:function () {
-                    alert(1111111);
+                    alert(error);
                 }
             });
         }

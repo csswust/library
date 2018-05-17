@@ -70,6 +70,11 @@ $(function () {
     };
 
     program.searchBookInfoList();
+    $(".search_btn").click(function () {
+        program.page = 1;
+        program.bookName = $("#keywords").val();
+        program.searchBookInfoList();
+    });
     $(function () {
         $('.M-box2').pagination({
             totalData: program.total,

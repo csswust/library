@@ -1,5 +1,51 @@
 $(document).ready(function ()
 {
+
+    var program = {
+        userName: "",
+        userId:0,
+        queryUserInfo: function () {
+            $.ajax({
+                type: "POST",
+                url: "/library/userInfo/check",
+                dataType: "json",
+                async: false,
+                data: {},
+                success: function (result) {
+                    var userInfo = result.data.userInfo;
+                    if (userInfo != null) {
+                        program.userName = userInfo.username;
+                        program.userId = userInfo.id;
+                    }
+                }
+
+            });
+        },
+        updateUserInfo:function () {
+            $.ajax({
+                type: "POST",
+                url: "/library/userInfo/updateById",
+                dataType: "json",
+                async: false,
+                data: {
+                    id:program.userId,
+                    username:program.userName
+                },
+                success: function (result) {
+                  if(result.status > 0){
+                      alert("修改成功！！！");
+                      window.location.href = "index.html";
+                  }
+                }
+            });
+        }
+    };
+    program.queryUserInfo();
+
+    $("#submit_btn").click(function () {
+     
+    });
+
     $('body').on('click', '#cancel_btn', close_current_layer);
 
     $('#admin_edit_pwd').validate(
@@ -83,4 +129,8 @@ $(document).ready(function ()
         console.dir(data);
         // ajax_request('admin/admin.php?action=reset_pwd', ajaxObj);
     }
+    
+
+
+
 });
